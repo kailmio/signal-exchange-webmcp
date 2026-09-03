@@ -8,6 +8,14 @@
 - Verified 10 Vitest checks, strict TypeScript/Vite build, WebMCP tool discovery with a two-value power enum, inspect → recommend Forge → preview/commit Forge → recommend Focus → preview/commit Focus → undo, and 1280×800 plus 360×800 visual behavior.
 - Existing rendered videos are historical and must be recut from the current build before submission. The public deployment remains unchanged pending explicit publication authorization.
 
+## 2026-09-04 — WebMCP leverage hardening
+
+- Made `inspect_mission_board` strictly side-effect-free so its read-only annotation is accurate; the visibly mutating recommendation tool is no longer marked read-only.
+- Added machine-readable `structuredContent` to every tool result while retaining readable JSON text for compatibility.
+- Clarified that commit follows a separate explicit approval step, either through the on-page control or a direct instruction to the agent.
+- Hardened asynchronous registration cleanup and added adapter-level tests for all six registrations, annotations, structured output, abort cleanup, and unsupported-browser fallback.
+- Verification: 13 Vitest tests pass, the strict TypeScript/Vite build succeeds, all six tools are discovered locally, and manual preview → exact commit → undo completes without console warnings or errors.
+
 ## 2026-09-03 — Guided build started
 
 - Entered the optional guided build path during the Resources stage.

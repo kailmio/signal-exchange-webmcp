@@ -18,7 +18,7 @@ export async function registerWebMcpTools(store: AppStore, commands: CommandServ
         {
           name: "inspect_mission_board",
           title: "Inspect mission board",
-          description: "Read the current committed mission, visible cards, focus, preview status, and recent human-readable history. Use this first before recommending a power.",
+          description: "Read the current committed mission, visible cards, focus, preview status, and recent human-readable history without changing any page state. Use this first before recommending a power.",
           inputSchema: EMPTY_SCHEMA,
           annotations: { readOnlyHint: true },
           execute: () => toToolResult(commands.inspect("agent")),
@@ -31,7 +31,6 @@ export async function registerWebMcpTools(store: AppStore, commands: CommandServ
           title: "List card powers",
           description: "List Forge and Focus with current availability, then return and visibly highlight the best contextual recommendation without changing the committed board.",
           inputSchema: EMPTY_SCHEMA,
-          annotations: { readOnlyHint: true },
           execute: () => toToolResult(commands.listPowers("agent")),
         },
         { signal: controller.signal },
@@ -51,7 +50,7 @@ export async function registerWebMcpTools(store: AppStore, commands: CommandServ
         {
           name: "commit_card_play",
           title: "Commit the visible preview",
-          description: "Apply only the exact active preview previously shown to the person. Requires its one-time preview token; never generates a replacement effect.",
+          description: "Apply only the exact active preview after the person explicitly asks you to commit it. Requires its one-time preview token; never generates or substitutes a different effect.",
           inputSchema: COMMIT_SCHEMA,
           execute: ({ previewToken }) => toToolResult(commands.commitCardPlay(previewToken, "agent")),
         },

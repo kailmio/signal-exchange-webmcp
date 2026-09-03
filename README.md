@@ -14,7 +14,7 @@ Open the app in a WebMCP-capable browser, then ask the agent:
 4. `Recommend the next power, preview Focus, and stop for approval.`
 5. `Commit Focus, then undo the last play.`
 
-The dramatic moment is not randomness: it is the handoff from an agent-authored proposal to a visible human decision. The board shows every recommendation, preview, commit, and undo in the Activity rail. Browsers without WebMCP honestly report **Manual demo mode** and keep the same card loop playable.
+The dramatic moment is not randomness: it is the handoff from an agent-authored proposal to a visible human decision. The person approves by clicking **Approve play** or explicitly asking the agent to commit the preview as a separate step. The board shows every recommendation, preview, commit, and undo in the Activity rail. Browsers without WebMCP honestly report **Manual demo mode** and keep the same card loop playable.
 
 The primary demo is a narrated 59-second [guided walkthrough](https://github.com/kailmio/mission-deck-webmcp/releases/download/v0.2.0/mission-deck-walkthrough.mp4). Its editable HyperFrames project lives in `video/mission-deck-walkthrough/`.
 
@@ -22,14 +22,14 @@ The primary demo is a narrated 59-second [guided walkthrough](https://github.com
 
 | Tool | Input | Purpose |
 | --- | --- | --- |
-| `inspect_mission_board` | `{}` | Reads committed board state, preview status, and recent activity. |
+| `inspect_mission_board` | `{}` | Reads committed board state, preview status, and recent activity without side effects. |
 | `list_card_powers` | `{}` | Returns Forge and Focus availability plus a contextual recommendation. |
 | `preview_card_play` | `{ power, targetCardId? }` | Displays an exact, non-mutating Forge or Focus proposal. |
 | `commit_card_play` | `{ previewToken }` | Applies only the stored active preview once. |
 | `undo_last_play` | `{}` | Restores the board before the latest committed card play. |
 | `load_demo_mission` | `{ confirmReplace }` | Loads the deterministic sample and clears preview/undo. |
 
-Preview tokens are bound to a board revision, expire, and are consumed once. Stale, expired, replayed, or mismatched commits fail without changing the board.
+Tool responses include both human-readable text and machine-readable structured content. Preview tokens are bound to a board revision, expire, and are consumed once. Stale, expired, replayed, or mismatched commits fail without changing the board.
 
 ## Local development
 

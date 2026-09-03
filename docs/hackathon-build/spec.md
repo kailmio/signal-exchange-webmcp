@@ -14,7 +14,7 @@ The shared command service owns inspect, list, preview, commit, undo, reset, and
 
 ## WebMCP
 
-Six tools mirror the visible product: `inspect_mission_board`, `list_card_powers`, `preview_card_play`, `commit_card_play`, `undo_last_play`, and `load_demo_mission`. The preview schema enum is limited to `forge` and `focus`.
+Six tools mirror the visible product: `inspect_mission_board`, `list_card_powers`, `preview_card_play`, `commit_card_play`, `undo_last_play`, and `load_demo_mission`. The preview schema enum is limited to `forge` and `focus`. Inspect is strictly side-effect-free and carries the read-only annotation; recommendation intentionally updates the visible page and is not labeled read-only. Every result includes structured content alongside its readable JSON text.
 
 ## Persistence
 

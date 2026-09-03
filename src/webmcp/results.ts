@@ -8,5 +8,6 @@ export function toToolResult<T>(result: CommandResult<T>) {
         text: JSON.stringify(result),
       },
     ],
+    structuredContent: result,
   };
 }

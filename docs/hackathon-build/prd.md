@@ -10,7 +10,7 @@ Mission Deck makes agent action tangible. A person sees a mission, idea cards, a
 2. An agent can inspect current committed state and receive a contextual recommendation without mutation.
 3. Forge requires an open idea and proposes four deterministic action cards.
 4. Focus requires action cards and proposes exactly one focused action, optionally honoring an explicit action target.
-5. Every play renders an exact preview and requires its active token for commit.
+5. Every play renders an exact preview and requires a separate approval step—an on-page click or an explicit instruction to the agent—plus its active token for commit.
 6. Stale, expired, replayed, missing, or mismatched tokens fail without mutation.
 7. One-level Undo restores the board before the latest commit.
 8. Manual controls and WebMCP tools produce equivalent committed boards.

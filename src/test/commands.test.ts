@@ -11,6 +11,14 @@ function harness(now = 1_000) {
 }
 
 describe("command safety", () => {
+  it("inspects without changing page state", () => {
+    const { store, service } = harness();
+    const before = store.getState();
+    const result = service.inspect("agent");
+    expect(result.ok).toBe(true);
+    expect(store.getState()).toBe(before);
+  });
+
   it("previews without mutating, then commits exactly once", () => {
     const { store, service } = harness();
     const before = store.getState().board;

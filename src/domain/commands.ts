@@ -49,10 +49,6 @@ export class CommandService {
 
   inspect(origin: Origin = "agent"): CommandResult<Record<string, unknown>> {
     const state = this.store.getState();
-    this.store.dispatch({
-      type: "ADD_ACTIVITY",
-      entry: this.activity(origin, "inspect", origin === "agent" ? "WebMCP · Board inspected" : "Board inspected"),
-    });
     return {
       ok: true,
       data: {

@@ -21,9 +21,16 @@ export default function App() {
   const powers = useMemo(() => getPowerAvailability(state.board.content), [state.board.content]);
 
   useEffect(() => {
-    let cleanup: () => void = () => undefined;
-    registerWebMcpTools(appStore, commands).then((unregister) => { cleanup = unregister; });
-    return () => cleanup();
+    let disposed = false;
+    let cleanup: (() => void) | undefined;
+    void registerWebMcpTools(appStore, commands).then((unregister) => {
+      if (disposed) unregister();
+      else cleanup = unregister;
+    });
+    return () => {
+      disposed = true;
+      cleanup?.();
+    };
   }, []);
 
   useEffect(() => {

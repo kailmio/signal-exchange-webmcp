@@ -6,9 +6,10 @@ The judged proof is the approval boundary: agent-authored changes appear as an e
 
 ## Current evidence
 
-- `npm test`: 10 tests pass.
+- `npm test`: 13 tests pass, including WebMCP registration, annotation, structured-result, cleanup, and fallback coverage.
 - `npm run build`: strict TypeScript and Vite production build pass.
 - Live local WebMCP discovery exposes six tools; the power enum contains only `forge` and `focus`.
+- Inspect is side-effect-free and truthfully read-only; recommendation visibly updates the board and is intentionally not annotated read-only.
 - Verified agent loop: inspect → recommend Forge → preview/commit Forge → recommend Focus → preview/commit Focus → undo.
 - Visual QA completed at 1280×800 and 360×800.
 - Canonical images live in `docs/design/`.
