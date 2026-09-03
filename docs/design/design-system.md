@@ -3,7 +3,6 @@
 ## Accepted Concepts
 
 - `mission-deck-ready-concept.png` — canonical 1536×1024 ready-state composition, implemented at a 1280×800 CSS-pixel target.
-- `mission-deck-wild-preview-concept.png` — canonical Wild preview, approval, and WebMCP activity state.
 
 ## Visual Direction
 
@@ -24,7 +23,6 @@
 - Muted text: `#9aa4aa`
 - Forge: `#f3a237`
 - Focus: `#27b9ef`
-- Wild: `#9b65ee`
 - Ready: `#17c968`
 - Error: `#ef6b68`
 - Radius: 10px for controls/cards; 14px for power cards.
@@ -43,7 +41,7 @@
 - The page is the canvas; do not wrap the whole product in a rounded shell.
 - Header and activity use hairline separators.
 - Idea cards share one quiet family with a top emblem, title, description, divider, and plain status.
-- Power cards share one larger family with an emblem, effect, and state treatment; Forge/Focus/Wild are color variants.
+- Power cards share one larger family with an emblem, effect, and state treatment; Forge and Focus are amber/cyan variants.
 - Avoid additional card grids, pills, fake metrics, side navigation, glass effects, neon grids, and decorative gradients.
 - Icons are original inline SVG components with consistent 1.6px strokes and `currentColor`.
 
@@ -66,7 +64,6 @@
 - No action focused yet
 - FORGE / Turn one idea into clear actions
 - FOCUS / Choose the highest-leverage next move
-- WILD / Reveal one bounded surprise
 - Recommended
 - ACTIVITY
 - Board ready
@@ -76,7 +73,7 @@
 
 ## Preview-State Copy
 
-- Wild preview
+- Exact preview
 - Nothing has changed yet
 - OUTCOME
 - Reverse the assumption
@@ -87,7 +84,7 @@
 - Approve play
 - Cancel
 - Preview expires in 5 minutes
-- WebMCP · Preview Wild
+- WebMCP · Preview Forge
 
 ## Responsive Continuation
 
@@ -103,7 +100,6 @@
 - Focus empty state: crosshair.
 - Forge: angular anvil/spark.
 - Focus power: aperture/target.
-- Wild: split diamond.
 - Activity: check, document, clock, target.
 - Undo: curved back arrow.
 

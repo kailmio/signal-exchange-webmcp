@@ -1,4 +1,4 @@
-type IconName = "mark" | "forge" | "focus" | "wild" | "idea" | "reveal" | "control" | "check" | "clock" | "undo";
+type IconName = "mark" | "forge" | "focus" | "idea" | "reveal" | "control" | "check" | "clock" | "undo";
 
 export function Icon({ name, size = 24 }: { name: IconName; size?: number }) {
   const common = { width: size, height: size, viewBox: "0 0 48 48", fill: "none", "aria-hidden": true } as const;
@@ -10,9 +10,6 @@ export function Icon({ name, size = 24 }: { name: IconName; size?: number }) {
   }
   if (name === "focus") {
     return <svg {...common}><circle cx="24" cy="24" r="14"/><circle cx="24" cy="24" r="6"/><path d="M24 3v8M24 37v8M3 24h8M37 24h8"/></svg>;
-  }
-  if (name === "wild") {
-    return <svg {...common}><path d="m24 5 16 19-16 19L8 24 24 5Z"/><path d="M24 5v38M8 24h32M24 5 15 24l9 19 9-19L24 5Z"/></svg>;
   }
   if (name === "undo") {
     return <svg {...common}><path d="m18 13-9 8 9 8"/><path d="M10 21h17c7 0 12 5 12 12"/></svg>;

@@ -2,7 +2,7 @@
 
 ## Product Summary
 
-This product is a polished, self-contained mission-planning web application in which a person and a WebMCP-capable agent collaborate on the same visible board. The person's goal and ideas appear as tangible cards. Three power cards—Forge, Focus, and Wild—let the board evolve through clear, dramatic, reversible actions.
+This product is a polished, self-contained mission-planning web application in which a person and a WebMCP-capable agent collaborate on the same visible board. The person's goal and ideas appear as tangible cards. Two power cards—Forge and Focus—let the board evolve through clear, dramatic, reversible actions.
 
 The agent does more than answer in a separate chat. It can inspect the board's current state, understand which powers are available, recommend a suitable card, prepare an exact preview, and apply that preview after explicit human approval. The person can also explore and play the same cards directly in the interface.
 
@@ -62,8 +62,7 @@ The product succeeds when a first-time visitor can:
 2. ask an agent to inspect it and receive a contextually sensible card recommendation;
 3. see the exact proposed effect before anything changes;
 4. approve the change and watch the board update clearly;
-5. play a surprising Wild card without losing trust;
-6. undo a committed play;
+5. undo a committed play;
 7. repeat the core experience without reloading or repairing the application.
 
 For the submission demo, the complete sequence should fit comfortably into 60–90 seconds.
@@ -77,7 +76,7 @@ The visitor opens the application directly into a complete sample mission. The s
 - a concise mission statement;
 - several deliberately vague idea cards;
 - an empty or uncommitted focus area;
-- the Forge, Focus, and Wild power cards;
+- the Forge and Focus power cards;
 - a small agent-readiness indicator;
 - a compact activity history;
 - a secondary action to start a custom mission.
@@ -282,24 +281,6 @@ Acceptance criteria:
 - Playing Focus again can replace the current choice through the same preview and approval flow.
 - When no actionable card exists, Focus explains that Forge or adding an idea is required first.
 
-### Epic 7: Play Wild
-
-#### Story 7.1 — Introduce a memorable but bounded surprise
-
-As a maker who wants a fresh perspective, I want Wild to reveal an unexpected constraint or transformation so that the board can escape predictable thinking.
-
-Acceptance criteria:
-
-- Wild can be requested without selecting a specific power outcome in advance.
-- The preview reveals one result from a curated set of safe transformations.
-- Every Wild result identifies its affected cards and exact proposed change.
-- Supported outcomes include at least: combine two compatible ideas, reverse an assumption, change the target audience, and impose a radically smaller scope.
-- From a clean sample mission, the first Wild preview uses a fixed, demo-worthy outcome; later Wild previews may vary across the curated set.
-- A Wild result never executes code, opens external pages, deletes the entire mission, or bypasses preview.
-- Cancelling a Wild result returns to the unchanged committed board.
-- Requesting another Wild preview may reveal a different outcome, but only the currently visible preview can be approved.
-- The reveal is visually distinctive and remains understandable with reduced motion.
-
 ### Epic 8: Understand history and reverse a play
 
 #### Story 8.1 — See what happened
@@ -320,7 +301,7 @@ As the owner of the board, I want to undo the latest play so that experimentatio
 
 Acceptance criteria:
 
-- Undo is available after a committed Forge, Focus, or Wild play.
+- Undo is available after a committed Forge or Focus play.
 - Undo restores the immediately previous committed board state.
 - Undo creates its own history entry.
 - A second undo is unavailable in the MVP unless a newer card is played after the first undo.
@@ -336,7 +317,7 @@ As a visitor without WebMCP support, I want to explore the same card effects man
 
 Acceptance criteria:
 
-- Manual demo mode keeps Forge, Focus, Wild, preview, approval, history, undo, and reset available.
+- Manual demo mode keeps Forge, Focus, preview, approval, history, undo, and reset available.
 - Manual controls use the same visible product states as agent-triggered actions.
 - For the same starting board and selected card, manual and agent-triggered play produce the same committed board and an equivalent history result.
 - The interface clearly distinguishes manual demonstration from a live agent tool call.
@@ -351,7 +332,7 @@ As a visitor, I want card actions to feel satisfying and legible so that the pro
 
 Acceptance criteria:
 
-- Forge, Focus, Wild, commit, and undo each have a distinct visual treatment that completes within one second and never delays access to controls.
+- Forge, Focus, commit, and undo each have a distinct visual treatment that completes within one second and never delays access to controls.
 - Essential information remains readable during and after animation.
 - Motion never blocks approval, cancellation, or recovery.
 - Reduced-motion preferences replace large transitions with restrained fades or immediate state changes.
@@ -416,8 +397,6 @@ Acceptance criteria:
 
 - Forge cannot act without an eligible idea target or repeatedly expand the same source card.
 - Focus cannot act when the board contains no actionable cards.
-- Wild cannot choose an outcome that lacks the required number or type of cards.
-- Wild outcomes remain bounded even if agent-provided text is unusually long or malformed.
 - Undo after a reset is unavailable because reset establishes a new baseline.
 
 ### Persistence and recovery cases
@@ -441,7 +420,7 @@ Acceptance criteria:
 
 - Immediate sample mission and optional custom mission.
 - Shared mission board with visible idea, action, and focus states.
-- Forge, Focus, and Wild cards.
+- Forge and Focus cards.
 - Agent inspection and power discovery.
 - Recommendation highlighting.
 - Preview, approve, cancel, and commit states.
@@ -512,7 +491,7 @@ These additions are explicitly excluded from the hackathon MVP because none is r
 ### Creativity And Ambition
 
 - Web capabilities become a visible deck instead of an invisible menu or chatbot command list.
-- Wild creates a memorable surprise while preserving safety and consent.
+- Exact preview and approval make agent actions understandable and consensual.
 - Card theatre, shared state, and human approval form one coherent interaction language rather than decorative gamification.
 
 ## Demo Acceptance Path
@@ -527,8 +506,7 @@ The final build is demo-ready only when this sequence succeeds from a clean sess
 6. Confirm recent tool activity visibly identifies the WebMCP preview and commit calls for Forge.
 7. Approve and observe the board update and history entry.
 8. Ask for the best next move; preview and approve Focus.
-9. Ask to be surprised; preview and approve the deterministic first Wild result.
-10. Undo Wild and observe restoration plus a history entry.
-11. Reset the sample, confirm undo is unavailable, and repeat the flow without stale state or page repair.
+9. Undo Focus and observe restoration plus a history entry.
+10. Reset the sample, confirm undo is unavailable, and repeat the flow without stale state or page repair.
 
-The manual fallback path must also complete Forge, Focus, Wild, and undo without claiming that a WebMCP agent is connected.
+The manual fallback path must also complete Forge, Focus, and undo without claiming that a WebMCP agent is connected.

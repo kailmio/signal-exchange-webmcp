@@ -4,13 +4,12 @@
 
 - Live app: https://kailmio.github.io/mission-deck-webmcp/
 - Public repository: https://github.com/kailmio/mission-deck-webmcp
-- Public guided walkthrough: https://github.com/kailmio/mission-deck-webmcp/releases/download/v0.1.1/mission-deck-walkthrough.mp4
-- Walkthrough release page: https://github.com/kailmio/mission-deck-webmcp/releases/tag/v0.1.1
+- Public guided walkthrough: https://github.com/kailmio/mission-deck-webmcp/releases/download/v0.2.0/mission-deck-walkthrough.mp4
+- Walkthrough release page: https://github.com/kailmio/mission-deck-webmcp/releases/tag/v0.2.0
 - Demo script: `docs/demo-script.md`
 - Visual proof: `docs/design/mission-deck-implementation-1280x800.png`
 - Guided walkthrough: `video/mission-deck-walkthrough/renders/mission-deck-walkthrough.mp4`
 - Editable walkthrough project: `video/mission-deck-walkthrough/`
-- Cinematic trailer: `video/mission-deck-demo/renders/mission-deck-demo.mp4`
 
 ## One-line pitch
 
@@ -20,7 +19,7 @@ Mission Deck turns invisible agent actions into visible WebMCP power cards that 
 
 - **Problem:** agent actions are often hidden behind chat and difficult for ordinary people to understand or trust.
 - **Insight:** familiar card mechanics give each capability a name, constraint, preview, and consequence.
-- **Experience:** Forge makes ideas actionable, Focus chooses the highest-leverage move, and Wild reveals a bounded surprise.
+- **Experience:** Forge makes ideas actionable and Focus chooses the highest-leverage move; the small two-card vocabulary is easy to understand at a glance.
 - **WebMCP leverage:** the agent reads real page state and uses six page-defined tools across a multi-step workflow instead of scraping pixels or receiving pasted context.
 - **Human control:** every mutation is an exact visible preview; stale/replayed commits fail; undo restores the prior board.
 - **Execution:** static, deterministic, responsive, accessible, and usable manually when WebMCP is unavailable.
@@ -30,11 +29,11 @@ Mission Deck turns invisible agent actions into visible WebMCP power cards that 
 - 11 automated domain/persistence/command tests.
 - Strict TypeScript and Vite production build.
 - Six tools discovered and invoked in the in-app browser on local and public HTTPS builds.
-- Full manual Forge → Focus → Wild → undo path.
+- Full manual Forge → Focus → undo path.
 - Persistence restores committed content and discards previews.
 - 1280×800 desktop without page scroll; 360px without page-level horizontal overflow.
 - Keyboard Enter/Space, Escape cancellation, dialog focus trap/restore, and reduced-motion emulation verified.
-- Narrated 1920×1080 guided walkthrough covers manual controls, agent prompting, exact previews, approval, commit evidence, and recovery. The H.264/AAC render runs 67.0 seconds at 30fps and passed a complete decode check. The original 60.5-second cinematic cut remains available as a trailer.
+- Narrated 1920×1080 guided walkthrough covers manual controls, agent prompting, exact previews, approval, commit evidence, and recovery. The H.264/AAC render runs approximately 59 seconds at 30fps and passed a complete decode check.
 
 ## AI-use disclosure
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-Mission Deck is a near-black mission-control canvas split between a spacious planning board and a narrow activity rail. Thin borders, exact spacing, and large tactile power cards make the interface feel dependable; amber, cyan, violet, and green communicate the progression from idea to action to surprise. The walkthrough must preserve the product as evidence while adding a calm instructional layer: numbered steps, a visible cursor, short callouts, and a persistent human-control reminder.
+Mission Deck is a near-black mission-control canvas split between a spacious planning board and a narrow activity rail. Thin borders, exact spacing, and two large tactile power cards make the interface feel dependable; amber, cyan, and green communicate the progression from idea to action to verified agent collaboration. The walkthrough must preserve the product as evidence while adding a calm instructional layer: numbered steps, a visible cursor, short callouts, and a persistent human-control reminder.
 
 ## Colors
 
@@ -14,7 +14,6 @@ Mission Deck is a near-black mission-control canvas split between a spacious pla
 - **Quiet Text**: `#69757C` — metadata.
 - **Forge Amber**: `#F3A237` — select and create.
 - **Focus Cyan**: `#27B9EF` — prioritize.
-- **Wild Violet**: `#9B65EE` — bounded surprise.
 - **Agent Ready**: `#17C968` — live WebMCP connection.
 - **Error Coral**: `#EF6B68` — rejection and safety boundaries.
 
@@ -45,14 +44,14 @@ Depth comes from one-pixel `#334048` borders, localized accent bloom, clipped sc
 
 - Keep the real product state visible in every instructional beat.
 - Use one numbered action at a time and repeat the exact visible control label.
-- Move through amber → cyan → violet → green as the workflow develops.
+- Move through amber → cyan → green as the workflow develops.
 - Hold hero frames long enough to read before moving the cursor.
 - Make preview, commit, and undo visually distinct.
 
 ### Don'ts
 
 - Do not open with abstract positioning or a cinematic manifesto.
-- Do not invent controls or imply that Wild runs arbitrary code.
+- Do not invent controls or imply that the agent can use any power beyond Forge and Focus.
 - Do not cover the approval button, activity history, or focused result.
 - Do not use tiny web-sized labels, chat bubbles, or generic AI gradients.
 - Do not imply that the agent can bypass human approval.

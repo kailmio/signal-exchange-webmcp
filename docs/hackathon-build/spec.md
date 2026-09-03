@@ -68,11 +68,10 @@ Implements: `prd.md > Epic 2`, `Epic 3`, `Epic 4`, `Epic 8`, `Epic 9`.
 
 ### Domain and power engine
 
-Pure functions validate a requested power and return a complete proposed board plus a human-readable change list. They never access React, DOM APIs, storage, time, or WebMCP directly. Forge, Focus, and Wild use fixed local templates so the sample mission remains fast and repeatable.
+Pure functions validate a requested power and return a complete proposed board plus a human-readable change list. They never access React, DOM APIs, storage, time, or WebMCP directly. Forge and Focus use fixed local templates so the sample mission remains fast and repeatable.
 
 - **Forge:** targets one un-forged idea and proposes 3–5 verb-led action cards with completion checks.
 - **Focus:** chooses or accepts one actionable card and proposes it as the sole focus.
-- **Wild:** chooses one compatible bounded template. The first Wild draw on a clean sample board is fixed; later draws rotate through compatible templates.
 
 Implements: `prd.md > Epic 5`, `Epic 6`, `Epic 7`.
 
@@ -118,7 +117,7 @@ Implements: `prd.md > Epic 1`, `Epic 2`, `Epic 4`, `Epic 8`, `Epic 9`, `Epic 10`
 ### Committed board
 
 ```ts
-type PowerId = "forge" | "focus" | "wild";
+type PowerId = "forge" | "focus";
 type CardKind = "idea" | "action";
 type CardStatus = "open" | "forged" | "focused";
 type Origin = "agent" | "manual" | "system";
@@ -139,7 +138,6 @@ interface BoardContent {
   goal: string;
   cards: MissionCard[];
   focusedCardId: string | null;
-  wildDrawIndex: number;
 }
 
 interface CommittedBoard {
@@ -231,8 +229,8 @@ interface AppState {
 │  │  └─ app.css                      # layout, card states, responsive and reduced-motion rules
 │  ├─ domain/
 │  │  ├─ types.ts                     # board, preview, history, command, and error types
-│  │  ├─ sampleMission.ts             # stable judge-ready fixture and deterministic Wild sequence
-│  │  ├─ powers.ts                    # pure Forge, Focus, Wild availability and transformations
+│  │  ├─ sampleMission.ts             # stable judge-ready fixture
+│  │  ├─ powers.ts                    # pure Forge and Focus availability and transformations
 │  │  ├─ recommendation.ts            # deterministic suggested power and short reason
 │  │  └─ commands.ts                  # inspect/list/preview/commit/cancel/undo/reset/custom logic
 │  ├─ state/
@@ -304,7 +302,7 @@ interface AppState {
 ### 5. Undo and reset
 
 - Undo replaces current content with `undoBoard`, increments the revision, clears the preview, clears `undoBoard`, and records an undo entry. It does not delete earlier visible history.
-- Reset requires confirmation when work differs from the sample, loads a fresh sample baseline, increments revision, clears preview and undo, resets the Wild sequence, and records a reset entry. Reset is not undoable.
+- Reset requires confirmation when work differs from the sample, loads a fresh sample baseline, increments revision, clears preview and undo, and records a reset entry. Reset is not undoable.
 
 ### 6. Refresh
 
@@ -326,7 +324,7 @@ Implements: `prd.md > Epic 2`, `Epic 5`, `Epic 6`, `Epic 7`, `Epic 10`.
 
 ### PowerHand and PowerCard
 
-Render Forge, Focus, and Wild with descriptions, availability, recommendation, selection, and recently-played treatments. Manual selection begins the same preview command used by the WebMCP adapter.
+Render Forge and Focus with descriptions, availability, recommendation, selection, and recently-played treatments. Manual selection begins the same preview command used by the WebMCP adapter.
 
 Implements: `prd.md > Epic 3`, `Epic 5`, `Epic 6`, `Epic 7`, `Epic 9`, `Epic 10`.
 
@@ -376,12 +374,12 @@ Input:
 
 ```json
 {
-  "power": "forge | focus | wild",
+  "power": "forge | focus",
   "targetCardId": "optional string"
 }
 ```
 
-`targetCardId` is required for Forge and optional for Focus/Wild. Returns the preview token, base revision, five-minute expiry, rationale, exact change summaries, and explicit `committed: false`. It replaces any earlier preview visibly.
+`targetCardId` is required for Forge and optional for Focus. Returns the preview token, base revision, five-minute expiry, rationale, exact change summaries, and explicit `committed: false`. It replaces any earlier preview visibly.
 
 ### `commit_card_play`
 
@@ -407,7 +405,7 @@ Input:
 { "confirmReplace": true }
 ```
 
-If the current board differs from the sample and confirmation is missing, returns `CONFIRMATION_REQUIRED`. Success creates a fresh baseline, clears preview and undo, resets deterministic Wild order, records reset, and returns the sample summary.
+If the current board differs from the sample and confirmation is missing, returns `CONFIRMATION_REQUIRED`. Success creates a fresh baseline, clears preview and undo, records reset, and returns the sample summary.
 
 ### Error codes
 
@@ -489,14 +487,14 @@ Mitigation: implement in this order: domain loop, visible desktop loop, WebMCP, 
 
 ### Risk 5 — A good build produces a weak video
 
-Mitigation: keep a stable sample fixture and deterministic first Wild result, create the script before feature freeze, record an insurance take immediately after the real tool loop works, and verify the uploaded video from its public playback URL.
+Mitigation: keep a stable sample fixture, create the script before feature freeze, record an insurance take immediately after the real tool loop works, and verify the uploaded video from its public playback URL.
 
 ### Verification gates
 
 1. `npm run test` passes the domain safety suite.
 2. `npm run build` passes strict type checking and production bundling.
 3. Clean load shows the complete sample without console errors.
-4. Manual Forge → commit → Focus → commit → Wild → commit → undo succeeds.
+4. Manual Forge → commit → Focus → commit → undo succeeds.
 5. The same starting state and inputs produce equivalent manual and WebMCP results.
 6. WebMCP activity visibly names preview and commit calls.
 7. Missing/stale/expired/replayed commits do not mutate state.
@@ -516,8 +514,8 @@ The script targets 60–90 seconds:
 2. **10–25s:** ask the agent to inspect and recommend; show Forge highlighted with a short reason.
 3. **25–42s:** ask for a Forge preview; point to the exact proposed actions and unchanged-board message; approve and show the WebMCP commit activity.
 4. **42–55s:** ask for Focus; approve the highest-leverage next action.
-5. **55–70s:** ask to be surprised; reveal the deterministic first Wild transformation and approve it.
-6. **70–82s:** undo Wild and show restoration/history; close on human control and shared state.
+5. **55–70s:** show the agent using the same inspect, recommend, and preview workflow.
+6. **70–82s:** undo Focus and show restoration/history; close on human control and shared state.
 
 The recording must show the browser agent invoking real tools, not only manual UI. Capture at a readable desktop viewport, hide unrelated windows and notifications, use a fresh sample baseline, and verify audio and text legibility before editing.
 

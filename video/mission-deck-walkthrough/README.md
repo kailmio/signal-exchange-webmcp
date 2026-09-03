@@ -1,6 +1,6 @@
 # Mission Deck Walkthrough
 
-This is the instructional companion to the cinematic Mission Deck intro. It demonstrates the literal operating sequence: choose an idea, play Forge, review and approve the exact preview, use Focus, try Wild, ask an agent through WebMCP, inspect Activity, and undo.
+This instructional Mission Deck demo demonstrates the literal two-power operating sequence: choose an idea, play Forge, review and approve the exact preview, use Focus, ask an agent through WebMCP, inspect Activity, and undo.
 
 ## Preview
 

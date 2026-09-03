@@ -1,12 +1,12 @@
 # Mission Deck
 
-Mission Deck is a self-contained WebMCP planning board where agent actions become visible, previewable, and reversible power cards. An agent can inspect live state, recommend Forge, Focus, or Wild, preview an exact change, and commit only the proposal the person approved.
+Mission Deck is a self-contained WebMCP planning board where agent actions become visible, previewable, and reversible power cards. An agent can inspect live state, recommend Forge or Focus, preview an exact change, and commit only the proposal the person approved.
 
 **Live app:** https://kailmio.github.io/mission-deck-webmcp/
 
 ## Why it exists
 
-Most agent actions disappear behind a chat transcript. Mission Deck gives them a shared visual language: every capability is a card with an effect, every mutation is previewed on the page, and every committed play can be undone. Wild adds a memorable bounded surprise without giving up consent.
+Most agent actions disappear behind a chat transcript. Mission Deck gives them a shared visual language: Forge turns an idea into concrete actions, Focus chooses the next move, every mutation is previewed on the page, and every committed play can be undone.
 
 ## Judge-ready demo
 
@@ -15,14 +15,12 @@ Open the live app in ChatGPT's WebMCP-capable in-app browser, then ask the agent
 1. `Inspect this mission board and recommend the best card. Do not change anything yet.`
 2. `Preview Forge on the “Make actions tangible” idea. Stop for my approval.`
 3. `Commit that exact preview.`
-4. `Preview and commit Focus, then surprise me with a Wild preview.`
-5. `Commit the Wild preview, then undo it.`
+4. `Preview and commit Focus.`
+5. `Undo the Focus play.`
 
-The board should visibly move from Forge → Focus → Wild while the activity rail attributes each WebMCP preview, commit, and undo. In a browser without WebMCP, the header honestly reports **Manual demo mode** and the same cards remain playable with the pointer or keyboard.
+The board should visibly move from Forge → Focus → Undo while the activity rail attributes each WebMCP preview, commit, and recovery. In a browser without WebMCP, the header honestly reports **Manual demo mode** and both cards remain playable with the pointer or keyboard.
 
-The primary demo is a narrated 67-second [guided walkthrough](https://github.com/kailmio/mission-deck-webmcp/releases/download/v0.1.1/mission-deck-walkthrough.mp4) in `video/mission-deck-walkthrough/`. It teaches both the manual card flow and the agent/WebMCP flow, including the exact-preview approval boundary and Undo. Open the editable version with `npx hyperframes preview video/mission-deck-walkthrough --port 3018`.
-
-The original 60.5-second cinematic introduction remains in `video/mission-deck-demo/` as a shorter product trailer.
+The primary demo is a narrated 59-second [guided walkthrough](https://github.com/kailmio/mission-deck-webmcp/releases/download/v0.2.0/mission-deck-walkthrough.mp4) in `video/mission-deck-walkthrough/`. It teaches both the manual card flow and the agent/WebMCP flow, including the exact-preview approval boundary and Undo. Open the editable version with `npx hyperframes preview video/mission-deck-walkthrough --port 3018`.
 
 ## WebMCP tools
 
@@ -30,7 +28,7 @@ The original 60.5-second cinematic introduction remains in `video/mission-deck-d
 | --- | --- | --- |
 | `inspect_mission_board` | `{}` | Reads committed board state, preview status, and recent activity. |
 | `list_card_powers` | `{}` | Returns availability and the contextual recommendation. |
-| `preview_card_play` | `{ power, targetCardId? }` | Displays an exact, non-mutating Forge, Focus, or Wild proposal. |
+| `preview_card_play` | `{ power, targetCardId? }` | Displays an exact, non-mutating Forge or Focus proposal. |
 | `commit_card_play` | `{ previewToken }` | Applies only the stored active preview once. |
 | `undo_last_play` | `{}` | Restores the board before the latest committed card play. |
 | `load_demo_mission` | `{ confirmReplace }` | Loads the deterministic sample and clears preview/undo. |

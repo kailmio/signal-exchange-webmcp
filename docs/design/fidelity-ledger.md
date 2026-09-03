@@ -8,7 +8,7 @@ Verification viewport: 1280×800 desktop, plus 360×800 responsive inspection.
 | --- | --- | --- | --- |
 | Overall composition | Open dark canvas, board left, compact activity rail right, complete experience above the fold. | Two-column desktop shell preserves the composition and has exactly 1280×800 document dimensions with no page scroll. | Faithful |
 | Hierarchy and typography | Condensed uppercase wordmark/microcopy, dominant mission heading, quiet support text. | Original system/type stack preserves contrast and sizing hierarchy without importing or copying reference assets. | Faithful |
-| Palette and material | Near-black blue surface with amber Forge, cyan Focus, violet Wild, and restrained borders. | The same semantic color system drives card borders, state dots, focus treatments, preview accents, and icons. | Faithful |
+| Palette and material | Near-black blue surface with amber Forge, cyan Focus, green confirmation, and restrained borders. | The same semantic color system drives card borders, state dots, focus treatments, preview accents, and icons. | Faithful |
 | Mission cards and focus well | Three concise idea cards lead into a dashed empty focus target. | Stable sample content, selectable cards, status labels, and the dashed focus well match the reference structure. | Faithful |
 | Power-card theatre | Three oversized tactile cards form a hand; Forge is clearly recommended. | Original CSS/SVG cards preserve the fan, scale, recommendation, and distinct power silhouettes with sub-second interaction motion. | Faithful |
 | Activity rail | A quiet vertical event timeline with undo anchored at the bottom. | Attributed manual/WebMCP entries, timestamps, source color, and one-level Undo retain the same information rhythm. | Faithful |
@@ -24,4 +24,4 @@ The above-fold default copy matches the accepted concept for the mission title, 
 - The first implementation placed the manual fallback explanation over the card hand in a headless non-WebMCP capture. The redundant overlay was removed; the persistent header status now carries the visible truth, with a screen-reader explanation.
 - The custom mission dialog now traps Tab/Shift+Tab and restores focus to its opener, closing the final keyboard gap.
 
-No material fixable mismatch remains in the ready-state implementation. The separate Wild-preview concept remains the visual target for the expanded violet preview panel.
+No material fixable mismatch remains in the ready-state implementation. Forge and Focus previews reuse the same compact approval panel with their semantic accent color.

@@ -40,7 +40,6 @@ export function createSampleContent(): BoardContent {
     goal: SAMPLE_GOAL,
     cards: SAMPLE_CARDS,
     focusedCardId: null,
-    wildDrawIndex: 0,
   });
 }
 
@@ -68,6 +67,5 @@ export function createCustomContent(goal: string, ideas: string[]): BoardContent
       status: "open",
     })),
     focusedCardId: null,
-    wildDrawIndex: 0,
   };
 }

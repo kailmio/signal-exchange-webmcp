@@ -83,8 +83,8 @@ export class CommandService {
     input: { power: PowerId; targetCardId?: string },
     origin: Origin = "agent",
   ): CommandResult<Omit<PendingPreview, "proposedContent"> & { committed: false }> {
-    if (!(["forge", "focus", "wild"] as string[]).includes(input.power)) {
-      return this.fail(origin, { code: "INVALID_INPUT", message: "Unknown power.", nextAction: "Choose Forge, Focus, or Wild." });
+    if (!(["forge", "focus"] as string[]).includes(input.power)) {
+      return this.fail(origin, { code: "INVALID_INPUT", message: "Unknown power.", nextAction: "Choose Forge or Focus." });
     }
     const state = this.store.getState();
     const proposal = previewPower(state.board.content, input.power, input.targetCardId);

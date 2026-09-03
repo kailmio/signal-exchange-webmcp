@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { createSampleContent } from "../domain/sampleMission";
 import { getPowerAvailability, previewPower, recommendPower } from "../domain/powers";
+import type { PowerId } from "../domain/types";
 
 describe("power engine", () => {
   it("creates a stable playable sample", () => {
@@ -40,14 +41,12 @@ describe("power engine", () => {
     expect(focused.data.proposedContent.cards.filter((card) => card.status === "focused")).toHaveLength(1);
     expect(focused.data.proposedContent.focusedCardId).toBeTruthy();
     expect(recommendPower(forged.data.proposedContent).power).toBe("focus");
-    expect(recommendPower(focused.data.proposedContent).power).toBe("wild");
+    expect(recommendPower(focused.data.proposedContent).power).toBe("forge");
   });
 
-  it("uses a deterministic, bounded first Wild reveal", () => {
-    const first = previewPower(createSampleContent(), "wild");
-    const second = previewPower(createSampleContent(), "wild");
-    expect(first).toEqual(second);
-    expect(first.ok && first.data.outcomeKey).toBe("reverse-assumption");
-    expect(first.ok && first.data.changes).toHaveLength(1);
+  it("exposes only Forge and Focus", () => {
+    expect(getPowerAvailability(createSampleContent()).map((power) => power.id)).toEqual(["forge", "focus"]);
+    const invalid = previewPower(createSampleContent(), "random" as PowerId);
+    expect(invalid.ok ? "" : invalid.error.code).toBe("INVALID_INPUT");
   });
 });

@@ -1,4 +1,4 @@
-export type PowerId = "forge" | "focus" | "wild";
+export type PowerId = "forge" | "focus";
 export type Origin = "agent" | "manual" | "system";
 export type CardKind = "idea" | "action";
 export type CardStatus = "open" | "forged" | "focused";
@@ -19,7 +19,6 @@ export interface BoardContent {
   goal: string;
   cards: MissionCard[];
   focusedCardId: string | null;
-  wildDrawIndex: number;
 }
 
 export interface CommittedBoard {
@@ -28,7 +27,7 @@ export interface CommittedBoard {
 }
 
 export interface ChangeSummary {
-  kind: "add" | "update" | "focus" | "combine";
+  kind: "add" | "update" | "focus";
   cardId?: string;
   label: string;
   before?: string;
@@ -120,7 +119,7 @@ export interface PowerDefinition {
   id: PowerId;
   name: string;
   effect: string;
-  accent: "amber" | "cyan" | "violet";
+  accent: "amber" | "cyan";
 }
 
 export interface PowerAvailability extends PowerDefinition {

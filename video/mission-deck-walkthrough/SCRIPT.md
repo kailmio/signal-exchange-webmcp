@@ -10,8 +10,6 @@ Choose an idea, then play Forge. Mission Deck does not change the board immediat
 
 After approval, those actions become committed board state. Focus is now available. Play Focus to select one highest-leverage next move, review the preview, and approve it the same way.
 
-Wild adds one bounded surprise. It can reframe the mission or add a useful constraint, but it still stops at preview. You remain in control.
-
 An agent can use the same workflow through Web M C P. Ask it to inspect the board, recommend a card, and preview the result. The green Agent Ready status means the page has exposed its six tools.
 
 Every preview, approval, rejection, and commit appears in Activity. If the last play was wrong, choose Undo and the previous board returns.
@@ -20,4 +18,4 @@ That’s the complete loop: inspect, recommend, preview, approve, commit, and re
 
 ## On-screen prompt
 
-`Inspect this mission board, recommend the best card, and preview it. Do not commit until I approve.`
+`Inspect this mission board, recommend Forge or Focus, and preview it. Do not commit until I approve.`

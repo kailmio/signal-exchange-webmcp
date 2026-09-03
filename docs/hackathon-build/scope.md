@@ -43,13 +43,12 @@ The project tests a different interaction model: agent capabilities are tangible
 
 1. **Forge** — expands one vague idea card into a short sequence of concrete actions with acceptance checks.
 2. **Focus** — selects the highest-leverage next action, moves it into focus, and visually quiets lower-priority work.
-3. **Wild** — draws one bounded, safe surprise from a curated set, such as combining two cards, reversing an assumption, changing the target audience, or forcing a radically smaller scope. The surprise is revealed during preview and is never silently applied.
 
 ### WebMCP contract
 
 - `inspect_mission_board` — returns the current goal, cards, focus state, and recent history.
 - `list_card_powers` — returns card descriptions, constraints, and whether each is currently playable.
-- `preview_card_play` — validates a proposed Forge, Focus, or Wild play and creates a short-lived preview token without mutating the board.
+- `preview_card_play` — validates a proposed Forge or Focus play and creates a short-lived preview token without mutating the board.
 - `commit_card_play` — applies the exact previewed change using its token and records it in history.
 - `undo_last_play` — reverses the latest committed card play.
 - `load_demo_mission` — restores the known demonstration state.
@@ -91,8 +90,7 @@ The implementation and visual assets will be original. The GPL-licensed Card Mas
 2. Ask the agent to inspect the board and recommend a power.
 3. The agent recommends **Forge**, previews an expansion, receives approval, and commits it; the board visibly unfolds into actionable steps.
 4. Ask for the best next move. The agent recommends and plays **Focus**, centering one high-leverage action.
-5. Ask to be surprised. **Wild** reveals a bounded twist and applies it only after approval.
-6. Undo the Wild play to demonstrate human control and trustworthy reversibility.
+5. Undo the Focus play to demonstrate human control and trustworthy reversibility.
 
 The core interaction should be understandable in the first 15 seconds and demonstrable in roughly 60–90 seconds.
 

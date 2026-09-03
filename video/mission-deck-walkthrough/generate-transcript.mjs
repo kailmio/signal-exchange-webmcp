@@ -8,14 +8,13 @@ const paragraphs = (await readFile(new URL("./narration.txt", import.meta.url), 
 // af_nova 0.88x narration. Word timing inside each paragraph is weighted by
 // spoken token length; these timestamps drive only beat mapping, not captions.
 const bounds = [
-  [0.18, 3.683],
-  [4.11, 11.526],
-  [11.906, 29.995],
-  [30.716, 40.67],
-  [41.081, 48.757],
-  [49.228, 56.925],
-  [57.424, 60.8],
-  [60.8, 63.15],
+  [0, 3.724],
+  [4.062, 12.151],
+  [12.7, 25.306],
+  [25.805, 39.267],
+  [39.898, 47.487],
+  [48.208, 53.82],
+  [54.02, 57.929],
 ];
 
 if (paragraphs.length !== bounds.length) {

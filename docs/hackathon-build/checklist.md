@@ -11,7 +11,7 @@
 - **Hard cutoff:** Application built, tested, and deployed before 12:00 AM Australia/Sydney on 2026-09-04.
 - **Execution target:** Finish item 12 by approximately 10:45 PM, preserving at least 75 minutes of application contingency before midnight.
 - **Scope guard:** If time slips, simplify custom-mission presentation and decorative motion first. Do not cut the sample mission, six WebMCP tools, exact preview/commit, visible tool activity, manual parity, or undo.
-- **Submission wow moment:** A real agent invokes Wild, the board reveals a bounded surprise only in preview, the person approves it, and one-level undo instantly restores the prior board.
+- **Submission wow moment:** A real agent previews Forge without changing the page, the person approves the exact diff, Focus identifies the next move, and one-level undo instantly restores the prior board.
 
 ## Checklist
 
@@ -29,15 +29,15 @@
 
 - [x] **3. Implement the typed board model and stable sample mission — 20 minutes**
   Spec ref: `spec.md > Data Model > Committed board` and `spec.md > Domain and power engine`
-  What to build: Add domain types, length limits, stable sample IDs, a polished fuzzy-project mission, idea cards, empty focus state, deterministic Wild sequence, and helpers for safe cloning/normalization.
-  Acceptance: A clean state always contains the mission, multiple vague ideas, three power definitions, no focus, revision zero, and the same first Wild outcome.
+  What to build: Add domain types, length limits, stable sample IDs, a polished fuzzy-project mission, idea cards, empty focus state, and helpers for safe cloning/normalization.
+  Acceptance: A clean state always contains the mission, multiple vague ideas, two power definitions, no focus, and revision zero.
   Verify: Add and run fixture tests that assert IDs are unique, text is within limits, Forge has an eligible target, and resetting twice produces deeply equivalent sample content.
 
-- [x] **4. Build Forge, Focus, Wild, and recommendation as pure functions — 30 minutes**
+- [x] **4. Build Forge, Focus, and recommendation as pure functions — 30 minutes**
   Spec ref: `spec.md > Domain and power engine`
-  What to build: Implement availability checks and deterministic transformations for all three powers plus the recommendation rule. Each transformation returns proposed board content, rationale, and exact human-readable changes without touching app state.
-  Acceptance: Forge proposes 3–5 verb-led actions with checks; Focus proposes exactly one action; Wild chooses only compatible bounded templates and uses the fixed first sample outcome; unavailable powers explain why.
-  Verify: Run table-driven Vitest cases for success, missing targets, forged targets, no actionable cards, incompatible Wild outcomes, repeated sample determinism, and recommendation changes after commits.
+  What to build: Implement availability checks and deterministic transformations for both powers plus the recommendation rule. Each transformation returns proposed board content, rationale, and exact human-readable changes without touching app state.
+  Acceptance: Forge proposes 3–5 verb-led actions with checks; Focus proposes exactly one action; unavailable powers explain why.
+  Verify: Run table-driven Vitest cases for success, missing targets, forged targets, no actionable cards, and recommendation changes after commits.
 
 - [x] **5. Implement preview-safe commands and domain tests — 30 minutes**
   Spec ref: `spec.md > Command coordinator`, `spec.md > Preview`, and `spec.md > Data Flow > Commit and exactness`
@@ -53,8 +53,8 @@
 
 - [x] **7. Build the complete manual desktop interaction loop — 30 minutes**
   Spec ref: `spec.md > Static application shell` and `spec.md > Components And Responsibilities`
-  What to build: Compose the header/status, mission board, cards, focus zone, three-card power hand, Forge target selection, preview panel, approve/cancel actions, activity rail, notices, undo, and reset using the shared commands. Implement the dark restrained mission-control visual direction with original CSS.
-  Acceptance: At 1280×800 the complete sample loop is visible without page scrolling; manual Forge → Focus → Wild → undo succeeds; preview preserves committed text/order/focus/history; activity clearly attributes manual actions.
+  What to build: Compose the header/status, mission board, cards, focus zone, two-card power hand, Forge target selection, preview panel, approve/cancel actions, activity rail, notices, undo, and reset using the shared commands. Implement the dark restrained mission-control visual direction with original CSS.
+  Acceptance: At 1280×800 the complete sample loop is visible without page scrolling; manual Forge → Focus → undo succeeds; preview preserves committed text/order/focus/history; activity clearly attributes manual actions.
   Verify: Run the production build, open a clean sample, execute the complete manual path twice, cancel one preview, attempt one invalid play, and confirm the board stays usable with no console errors.
 
 - [x] **8. Register and prove the real WebMCP loop — 30 minutes**
@@ -83,6 +83,6 @@
 
 - [x] **12. Prepare the Devpost and video handoff — 30 minutes**
   Spec ref: `spec.md > Demo And Submission Flow` and `prd.md > Submission Proof Points`
-  What to build: Create the timed 60–90 second `docs/demo-script.md`, capture checklist, screenshot shortlist, project-story bullets, setup/test instructions, deployed URL, repository status/link placeholder, AI-use disclosure, and proof checklist. Ensure the hero sequence is real WebMCP Wild preview → approval → commit → undo. This item prepares materials; final editing/upload/submission continues with `$prepare-submission` after the application build.
+  What to build: Create the timed 60–90 second `docs/demo-script.md`, capture checklist, screenshot shortlist, project-story bullets, setup/test instructions, deployed URL, repository status/link placeholder, AI-use disclosure, and proof checklist. Ensure the hero sequence is real WebMCP Forge preview → approval → Focus → undo. This item prepares materials; final editing/upload/submission continues with `$prepare-submission` after the application build.
   Acceptance: The script shows the sample board and agent readiness within 10 seconds, starts inspect → recommend → preview within 15 seconds, visibly proves WebMCP preview/commit, ends with undo, and leaves enough material to prepare the Devpost entry without rediscovering facts.
   Verify: Rehearse once against the frozen URL with a stopwatch, confirm every narrated claim is visible, open each selected screenshot, confirm the insurance capture is playable, and verify the next command is `$prepare-submission`.
