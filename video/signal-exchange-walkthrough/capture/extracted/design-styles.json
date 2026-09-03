@@ -1,0 +1,177 @@
+{
+  "typography": [
+    {
+      "role": "display",
+      "fontFamily": "Georgia",
+      "fontSize": "42px",
+      "fontWeight": "700",
+      "lineHeight": "45.36px",
+      "letterSpacing": "normal",
+      "color": "#F0E7D5",
+      "sampleText": "Find trusted data. Let your agent negotiate."
+    },
+    {
+      "role": "body",
+      "fontFamily": "Inter",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "color": "#A99F91",
+      "sampleText": "Set the goal and budget. Your agent compares provenance meta"
+    },
+    {
+      "role": "body-small",
+      "fontFamily": "Georgia",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "color": "#A99F91",
+      "sampleText": "by CitySignal verified"
+    },
+    {
+      "role": "heading",
+      "fontFamily": "Georgia",
+      "fontSize": "11px",
+      "fontWeight": "700",
+      "lineHeight": "normal",
+      "letterSpacing": "1.87px",
+      "color": "#F0E7D5",
+      "sampleText": "Market offers · Sydney foot-traffic data"
+    }
+  ],
+  "spacing": {
+    "observed": [
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      18,
+      24,
+      28
+    ],
+    "baseUnit": 4
+  },
+  "radius": [
+    "4px"
+  ],
+  "shadows": [
+    {
+      "value": "rgba(201, 151, 72, 0.16) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.2) 0px 8px 28px 0px",
+      "count": 1
+    }
+  ],
+  "buttons": [
+    {
+      "label": "Compare offers",
+      "background": "transparent",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#A99F91",
+      "padding": "0px 14px",
+      "borderRadius": "0px",
+      "border": "",
+      "boxShadow": "none",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "height": "34px"
+    },
+    {
+      "label": "1MetroPulse Foot Trafficby CitySignal ve",
+      "background": "transparent",
+      "backgroundImage": "linear-gradient(100deg, rgba(8, 19, 27, 0.97), rgba(5, 12, 18, 0.97))",
+      "backdropFilter": "",
+      "color": "#F0E7D5",
+      "padding": "0px",
+      "borderRadius": "4px",
+      "border": "1px solid rgb(201, 151, 72)",
+      "boxShadow": "rgba(201, 151, 72, 0.16) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.2) 0px 8px 28px 0px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "137px"
+    },
+    {
+      "label": "2VenueLens Weekend Demandby VenueLens ve",
+      "background": "transparent",
+      "backgroundImage": "linear-gradient(100deg, rgba(8, 19, 27, 0.97), rgba(5, 12, 18, 0.97))",
+      "backdropFilter": "",
+      "color": "#F0E7D5",
+      "padding": "0px",
+      "borderRadius": "4px",
+      "border": "1px solid rgba(118, 91, 49, 0.58)",
+      "boxShadow": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "137px"
+    },
+    {
+      "label": "Negotiate rental →",
+      "background": "#10161B",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#F0E7D5",
+      "padding": "0px 13px",
+      "borderRadius": "2px",
+      "border": "1px solid rgb(24, 17, 9)",
+      "boxShadow": "none",
+      "fontSize": "11px",
+      "fontWeight": "700",
+      "height": "37px"
+    }
+  ],
+  "cards": [
+    {
+      "label": "card",
+      "background": "#060F16",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#F0E7D5",
+      "padding": "18px",
+      "borderRadius": "0px",
+      "border": "1px solid rgba(118, 91, 49, 0.48)",
+      "boxShadow": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "607.531px"
+    }
+  ],
+  "nav": {
+    "label": "navigation",
+    "background": "#040A10",
+    "backgroundImage": "",
+    "backdropFilter": "",
+    "color": "#F0E7D5",
+    "padding": "0px 28px",
+    "borderRadius": "0px",
+    "border": "",
+    "boxShadow": "none",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "height": "64px"
+  },
+  "chips": [],
+  "statCells": [],
+  "tabs": [],
+  "backgrounds": [
+    {
+      "value": "radial-gradient(circle at 20% 28%, rgba(201, 151, 72, 0.17) 0px, rgba(201, 151, 72, 0.17) 1px, rgba(0, 0, 0, 0) 1.5px), radial-gradient(circle at 76% 62%, rgba(107, 200, 232, 0.11) 0px, rgba(107, 200, 232, 0.11) 1px, rgba(0, 0, 0, 0) 1.5px)",
+      "area": 2073600
+    },
+    {
+      "value": "radial-gradient(circle at 28% -10%, rgb(16, 32, 42) 0px, rgba(0, 0, 0, 0) 34%), none",
+      "area": 2073600
+    },
+    {
+      "value": "linear-gradient(135deg, rgb(237, 190, 100), rgb(200, 139, 50))",
+      "area": 37092
+    }
+  ],
+  "glass": []
+}

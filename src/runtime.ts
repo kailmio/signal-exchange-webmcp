@@ -7,7 +7,7 @@ const persisted = loadPersistedState();
 const initialState = createInitialState(persisted);
 try {
   if (!persisted && localStorage.getItem(STORAGE_KEY)) {
-    initialState.notice = { tone: "error", text: "Saved data was incompatible, so the sample mission was restored safely." };
+    initialState.notice = { tone: "error", text: "Saved data was incompatible, so the exchange demo was restored safely." };
   }
 } catch {
   initialState.persistence = "unavailable";

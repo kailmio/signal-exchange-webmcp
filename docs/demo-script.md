@@ -1,18 +1,29 @@
-# 60-second judged demo
+# Signal Exchange Demo Script
+
+Target length: 60–75 seconds. The product interaction—not the title sequence—is the hero.
 
 | Time | Screen action | Narration |
 | --- | --- | --- |
-| 0–8s | Hold on the complete board and two power cards. | “Mission Deck turns invisible agent actions into a shared game board.” |
-| 8–18s | Ask the agent to inspect and recommend. Activity records both calls; Forge glows. | “The agent reads the live page through WebMCP and recommends one of two powers.” |
-| 18–31s | Ask for Forge on “Make actions tangible.” Hold on the exact preview. | “Forge proposes four executable actions, but the board has not changed. The person still decides.” |
-| 31–39s | Approve Forge. New parchment action cards appear. | “Approval commits exactly the visible proposal. Focus now becomes the recommended power.” |
-| 39–51s | Preview and approve Focus. The Focus well names the selected action. | “Focus chooses one highest-leverage next move through the same preview boundary.” |
-| 51–60s | Undo. Hold on Activity and restored board. | “Every agent action is visible, attributable, and reversible. That is WebMCP as a game mechanic.” |
+| 0–7s | Show the goal, 40-credit budget, three offers, and `Agent ready`. | “A pop-up retailer needs current Sydney foot traffic, but comparing data sellers by hand is slow and risky.” |
+| 7–16s | Ask the agent to inspect and search within the visible budget. Offers and Activity update. | “Signal Exchange exposes the page as typed WebMCP tools. The agent reads the same goal and constraints I see.” |
+| 16–25s | Ask it to compare. Hold on MetroPulse's recommendation and reason. | “It ranks trust, freshness, formats, and price—then makes a visible recommendation.” |
+| 25–37s | Ask it to bid 20 credits for seven days, preview only. Hold on the 22-credit counteroffer. | “The agent negotiates, but preview is a hard boundary: no credits move and no data unlocks.” |
+| 37–50s | Click `Approve exact deal`, then ask the agent to commit. Show wallet 78, access granted, schema fields, and Activity. | “Only my explicit approval unlocks this exact token for commit. The wallet and access update together.” |
+| 50–59s | Ask to undo. Show wallet 100 and access removed. | “Every agent action is attributable, and this simulated rental is reversible.” |
+| 59–68s | Return to the three offers and Activity rail. | “That is the new interaction: agents operate the marketplace; people keep intent, limits, and consent.” |
 
-Prompt sequence:
+## Exact prompts
 
-1. `Inspect this board and recommend the best power. Do not change anything yet.`
-2. `Preview Forge on “Make actions tangible.” Stop for approval.`
-3. `Commit that exact preview.`
-4. `Recommend the next power and preview Focus. Stop for approval.`
-5. `Commit Focus, then undo the last play.`
+1. `Inspect this exchange and find data for my visible goal within budget.`
+2. `Compare the matching offers and explain your recommendation.`
+3. `Bid 20 credits for seven days on the recommended offer. Preview only—do not commit.`
+4. Click `Approve exact deal · 22`, then ask: `Commit the approved deal.`
+5. `Undo that simulated rental.`
+
+## Recording rules
+
+- Begin on a reset exchange with wallet 100.
+- Keep the agent conversation and visible page changes in the same frame when possible.
+- Pause on the non-mutating counteroffer long enough to read 20, 22, and 78.
+- Do not imply real payment, real seller contact, or real dataset delivery.
+- End on the human/agent thesis, not a feature list.

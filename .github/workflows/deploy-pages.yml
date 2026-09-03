@@ -26,6 +26,14 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      - name: Install video encoder
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Render Signal Exchange walkthrough
+        run: |
+          mkdir -p dist/video
+          npx --yes hyperframes@0.8.27 render video/signal-exchange-walkthrough \
+            --output dist/video/signal-exchange-walkthrough.mp4 \
+            --quality high
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

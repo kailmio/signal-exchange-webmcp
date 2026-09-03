@@ -1,0 +1,767 @@
+<template id="beat-4-thesis-template">
+  <div data-composition-id="beat-4-thesis" data-start="0" data-duration="13" data-width="1920" data-height="1080">
+    <div class="scene-shell">
+      <div class="bg-grid" aria-hidden="true"></div>
+      <div class="bg-glow bg-glow-cyan" aria-hidden="true" data-layout-ignore></div>
+      <div class="bg-glow bg-glow-brass" aria-hidden="true" data-layout-ignore></div>
+
+      <div class="scene-content">
+        <header class="scene-header">
+          <div class="chapter">
+            <span class="chapter-index">04</span>
+            <span class="chapter-label">REVERSIBLE AGENCY</span>
+          </div>
+          <p class="chapter-proof">ONE TOOL CALL · COMPLETE RESTORATION</p>
+        </header>
+
+        <section class="state-strip" aria-label="Undo restores the transaction state">
+          <div class="state-card restored-card">
+            <div class="state-card-topline">
+              <span class="state-kicker">RESTORED</span>
+              <span class="verified-check" aria-hidden="true">✓</span>
+            </div>
+            <div class="wallet-line">
+              <span class="wallet-number">100</span>
+              <span class="wallet-unit">CREDITS</span>
+            </div>
+            <div class="access-line">
+              <span class="lock-icon" aria-hidden="true">◇</span>
+              <span>ACCESS LOCKED</span>
+            </div>
+          </div>
+
+          <div class="reversal-track" aria-hidden="true">
+            <span class="track-label">undo_last_deal</span>
+            <svg viewBox="0 0 640 90">
+              <path class="track-line" d="M 594 45 H 58" />
+              <path class="track-arrow" d="M 76 28 L 58 45 L 76 62" />
+              <circle class="reversal-token" cx="58" cy="45" r="11" />
+            </svg>
+            <span class="track-caption">wallet + access reverse together</span>
+          </div>
+
+          <div class="state-card committed-card">
+            <div class="state-card-topline">
+              <span class="state-kicker">COMMITTED</span>
+              <span class="state-time">T−1</span>
+            </div>
+            <div class="wallet-line old-wallet">
+              <span class="wallet-number">78</span>
+              <span class="wallet-unit">CREDITS</span>
+            </div>
+            <div class="access-line old-access">
+              <span class="unlock-icon" aria-hidden="true">◆</span>
+              <span>ACCESS GRANTED</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="thesis-stack" aria-label="Agents operate. People decide. WebMCP connects.">
+          <div class="thesis-row thesis-agents">
+            <span class="thesis-index">01</span>
+            <span class="thesis-subject">AGENTS</span>
+            <span class="thesis-rule" aria-hidden="true"></span>
+            <span class="thesis-verb">OPERATE</span>
+          </div>
+          <div class="thesis-row thesis-people">
+            <span class="thesis-index">02</span>
+            <span class="thesis-subject">PEOPLE</span>
+            <span class="thesis-rule" aria-hidden="true"></span>
+            <span class="thesis-verb">DECIDE</span>
+          </div>
+          <div class="thesis-row thesis-webmcp">
+            <span class="thesis-index">03</span>
+            <span class="thesis-subject">WEBMCP</span>
+            <span class="thesis-rule" aria-hidden="true"></span>
+            <span class="thesis-verb">CONNECTS</span>
+          </div>
+        </section>
+
+        <footer class="closing-lockup">
+          <div class="closing-principles">
+            <span>INTENT</span>
+            <i aria-hidden="true"></i>
+            <span>LIMITS</span>
+            <i aria-hidden="true"></i>
+            <span>CONSENT</span>
+          </div>
+          <div class="closing-rule" aria-hidden="true"></div>
+          <div class="brand-lockup">
+            <span class="brand-mark">
+              <img
+                src="capture/assets/svgs/logo-2685cc99.svg"
+                alt=""
+                crossorigin="anonymous"
+              />
+            </span>
+            <span class="brand-copy">
+              <b>SIGNAL EXCHANGE</b>
+              <small>AGENT-READY DATA · HUMAN-APPROVED DEALS</small>
+            </span>
+          </div>
+        </footer>
+      </div>
+
+      <div class="final-dip" aria-hidden="true"></div>
+    </div>
+
+    <style>
+      [data-composition-id="beat-4-thesis"] {
+        --canvas: #040a10;
+        --header: #061019;
+        --raised: #10202a;
+        --text: #f0e7d5;
+        --muted: #a99f91;
+        --brass: #c99748;
+        --bright-brass: #efc46d;
+        --cyan: #6bc8e8;
+        --green: #65d49a;
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        color: var(--text);
+        background: var(--canvas);
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+      }
+
+      [data-composition-id="beat-4-thesis"] *,
+      [data-composition-id="beat-4-thesis"] *::before,
+      [data-composition-id="beat-4-thesis"] *::after {
+        box-sizing: border-box;
+      }
+
+      [data-composition-id="beat-4-thesis"] .scene-shell {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: var(--canvas);
+      }
+
+      [data-composition-id="beat-4-thesis"] .bg-grid {
+        position: absolute;
+        inset: 0;
+        opacity: 0.48;
+        background-image:
+          linear-gradient(rgba(107, 200, 232, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(107, 200, 232, 0.06) 1px, transparent 1px);
+        background-size: 76px 76px;
+        mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.72) 76%, transparent 100%);
+      }
+
+      [data-composition-id="beat-4-thesis"] .bg-glow {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      [data-composition-id="beat-4-thesis"] .bg-glow-cyan {
+        width: 860px;
+        height: 690px;
+        left: 130px;
+        top: 170px;
+        background: radial-gradient(circle, rgba(107, 200, 232, 0.105) 0%, transparent 70%);
+      }
+
+      [data-composition-id="beat-4-thesis"] .bg-glow-brass {
+        width: 690px;
+        height: 620px;
+        right: -170px;
+        bottom: -210px;
+        background: radial-gradient(circle, rgba(201, 151, 72, 0.16) 0%, transparent 70%);
+      }
+
+      [data-composition-id="beat-4-thesis"] .scene-content {
+        position: relative;
+        z-index: 4;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        padding: 60px 82px 56px;
+        gap: 0;
+        box-sizing: border-box;
+      }
+
+      [data-composition-id="beat-4-thesis"] .scene-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 46px;
+        border-bottom: 1px solid rgba(201, 151, 72, 0.42);
+      }
+
+      [data-composition-id="beat-4-thesis"] .chapter {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-family: "Courier New", monospace;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+      }
+
+      [data-composition-id="beat-4-thesis"] .chapter-index {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 31px;
+        color: var(--canvas);
+        background: var(--bright-brass);
+        font-variant-numeric: tabular-nums;
+      }
+
+      [data-composition-id="beat-4-thesis"] .chapter-label {
+        color: var(--bright-brass);
+      }
+
+      [data-composition-id="beat-4-thesis"] .chapter-proof {
+        margin: 0;
+        color: #c8beaf;
+        font-family: "Courier New", monospace;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.11em;
+      }
+
+      [data-composition-id="beat-4-thesis"] .state-strip {
+        display: grid;
+        grid-template-columns: 350px 1fr 350px;
+        align-items: center;
+        min-height: 220px;
+        margin-top: 28px;
+        padding: 22px;
+        border: 1px solid rgba(107, 200, 232, 0.25);
+        background: rgba(6, 16, 25, 0.86);
+        box-shadow: 15px 15px 0 rgba(16, 32, 42, 0.62);
+      }
+
+      [data-composition-id="beat-4-thesis"] .state-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 170px;
+        padding: 17px 22px;
+        border: 1px solid rgba(169, 159, 145, 0.28);
+        background: var(--raised);
+      }
+
+      [data-composition-id="beat-4-thesis"] .restored-card {
+        border-color: rgba(101, 212, 154, 0.72);
+        box-shadow: -8px 8px 0 rgba(101, 212, 154, 0.09);
+      }
+
+      [data-composition-id="beat-4-thesis"] .committed-card {
+        opacity: 0.64;
+      }
+
+      [data-composition-id="beat-4-thesis"] .state-card-topline,
+      [data-composition-id="beat-4-thesis"] .access-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: "Courier New", monospace;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+      }
+
+      [data-composition-id="beat-4-thesis"] .state-kicker,
+      [data-composition-id="beat-4-thesis"] .state-time {
+        color: var(--muted);
+      }
+
+      [data-composition-id="beat-4-thesis"] .verified-check {
+        display: grid;
+        place-items: center;
+        width: 31px;
+        height: 31px;
+        color: var(--canvas);
+        border-radius: 50%;
+        background: var(--green);
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      [data-composition-id="beat-4-thesis"] .wallet-line {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin: auto 0 7px;
+        font-family: "Courier New", monospace;
+        font-variant-numeric: tabular-nums;
+      }
+
+      [data-composition-id="beat-4-thesis"] .wallet-number {
+        color: var(--green);
+        font-size: 69px;
+        font-weight: 700;
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+      }
+
+      [data-composition-id="beat-4-thesis"] .old-wallet .wallet-number {
+        color: var(--muted);
+      }
+
+      [data-composition-id="beat-4-thesis"] .wallet-unit {
+        color: #c9c0b2;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      [data-composition-id="beat-4-thesis"] .access-line {
+        justify-content: flex-start;
+        gap: 11px;
+        color: var(--green);
+      }
+
+      [data-composition-id="beat-4-thesis"] .old-access {
+        color: var(--muted);
+      }
+
+      [data-composition-id="beat-4-thesis"] .reversal-track {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 0;
+        padding: 0 28px;
+      }
+
+      [data-composition-id="beat-4-thesis"] .track-label,
+      [data-composition-id="beat-4-thesis"] .track-caption {
+        color: var(--cyan);
+        font-family: "Courier New", monospace;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      [data-composition-id="beat-4-thesis"] .track-caption {
+        color: #c8beaf;
+        font-size: 16px;
+        letter-spacing: 0.04em;
+      }
+
+      [data-composition-id="beat-4-thesis"] .reversal-track svg {
+        width: 100%;
+        height: 90px;
+        overflow: visible;
+      }
+
+      [data-composition-id="beat-4-thesis"] .track-line,
+      [data-composition-id="beat-4-thesis"] .track-arrow {
+        fill: none;
+        stroke: var(--cyan);
+        stroke-width: 3;
+      }
+
+      [data-composition-id="beat-4-thesis"] .track-line {
+        stroke-dasharray: 10 12;
+        opacity: 0.64;
+      }
+
+      [data-composition-id="beat-4-thesis"] .reversal-token {
+        fill: var(--bright-brass);
+        stroke: var(--canvas);
+        stroke-width: 5;
+        filter: drop-shadow(0 0 12px rgba(239, 196, 109, 0.7));
+      }
+
+      [data-composition-id="beat-4-thesis"] .thesis-stack {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+        padding: 20px 0 13px;
+      }
+
+      [data-composition-id="beat-4-thesis"] .thesis-row {
+        display: grid;
+        grid-template-columns: 74px 425px minmax(100px, 1fr) 590px;
+        align-items: center;
+        min-height: 126px;
+        border-bottom: 1px solid rgba(169, 159, 145, 0.15);
+      }
+
+      [data-composition-id="beat-4-thesis"] .thesis-row:last-child {
+        border-bottom-color: rgba(201, 151, 72, 0.42);
+      }
+
+      [data-composition-id="beat-4-thesis"] .thesis-index {
+        color: var(--muted);
+        font-family: "Courier New", monospace;
+        font-size: 20px;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+
+      [data-composition-id="beat-4-thesis"] .thesis-subject,
+      [data-composition-id="beat-4-thesis"] .thesis-verb {
+        font-family: Georgia, serif;
+        font-size: 82px;
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.045em;
+        white-space: nowrap;
+      }
+
+      [data-composition-id="beat-4-thesis"] .thesis-subject {
+        color: var(--text);
+      }
+
+      [data-composition-id="beat-4-thesis"] .thesis-verb {
+        justify-self: end;
+        color: var(--cyan);
+      }
+
+      [data-composition-id="beat-4-thesis"] .thesis-people .thesis-verb {
+        color: var(--bright-brass);
+      }
+
+      [data-composition-id="beat-4-thesis"] .thesis-webmcp .thesis-verb {
+        color: var(--green);
+      }
+
+      [data-composition-id="beat-4-thesis"] .thesis-rule {
+        width: calc(100% - 42px);
+        height: 2px;
+        margin: 0 21px;
+        background: currentColor;
+        color: rgba(107, 200, 232, 0.48);
+        transform-origin: left center;
+      }
+
+      [data-composition-id="beat-4-thesis"] .thesis-people .thesis-rule {
+        color: rgba(201, 151, 72, 0.55);
+      }
+
+      [data-composition-id="beat-4-thesis"] .thesis-webmcp .thesis-rule {
+        color: rgba(101, 212, 154, 0.48);
+      }
+
+      [data-composition-id="beat-4-thesis"] .closing-lockup {
+        display: grid;
+        grid-template-columns: auto minmax(100px, 1fr) auto;
+        align-items: center;
+        min-height: 76px;
+        gap: 28px;
+      }
+
+      [data-composition-id="beat-4-thesis"] .closing-principles {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: #cbc1b2;
+        font-family: "Courier New", monospace;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+      }
+
+      [data-composition-id="beat-4-thesis"] .closing-principles i {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--brass);
+      }
+
+      [data-composition-id="beat-4-thesis"] .closing-rule {
+        width: 100%;
+        height: 1px;
+        background: var(--brass);
+        transform-origin: left center;
+      }
+
+      [data-composition-id="beat-4-thesis"] .brand-lockup {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      [data-composition-id="beat-4-thesis"] .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 64px;
+        height: 64px;
+        border: 1px solid var(--bright-brass);
+        background: var(--header);
+        box-shadow: 8px 8px 0 rgba(201, 151, 72, 0.13);
+      }
+
+      [data-composition-id="beat-4-thesis"] .brand-mark img {
+        width: 42px;
+        height: 42px;
+        filter: invert(81%) sepia(63%) saturate(580%) hue-rotate(350deg) brightness(102%) contrast(88%);
+      }
+
+      [data-composition-id="beat-4-thesis"] .brand-copy {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+
+      [data-composition-id="beat-4-thesis"] .brand-copy b {
+        color: var(--bright-brass);
+        font-family: "Courier New", monospace;
+        font-size: 22px;
+        letter-spacing: 0.15em;
+      }
+
+      [data-composition-id="beat-4-thesis"] .brand-copy small {
+        color: var(--muted);
+        font-family: "Courier New", monospace;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.045em;
+      }
+
+      [data-composition-id="beat-4-thesis"] .final-dip {
+        position: absolute;
+        z-index: 30;
+        inset: 0;
+        pointer-events: none;
+        background: var(--canvas);
+        opacity: 0;
+      }
+    </style>
+
+    <script src="vendor/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      const beat4 = gsap.timeline({ paused: true });
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .bg-grid', {
+        opacity: 0,
+        duration: 1.2,
+        ease: 'sine.out'
+      }, 0.1);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .bg-glow-cyan', {
+        opacity: 0,
+        scale: 0.72,
+        duration: 1.42,
+        ease: 'power1.out'
+      }, 0.15);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .bg-glow-brass', {
+        opacity: 0,
+        scale: 0.78,
+        duration: 1.15,
+        ease: 'circ.out'
+      }, 0.22);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .chapter-index', {
+        scale: 0,
+        rotation: -18,
+        duration: 0.38,
+        ease: 'back.out(1.9)'
+      }, 0.28);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .chapter-label', {
+        x: -42,
+        opacity: 0,
+        duration: 0.52,
+        ease: 'power4.out'
+      }, 0.42);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .chapter-proof', {
+        y: -24,
+        opacity: 0,
+        duration: 0.48,
+        ease: 'power2.out'
+      }, 0.56);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .state-strip', {
+        y: -54,
+        opacity: 0,
+        duration: 0.72,
+        ease: 'expo.out'
+      }, 0.74);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .committed-card', {
+        x: 88,
+        opacity: 0,
+        duration: 0.56,
+        ease: 'power3.out'
+      }, 1.02);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .track-label', {
+        opacity: 0,
+        duration: 0.5,
+        ease: 'circ.out'
+      }, 1.28);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .track-line, [data-composition-id="beat-4-thesis"] .track-arrow', {
+        strokeDasharray: 640,
+        strokeDashoffset: -640,
+        duration: 0.9,
+        ease: 'power2.inOut'
+      }, 1.52);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .reversal-token', {
+        x: 536,
+        scale: 0.72,
+        duration: 1.02,
+        ease: 'power3.inOut'
+      }, 1.76);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .restored-card', {
+        x: 156,
+        opacity: 0,
+        duration: 0.68,
+        ease: 'back.out(1.15)'
+      }, 2.36);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .wallet-number', {
+        scale: 1.35,
+        opacity: 0,
+        duration: 0.47,
+        stagger: 0.1,
+        ease: 'power4.out'
+      }, 2.68);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .verified-check', {
+        scale: 0,
+        rotation: -24,
+        duration: 0.42,
+        ease: 'back.out(2.15)'
+      }, 2.92);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .track-caption', {
+        y: 18,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'sine.out'
+      }, 3.08);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .thesis-agents .thesis-index', {
+        x: -40,
+        opacity: 0,
+        duration: 0.36,
+        ease: 'power2.out'
+      }, 3.68);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .thesis-agents .thesis-subject', {
+        x: -118,
+        opacity: 0,
+        duration: 0.62,
+        ease: 'expo.out'
+      }, 3.76);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .thesis-agents .thesis-rule', {
+        scaleX: 0,
+        duration: 0.66,
+        ease: 'circ.out'
+      }, 4.04);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .thesis-agents .thesis-verb', {
+        x: 122,
+        opacity: 0,
+        duration: 0.58,
+        ease: 'power4.out'
+      }, 4.18);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .thesis-people .thesis-index', {
+        y: -28,
+        opacity: 0,
+        duration: 0.35,
+        ease: 'back.out(1.4)'
+      }, 4.68);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .thesis-people .thesis-subject', {
+        y: 62,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power3.out'
+      }, 4.76);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .thesis-people .thesis-rule', {
+        scaleX: 0,
+        duration: 0.7,
+        ease: 'expo.out'
+      }, 5.02);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .thesis-people .thesis-verb', {
+        scale: 1.18,
+        opacity: 0,
+        duration: 0.56,
+        ease: 'back.out(1.1)'
+      }, 5.22);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .thesis-webmcp .thesis-index', {
+        x: 36,
+        opacity: 0,
+        duration: 0.34,
+        ease: 'circ.out'
+      }, 5.72);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .thesis-webmcp .thesis-subject', {
+        x: 112,
+        opacity: 0,
+        duration: 0.64,
+        ease: 'power4.out'
+      }, 5.8);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .thesis-webmcp .thesis-rule', {
+        scaleX: 0,
+        transformOrigin: 'right center',
+        duration: 0.66,
+        ease: 'power2.inOut'
+      }, 6.08);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .thesis-webmcp .thesis-verb', {
+        y: -64,
+        opacity: 0,
+        duration: 0.62,
+        ease: 'expo.out'
+      }, 6.28);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .closing-principles', {
+        x: -72,
+        opacity: 0,
+        duration: 0.55,
+        ease: 'power3.out'
+      }, 7.04);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .closing-rule', {
+        scaleX: 0,
+        duration: 0.9,
+        ease: 'circ.out'
+      }, 7.22);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .brand-mark', {
+        rotation: -20,
+        scale: 0.74,
+        opacity: 0,
+        duration: 0.76,
+        ease: 'back.out(1.5)'
+      }, 7.48);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .brand-copy b', {
+        x: 46,
+        opacity: 0,
+        duration: 0.52,
+        ease: 'power4.out'
+      }, 7.7);
+
+      beat4.from('[data-composition-id="beat-4-thesis"] .brand-copy small', {
+        y: 20,
+        opacity: 0,
+        duration: 0.48,
+        ease: 'sine.out'
+      }, 7.92);
+
+      beat4.to('[data-composition-id="beat-4-thesis"] .final-dip', {
+        opacity: 1,
+        duration: 0.7,
+        ease: 'power2.in'
+      }, 12.3);
+
+      window.__timelines['beat-4-thesis'] = beat4;
+    </script>
+  </div>
+</template>

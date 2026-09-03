@@ -1,44 +1,6 @@
 export const EMPTY_SCHEMA = { type: "object", properties: {}, additionalProperties: false } as const;
-
-export const PREVIEW_SCHEMA = {
-  type: "object",
-  properties: {
-    power: {
-      type: "string",
-      enum: ["forge", "focus"],
-      description: "The visible power card to preview.",
-    },
-    targetCardId: {
-      type: "string",
-      description: "Required for Forge. Use a card ID returned by inspect_mission_board.",
-      maxLength: 100,
-    },
-  },
-  required: ["power"],
-  additionalProperties: false,
-} as const;
-
-export const COMMIT_SCHEMA = {
-  type: "object",
-  properties: {
-    previewToken: {
-      type: "string",
-      description: "The token returned by preview_card_play for the exact visible preview.",
-      maxLength: 100,
-    },
-  },
-  required: ["previewToken"],
-  additionalProperties: false,
-} as const;
-
-export const LOAD_DEMO_SCHEMA = {
-  type: "object",
-  properties: {
-    confirmReplace: {
-      type: "boolean",
-      description: "Set true to acknowledge that modified board state will be replaced.",
-    },
-  },
-  required: ["confirmReplace"],
-  additionalProperties: false,
-} as const;
+export const SEARCH_SCHEMA = { type: "object", properties: { query: { type: "string", minLength: 2, maxLength: 160, description: "What data the person needs." }, maxCredits: { type: "number", minimum: 1, maximum: 100, description: "Optional maximum seven-day rental price." } }, required: ["query"], additionalProperties: false } as const;
+export const COMPARE_SCHEMA = { type: "object", properties: { offerIds: { type: "array", items: { type: "string", maxLength: 100 }, maxItems: 10, description: "Offer IDs to compare. Omit to compare every visible offer." } }, additionalProperties: false } as const;
+export const PREVIEW_SCHEMA = { type: "object", properties: { offerId: { type: "string", maxLength: 100, description: "Offer ID returned by inspect_exchange or search_data_offers." }, bidCredits: { type: "number", minimum: 1, maximum: 100, description: "The proposed seven-day rental price, within the person's budget." }, durationDays: { type: "integer", const: 7, description: "Fixed seven-day demo rental." } }, required: ["offerId", "bidCredits", "durationDays"], additionalProperties: false } as const;
+export const COMMIT_SCHEMA = { type: "object", properties: { previewToken: { type: "string", maxLength: 100, description: "One-time token from preview_data_deal for the exact visible agreement." } }, required: ["previewToken"], additionalProperties: false } as const;
+export const RESET_SCHEMA = { type: "object", properties: { confirmReplace: { type: "boolean", description: "True only after the person agrees to replace the current simulated deal." } }, required: ["confirmReplace"], additionalProperties: false } as const;

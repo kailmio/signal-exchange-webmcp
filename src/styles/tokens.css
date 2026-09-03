@@ -17,8 +17,8 @@
   --faint: #6e706d;
   --brass: #c99748;
   --brass-bright: #efc46d;
-  --forge: #f2a33b;
-  --focus: #6bc8e8;
+  --signal-warm: #f2a33b;
+  --signal-cyan: #6bc8e8;
   --ready: #65d49a;
   --error: #e8756d;
   --radius: 4px;
@@ -31,6 +31,6 @@ html, body, #root { min-width: 320px; min-height: 100%; margin: 0; }
 body { background: var(--bg); color: var(--text); }
 button, input { font: inherit; }
 button { color: inherit; }
-button:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--signal-cyan); outline-offset: 3px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 ::selection { color: #071018; background: var(--brass-bright); }

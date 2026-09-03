@@ -1,30 +1,13 @@
-# Visual Fidelity Ledger
+# Signal Exchange Fidelity Ledger
 
-Reference: `mission-deck-arcane-two-power-concept.png`
-
-Implementation: `mission-deck-arcane-implementation-1280x800.png`
-
-Verification: 1280×800 desktop and 360×800 mobile.
-
-| Comparison point | Reference intent | Implemented result | Status |
+| Element | Concept intent | Implemented behavior | Status |
 | --- | --- | --- | --- |
-| Composition | Open arcane board with Activity rail and a dramatic two-card hand. | Board/rail split, three idea cards, Focus well, and two centered powers preserve the composition. | Faithful |
-| Power hierarchy | Forge and Focus are the dominant choice; no third power. | Two 318px engraved cards occupy the full lower stage and expose recommendation/availability. | Faithful |
-| Material | Parchment, antique brass, blue-black stone, and subtle celestial marks. | Layered CSS gradients, noise, inset frames, brass rules, and constellation points reproduce the material language. | Faithful |
-| Typography | Classical fantasy display text with compact readable support copy. | Georgia/Times display and system sans support retain the hierarchy without an external font dependency. | Faithful adaptation |
-| Mission cards | Three bright parchment cards anchor the mission state. | Selectable cards preserve title, detail, status, hover, Forge target, and action-card continuation. | Faithful |
-| Focus well | A dark engraved target balances the parchment row. | Cyan target emblem, clipped corners, dashed inner frame, and focused-action state match the role. | Faithful |
-| Activity rail | An ornate vertical chronicle makes agent actions visible. | Attributed events, power-aware icons, timestamps, and anchored Undo retain the same rhythm. | Faithful |
-| Responsive behavior | Fantasy styling survives a narrow phone layout. | At 360px cards swipe horizontally, powers stack legibly, and Activity follows without horizontal page overflow. | Faithful adaptation |
+| Composition | Dense market at left; agent evidence and approval at right. | Responsive marketplace/sidebar split with one-screen desktop narrative. | Faithful |
+| Offer comparison | Three credible datasets with scannable differences. | Trust, freshness, formats, rows, license, coverage, and credits come from typed state. | Faithful |
+| Recommendation | One strong choice without removing agency. | Brass edge and Agent pick label; all alternatives remain visible. | Faithful |
+| Approval | Exact deal consequence before mutation. | Counteroffer panel lists wallet, access, and delivery deltas plus explicit CTA. | Enhanced |
+| Agent evidence | Actions must be visible, not hidden in chat. | Activity distinguishes WebMCP, manual, and system origins. | Enhanced |
+| Data access | Purchase outcome should feel concrete. | Commit reveals active rental metadata and schema fields; undo removes them. | Enhanced |
+| Mobile | Preserve full task rather than a decorative crop. | Compact offers and vertical Activity/deal sequence at 360px. | Faithful |
 
-## Above-fold copy diff
-
-The mission title, instruction, three idea cards, Focus state, Forge/Focus names and effects, recommendation, Activity, initial events, and Undo match the concept. The implementation adds truthful operational status: `Manual demo mode` appears only when WebMCP is unavailable, while the in-app browser displays `Agent ready`. `CURRENT MISSION` and `CHOOSE YOUR POWER` were retained as compact game-board wayfinding.
-
-## Accepted deviations
-
-- The concept uses denser hand-drawn ornament. The implementation uses lighter original CSS/SVG ornament to protect clarity and performance.
-- The concept’s larger 16:10 canvas was tightened to the strict 1280×800 judged viewport.
-- The Activity icons use the action’s real power or command state instead of illustrative symbols.
-
-No material fixable mismatch remains in the initial desktop or mobile board.
+Intentional divergence: the implementation makes the preview/commit boundary and simulation disclosure more explicit than the visual concept because both are central to trustworthy agent commerce.

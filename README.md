@@ -1,57 +1,75 @@
-# Mission Deck
+# Signal Exchange
 
-Mission Deck is a self-contained WebMCP planning game where agent actions become visible, previewable, and reversible power cards. The experience has exactly two powers: **Forge** turns one idea into executable actions, and **Focus** selects the highest-leverage next move.
+Signal Exchange is a self-contained WebMCP marketplace where people set the goal, budget, and approval boundary while agents find and negotiate access to machine-ready data.
 
-**Live app:** https://kailmio.github.io/mission-deck-webmcp/
+The judge-ready scenario is concrete: a small retailer needs fresh Sydney foot-traffic data to choose a weekend pop-up location. Instead of manually opening listings, translating metadata, and comparing incompatible terms, the agent can inspect the live marketplace, search within a 40-credit budget, compare trust and freshness, negotiate a seven-day rental, and present one exact deal for approval. Nothing is purchased until the person approves the visible preview.
 
-## Judge-ready demo
+## 65-second demo
 
-Open the app in a WebMCP-capable browser, then ask the agent:
+Watch the [guided Signal Exchange walkthrough](https://kailmio.github.io/mission-deck-webmcp/video/signal-exchange-walkthrough.mp4), or run the live agent flow below.
 
-1. `Inspect this mission board and recommend the best power. Do not change anything yet.`
-2. `Preview Forge on “Make actions tangible.” Stop for my approval.`
-3. `Commit that exact preview.`
-4. `Recommend the next power, preview Focus, and stop for approval.`
-5. `Commit Focus, then undo the last play.`
+Open the [live app](https://kailmio.github.io/mission-deck-webmcp/) in a WebMCP-capable browser and ask:
 
-The dramatic moment is not randomness: it is the handoff from an agent-authored proposal to a visible human decision. The person approves by clicking **Approve play** or explicitly asking the agent to commit the preview as a separate step. The board shows every recommendation, preview, commit, and undo in the Activity rail. Browsers without WebMCP honestly report **Manual demo mode** and keep the same card loop playable.
+1. `Inspect this exchange and find data for my visible goal within budget.`
+2. `Compare the matching offers and explain your recommendation.`
+3. `Bid 20 credits for seven days on the recommended offer. Preview only—do not commit.`
+4. Click `Approve exact deal · 22`, then ask: `Commit the approved deal.`
+5. `Undo that simulated rental.`
 
-The primary demo is a narrated 59-second [guided walkthrough](https://github.com/kailmio/mission-deck-webmcp/releases/download/v0.2.0/mission-deck-walkthrough.mp4). Its editable HyperFrames project lives in `video/mission-deck-walkthrough/`.
+Watch the same page change after each tool call: filtered offers, the recommendation badge, an attributed Activity entry, an exact counteroffer, wallet/access changes, and reversal.
 
-## WebMCP tools
+## Why WebMCP
 
-| Tool | Input | Purpose |
+A normal marketplace page is legible to a person but opaque to an agent: the agent must infer controls from pixels or bespoke APIs, and its work is often invisible. Signal Exchange registers the page's actual capabilities as typed tools while keeping one shared UI and state model.
+
+| Tool | What the agent can do | Visible effect |
 | --- | --- | --- |
-| `inspect_mission_board` | `{}` | Reads committed board state, preview status, and recent activity without side effects. |
-| `list_card_powers` | `{}` | Returns Forge and Focus availability plus a contextual recommendation. |
-| `preview_card_play` | `{ power, targetCardId? }` | Displays an exact, non-mutating Forge or Focus proposal. |
-| `commit_card_play` | `{ previewToken }` | Applies only the stored active preview once. |
-| `undo_last_play` | `{}` | Restores the board before the latest committed card play. |
-| `load_demo_mission` | `{ confirmReplace }` | Loads the deterministic sample and clears preview/undo. |
+| `inspect_exchange` | Read the goal, budget, offers, wallet, and state | None; genuinely read-only |
+| `search_data_offers` | Search listings by need and credit ceiling | Filters the visible market and logs the call |
+| `compare_data_offers` | Rank trust, freshness, formats, and price | Marks the recommendation and explains why |
+| `preview_data_deal` | Bid and receive an exact accepted price or counteroffer | Opens a non-mutating deal preview |
+| `commit_data_deal` | Apply only the approved preview token | Deducts credits and unlocks schema access |
+| `undo_last_deal` | Reverse the latest simulated rental | Restores credits and revokes access |
+| `load_demo_exchange` | Restore the deterministic judging scenario | Resets transaction state with confirmation |
 
-Tool responses include both human-readable text and machine-readable structured content. Preview tokens are bound to a board revision, expire, and are consumed once. Stale, expired, replayed, or mismatched commits fail without changing the board.
+The implementation is non-trivial: all seven tools call the same typed command layer as manual controls; search and ranking are deterministic; preview and commit are separate; commits use one-time, revision-bound, expiring tokens; replay, stale-token, wallet, budget, duration, and confirmation errors are explicit; and every state-changing agent action is visible and attributed.
+
+## Human control and demo honesty
+
+- Search and comparison may change presentation, but never spend credits.
+- Preview calculates the exact wallet, access, and delivery change without mutating committed state.
+- Commit requires the token from the currently visible preview and a human click bound to that exact token.
+- Undo restores the prior snapshot in one action.
+- Credits, sellers, negotiations, and access are simulated locally. There is no payment processor, account system, or real dataset transfer.
+- Local persistence keeps committed demo state; pending approvals are deliberately not restored.
 
 ## Local development
 
 ```bash
 npm install
-npm run dev
 npm test
+npm run dev
+```
+
+Production verification:
+
+```bash
 npm run build
 ```
 
-The production output is the static `dist/` directory. The app has no backend, login, analytics, or model API. Committed state persists locally; pending previews intentionally do not.
+The GitHub Pages workflow runs tests, the production build, and the validated HyperFrames video render before deployment.
 
-## Architecture and resilience
+## Project map
 
-- `src/domain/` contains the two pure power transformations and shared preview-safe command service.
-- `src/state/` contains the synchronous store and versioned persistence adapter.
-- `src/webmcp/` registers six page tools that call the same commands as manual controls.
-- `src/test/` proves exact preview/commit semantics, parity, persistence, undo, and recommendation progression.
-- Semantic controls, visible focus, Escape cancellation, live status, reduced-motion support, and the 360px layout preserve access to the complete experience.
+- `src/webmcp/registerTools.ts` — seven browser-native tool registrations
+- `src/domain/commands.ts` — shared safety and transaction boundary
+- `src/domain/marketplace.ts` — search, comparison, negotiation, and proposal logic
+- `src/state/reducer.ts` — committed state, pending preview, activity, and undo
+- `src/test` — marketplace, command safety, persistence, and WebMCP coverage
+- `docs/demo-script.md` — narrated walkthrough and exact agent prompts
+- `video/signal-exchange-walkthrough` — editable 65-second HyperFrames walkthrough
+- `docs/hackathon-build` — scope, PRD, specification, checklist, and evidence
 
-Codex was the primary coding agent. Hermes Agent provided an independent product review. Image generation produced original visual concept references; the shipped interface uses original HTML, CSS, and SVG assets.
+## Accessibility and responsive behavior
 
-## License
-
-[MIT](LICENSE)
+The app uses semantic buttons, visible keyboard focus, live status announcements, restrained motion with reduced-motion support, readable contrast, and a complete 360px mobile layout. WebMCP absence is shown honestly as `Manual demo mode`; the same core flow remains usable through page controls.

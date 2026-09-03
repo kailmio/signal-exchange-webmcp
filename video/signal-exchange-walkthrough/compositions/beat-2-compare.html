@@ -1,0 +1,745 @@
+<template id="beat-2-compare-template">
+  <div
+    data-composition-id="beat-2-compare"
+    data-start="0"
+    data-duration="16"
+    data-width="1920"
+    data-height="1080"
+  >
+    <div class="beat2-scene">
+      <div class="beat2-grid" data-layout-ignore></div>
+      <div class="beat2-glow" data-layout-ignore></div>
+      <div class="beat2-ghost" data-layout-ignore>COMPARE</div>
+
+      <div class="beat2-content">
+        <section class="beat2-tools" aria-label="WebMCP tool activity">
+          <div class="beat2-eyebrow">
+            <span class="beat2-live-dot"></span>
+            WEBMCP / LIVE OPERATION
+          </div>
+          <h1>Search.<br />Compare.<br />Recommend.</h1>
+          <p class="beat2-tools-intro">The agent works through page-owned tools while the marketplace stays visible.</p>
+
+          <div class="beat2-terminal">
+            <div class="beat2-terminal-head">
+              <span>TOOL RAIL</span>
+              <span>SYDNEY · 7 DAYS</span>
+            </div>
+
+            <div class="beat2-tool beat2-tool-one">
+              <span class="beat2-tool-index">01</span>
+              <span class="beat2-tool-name">inspect_exchange</span>
+              <span class="beat2-check">✓</span>
+              <span class="beat2-tool-note">goal + budget read</span>
+            </div>
+
+            <div class="beat2-tool beat2-tool-two">
+              <span class="beat2-tool-index">02</span>
+              <span class="beat2-tool-name">search_data_offers</span>
+              <span class="beat2-check">✓</span>
+              <span class="beat2-tool-note">3 compatible offers</span>
+            </div>
+
+            <div class="beat2-tool beat2-tool-three">
+              <span class="beat2-tool-index">03</span>
+              <span class="beat2-tool-name">compare_data_offers</span>
+              <span class="beat2-check">✓</span>
+              <span class="beat2-tool-note">ranked by constraints</span>
+            </div>
+          </div>
+
+          <div class="beat2-constraint">
+            <span>HUMAN CONSTRAINT</span>
+            <strong>UP TO 40 CREDITS</strong>
+          </div>
+        </section>
+
+        <section class="beat2-market" aria-label="Signal Exchange offer comparison">
+          <div class="beat2-stage-label">
+            <span>REAL MARKET VIEW</span>
+            <span>03 VERIFIED OFFERS</span>
+          </div>
+
+          <div class="beat2-market-frame">
+            <div class="beat2-market-screen" data-layout-ignore>
+              <img
+                src="capture/screenshots/scroll-000.png"
+                alt="Signal Exchange marketplace showing three Sydney foot-traffic offers"
+                crossorigin="anonymous"
+              />
+            </div>
+            <div class="beat2-screen-shade" data-layout-ignore></div>
+            <div class="beat2-row-scan" data-layout-ignore></div>
+          </div>
+
+          <div class="beat2-connector" aria-hidden="true">
+            <div class="beat2-line beat2-line-a"></div>
+            <div class="beat2-line beat2-line-b"></div>
+            <div class="beat2-line beat2-line-c"></div>
+            <div class="beat2-signal-dot"></div>
+          </div>
+
+          <div class="beat2-metrics" aria-label="MetroPulse winning metrics">
+            <div class="beat2-metric beat2-metric-trust">
+              <span class="beat2-metric-label">TRUST</span>
+              <strong><span id="beat2-trust-value">98</span></strong>
+              <small>VERIFIED</small>
+            </div>
+            <div class="beat2-metric beat2-metric-fresh">
+              <span class="beat2-metric-label">FRESHNESS</span>
+              <strong><span id="beat2-fresh-value">2</span> <em>HOURS</em></strong>
+              <small>GREATER SYDNEY</small>
+            </div>
+            <div class="beat2-metric beat2-metric-price">
+              <span class="beat2-metric-label">7-DAY RENTAL</span>
+              <strong><span id="beat2-price-value">24</span></strong>
+              <small>CREDITS</small>
+            </div>
+          </div>
+
+          <div class="beat2-recommendation">
+            <div class="beat2-border beat2-border-top"></div>
+            <div class="beat2-border beat2-border-right"></div>
+            <div class="beat2-border beat2-border-bottom"></div>
+            <div class="beat2-border beat2-border-left"></div>
+            <div class="beat2-reco-icon">
+              <img
+                src="capture/assets/svgs/svg-5b9c497d.svg"
+                alt=""
+                crossorigin="anonymous"
+              />
+            </div>
+            <div class="beat2-reco-copy">
+              <span>AGENT RECOMMENDATION</span>
+              <strong>MetroPulse Foot Traffic</strong>
+              <p>Freshest signal, strongest trust, within the 40-credit limit.</p>
+            </div>
+            <div class="beat2-reco-proof">98 TRUST · 2 HOURS · 24 CREDITS</div>
+          </div>
+        </section>
+      </div>
+
+      <div class="beat2-shutter beat2-shutter-top" data-layout-allow-overflow>
+        <span>RECOMMENDATION LOCKED</span>
+      </div>
+      <div class="beat2-shutter beat2-shutter-bottom" data-layout-allow-overflow>
+        <span>PREVIEW THE TERMS</span>
+      </div>
+    </div>
+
+    <style>
+      [data-composition-id="beat-2-compare"] {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        color: #f0e7d5;
+        background-color: #040a10;
+        font-family: Arial, sans-serif;
+      }
+
+      [data-composition-id="beat-2-compare"] * {
+        box-sizing: border-box;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-scene {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #040a10;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-grid {
+        position: absolute;
+        inset: 0;
+        opacity: 0.2;
+        background-image:
+          linear-gradient(rgba(107, 200, 232, 0.1) 1px, rgba(107, 200, 232, 0) 1px),
+          linear-gradient(90deg, rgba(107, 200, 232, 0.1) 1px, rgba(107, 200, 232, 0) 1px);
+        background-size: 96px 96px;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-glow {
+        position: absolute;
+        width: 1180px;
+        height: 860px;
+        right: -180px;
+        top: -140px;
+        border-radius: 50%;
+        opacity: 0.55;
+        background: radial-gradient(circle, rgba(107, 200, 232, 0.19) 0%, rgba(107, 200, 232, 0) 68%);
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-ghost {
+        position: absolute;
+        right: -70px;
+        bottom: -50px;
+        color: #10202a;
+        font-family: Georgia, serif;
+        font-size: 250px;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+        line-height: 1;
+        opacity: 0.62;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-content {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 455px minmax(0, 1fr);
+        gap: 34px;
+        width: 100%;
+        height: 100%;
+        padding: 52px 58px 48px;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-tools {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        height: 100%;
+        padding: 32px 30px;
+        border: 1px solid #245267;
+        background-color: rgba(6, 16, 25, 0.94);
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-eyebrow,
+      [data-composition-id="beat-2-compare"] .beat2-stage-label,
+      [data-composition-id="beat-2-compare"] .beat2-terminal-head,
+      [data-composition-id="beat-2-compare"] .beat2-tool-index,
+      [data-composition-id="beat-2-compare"] .beat2-tool-note,
+      [data-composition-id="beat-2-compare"] .beat2-metric-label,
+      [data-composition-id="beat-2-compare"] .beat2-metric small,
+      [data-composition-id="beat-2-compare"] .beat2-reco-copy > span,
+      [data-composition-id="beat-2-compare"] .beat2-reco-proof,
+      [data-composition-id="beat-2-compare"] .beat2-constraint {
+        font-family: "Courier New", monospace;
+        font-variant-ligatures: none;
+        letter-spacing: 0.08em;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #6bc8e8;
+        font-size: 17px;
+        font-weight: 700;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-live-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #65d49a;
+        box-shadow: 0 0 20px rgba(101, 212, 154, 0.7);
+      }
+
+      [data-composition-id="beat-2-compare"] h1 {
+        margin: 27px 0 18px;
+        color: #f0e7d5;
+        font-family: Georgia, serif;
+        font-size: 65px;
+        font-weight: 700;
+        line-height: 0.98;
+        letter-spacing: -0.04em;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-tools-intro {
+        margin: 0;
+        color: #b8afa2;
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 1.42;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-terminal {
+        margin-top: 34px;
+        border: 1px solid #245267;
+        background-color: #040a10;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-terminal-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 48px;
+        padding: 0 16px;
+        border-bottom: 1px solid #245267;
+        color: #a99f91;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-tool {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr) 28px;
+        grid-template-rows: 34px 28px;
+        align-items: center;
+        min-height: 86px;
+        padding: 10px 14px;
+        border-bottom: 1px solid #193745;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-tool:last-child {
+        border-bottom: 0;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-tool-index {
+        grid-row: 1 / 3;
+        color: #c99748;
+        font-size: 17px;
+        font-weight: 700;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-tool-name {
+        display: inline-block;
+        overflow: hidden;
+        color: #6bc8e8;
+        font-family: "Courier New", monospace;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.1;
+        white-space: nowrap;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-check {
+        color: #65d49a;
+        font-family: Arial, sans-serif;
+        font-size: 25px;
+        font-weight: 700;
+        text-align: right;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-tool-note {
+        color: #a99f91;
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-constraint {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        min-height: 62px;
+        margin-top: auto;
+        padding: 0 16px;
+        border-top: 1px solid #c99748;
+        border-bottom: 1px solid #c99748;
+        color: #a99f91;
+        font-size: 16px;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-constraint strong {
+        color: #efc46d;
+        font-size: 18px;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-market {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        height: 100%;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-stage-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 32px;
+        color: #a99f91;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-stage-label span:first-child {
+        color: #efc46d;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-market-frame {
+        position: relative;
+        flex: 1;
+        min-height: 0;
+        overflow: hidden;
+        border: 1px solid #c99748;
+        background-color: #061019;
+        box-shadow: 16px 16px 0 rgba(16, 32, 42, 0.9);
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-market-screen {
+        position: absolute;
+        left: -22px;
+        top: -142px;
+        width: 1650px;
+        height: 928px;
+        transform-origin: 50% 45%;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-market-screen img {
+        display: block;
+        width: 1650px;
+        height: 928px;
+        object-fit: fill;
+        filter: saturate(0.88) brightness(0.74) contrast(1.12);
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-screen-shade {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(4, 10, 16, 0.18);
+        box-shadow: inset 0 0 140px rgba(4, 10, 16, 0.86);
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-row-scan {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 132px;
+        height: 135px;
+        border-top: 2px solid rgba(239, 196, 109, 0.64);
+        border-bottom: 2px solid rgba(239, 196, 109, 0.64);
+        background-color: rgba(201, 151, 72, 0.06);
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-connector {
+        position: absolute;
+        left: 74px;
+        right: 58px;
+        top: 302px;
+        height: 140px;
+        pointer-events: none;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-line {
+        position: absolute;
+        background-color: #6bc8e8;
+        box-shadow: 0 0 14px rgba(107, 200, 232, 0.45);
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-line-a {
+        left: 0;
+        top: 0;
+        width: 37%;
+        height: 2px;
+        transform-origin: left center;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-line-b {
+        left: 37%;
+        top: 0;
+        width: 2px;
+        height: 92px;
+        transform-origin: top center;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-line-c {
+        left: 37%;
+        top: 90px;
+        width: 55%;
+        height: 2px;
+        transform-origin: left center;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-signal-dot {
+        position: absolute;
+        left: 0;
+        top: -7px;
+        width: 16px;
+        height: 16px;
+        border: 3px solid #040a10;
+        border-radius: 50%;
+        background-color: #6bc8e8;
+        box-shadow: 0 0 22px #6bc8e8;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-metrics {
+        position: absolute;
+        left: 96px;
+        right: 34px;
+        bottom: 196px;
+        z-index: 3;
+        display: grid;
+        grid-template-columns: 1fr 1.22fr 1fr;
+        gap: 14px;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-metric {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        min-height: 118px;
+        padding: 16px 18px;
+        border: 1px solid #245267;
+        background-color: rgba(6, 16, 25, 0.95);
+        box-shadow: 7px 7px 0 rgba(4, 10, 16, 0.85);
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-metric-label {
+        grid-column: 1 / 3;
+        color: #a99f91;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-metric strong {
+        color: #f0e7d5;
+        font-family: "Courier New", monospace;
+        font-size: 46px;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        line-height: 0.9;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-metric strong em {
+        color: #6bc8e8;
+        font-size: 20px;
+        font-style: normal;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-metric small {
+        color: #65d49a;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: right;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-metric-price {
+        border-color: #c99748;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-metric-price strong,
+      [data-composition-id="beat-2-compare"] .beat2-metric-price small {
+        color: #efc46d;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-recommendation {
+        position: absolute;
+        left: 28px;
+        right: 6px;
+        bottom: 22px;
+        z-index: 4;
+        display: grid;
+        grid-template-columns: 78px minmax(0, 1fr) auto;
+        align-items: center;
+        min-height: 150px;
+        padding: 24px 28px;
+        background-color: rgba(16, 32, 42, 0.97);
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-border {
+        position: absolute;
+        background-color: #efc46d;
+        box-shadow: 0 0 18px rgba(239, 196, 109, 0.34);
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-border-top,
+      [data-composition-id="beat-2-compare"] .beat2-border-bottom {
+        left: 0;
+        width: 100%;
+        height: 2px;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-border-top { top: 0; transform-origin: left center; }
+      [data-composition-id="beat-2-compare"] .beat2-border-bottom { bottom: 0; transform-origin: right center; }
+
+      [data-composition-id="beat-2-compare"] .beat2-border-left,
+      [data-composition-id="beat-2-compare"] .beat2-border-right {
+        top: 0;
+        width: 2px;
+        height: 100%;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-border-left { left: 0; transform-origin: center bottom; }
+      [data-composition-id="beat-2-compare"] .beat2-border-right { right: 0; transform-origin: center top; }
+
+      [data-composition-id="beat-2-compare"] .beat2-reco-icon {
+        display: grid;
+        place-items: center;
+        width: 62px;
+        height: 62px;
+        border: 1px solid #6bc8e8;
+        border-radius: 50%;
+        color: #6bc8e8;
+        background-color: #061019;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-reco-icon img {
+        width: 38px;
+        height: 38px;
+        color: #6bc8e8;
+        filter: invert(79%) sepia(19%) saturate(1240%) hue-rotate(156deg) brightness(98%);
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-reco-copy {
+        min-width: 0;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-reco-copy > span {
+        display: block;
+        margin-bottom: 7px;
+        color: #efc46d;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-reco-copy strong {
+        display: block;
+        color: #f0e7d5;
+        font-family: Georgia, serif;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 1.05;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-reco-copy p {
+        margin: 7px 0 0;
+        color: #b8afa2;
+        font-size: 20px;
+        line-height: 1.25;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-reco-proof {
+        max-width: 270px;
+        color: #f0e7d5;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.45;
+        text-align: right;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-shutter {
+        position: absolute;
+        left: 0;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 540px;
+        padding: 0 80px;
+        color: #040a10;
+        background-color: #efc46d;
+        font-family: "Courier New", monospace;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-shutter-top {
+        top: 0;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #040a10;
+      }
+
+      [data-composition-id="beat-2-compare"] .beat2-shutter-bottom {
+        bottom: 0;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 18px;
+        border-top: 1px solid #040a10;
+      }
+    </style>
+
+    <script src="vendor/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      var beat2 = gsap.timeline({ paused: true });
+
+      var trustCounter = { value: 0 };
+      var freshCounter = { value: 24 };
+      var priceCounter = { value: 0 };
+
+      beat2.from(".beat2-market-frame", { x: 170, opacity: 0, duration: 1.05, ease: "expo.out" }, 0.18);
+      beat2.from(".beat2-stage-label", { y: -22, opacity: 0, duration: 0.52, ease: "power3.out" }, 0.35);
+      beat2.from(".beat2-tools", { x: -76, opacity: 0, duration: 0.82, ease: "power4.out" }, 0.24);
+      beat2.from(".beat2-eyebrow", { y: -18, opacity: 0, duration: 0.66, ease: "sine.out" }, 0.7);
+      beat2.from(".beat2-tools h1", { x: -42, opacity: 0, duration: 0.76, ease: "expo.out" }, 0.86);
+      beat2.from(".beat2-tools-intro", { y: 28, opacity: 0, duration: 0.58, ease: "back.out(1.15)" }, 1.05);
+      beat2.from(".beat2-terminal", { scaleY: 0.82, opacity: 0, transformOrigin: "center top", duration: 0.7, ease: "power3.out" }, 1.22);
+      beat2.from(".beat2-constraint", { x: -28, opacity: 0, duration: 0.48, ease: "circ.out" }, 1.52);
+
+      beat2.from(".beat2-tool-one .beat2-tool-index", { x: -16, opacity: 0, duration: 0.3, ease: "power2.out" }, 2.0);
+      beat2.from(".beat2-tool-one .beat2-tool-name", { clipPath: "inset(0 100% 0 0)", duration: 0.9, ease: "steps(16)" }, 2.08);
+      beat2.from(".beat2-tool-one .beat2-tool-note", { y: 12, opacity: 0, duration: 0.34, ease: "back.out(1.2)" }, 2.78);
+      beat2.from(".beat2-tool-one .beat2-check", { scale: 0.15, rotation: -28, opacity: 0, duration: 0.36, ease: "back.out(2)" }, 2.9);
+
+      beat2.from(".beat2-tool-two .beat2-tool-index", { x: -18, opacity: 0, duration: 0.32, ease: "circ.out" }, 3.55);
+      beat2.from(".beat2-tool-two .beat2-tool-name", { clipPath: "inset(0 100% 0 0)", duration: 1.05, ease: "steps(18)" }, 3.65);
+      beat2.from(".beat2-tool-two .beat2-tool-note", { x: 18, opacity: 0, duration: 0.4, ease: "power3.out" }, 4.52);
+      beat2.from(".beat2-tool-two .beat2-check", { scale: 1.8, opacity: 0, duration: 0.3, ease: "power4.out" }, 4.66);
+
+      beat2.from(".beat2-tool-three .beat2-tool-index", { scale: 0.6, opacity: 0, duration: 0.34, ease: "back.out(1.5)" }, 5.25);
+      beat2.from(".beat2-tool-three .beat2-tool-name", { clipPath: "inset(0 100% 0 0)", duration: 1.16, ease: "steps(19)" }, 5.34);
+      beat2.from(".beat2-tool-three .beat2-tool-note", { y: -10, opacity: 0, duration: 0.4, ease: "sine.out" }, 6.28);
+      beat2.from(".beat2-tool-three .beat2-check", { rotation: 70, opacity: 0, duration: 0.38, ease: "expo.out" }, 6.4);
+
+      beat2.to(".beat2-market-screen", { x: -18, y: -34, scale: 1.018, duration: 9.4, ease: "sine.inOut" }, 0.72);
+      beat2.from(".beat2-row-scan", { scaleX: 0, opacity: 0, transformOrigin: "left center", duration: 0.78, ease: "expo.out" }, 5.86);
+
+      beat2.from(".beat2-line-a", { scaleX: 0, duration: 0.48, ease: "power3.out" }, 6.22);
+      beat2.from(".beat2-line-b", { scaleY: 0, duration: 0.34, ease: "circ.out" }, 6.66);
+      beat2.from(".beat2-line-c", { scaleX: 0, duration: 0.58, ease: "expo.out" }, 6.96);
+      beat2.from(".beat2-signal-dot", { scale: 0.25, opacity: 0, duration: 0.26, ease: "back.out(2.2)" }, 6.14);
+      beat2.to(".beat2-signal-dot", { x: 370, duration: 0.48, ease: "power2.inOut" }, 6.28);
+      beat2.to(".beat2-signal-dot", { x: 370, y: 92, duration: 0.34, ease: "power3.inOut" }, 6.76);
+      beat2.to(".beat2-signal-dot", { x: 925, y: 92, duration: 0.74, ease: "expo.inOut" }, 7.1);
+
+      beat2.from(".beat2-metric-trust", { x: -54, opacity: 0, duration: 0.56, ease: "power4.out" }, 6.74);
+      beat2.to(trustCounter, {
+        value: 98,
+        duration: 0.82,
+        ease: "power2.out",
+        snap: "value",
+        onUpdate: function () {
+          document.getElementById("beat2-trust-value").textContent = Math.round(trustCounter.value);
+        }
+      }, 6.86);
+
+      beat2.from(".beat2-metric-fresh", { y: 48, scale: 0.96, opacity: 0, duration: 0.64, ease: "back.out(1.3)" }, 7.34);
+      beat2.to(freshCounter, {
+        value: 2,
+        duration: 0.78,
+        ease: "circ.out",
+        snap: "value",
+        onUpdate: function () {
+          document.getElementById("beat2-fresh-value").textContent = Math.round(freshCounter.value);
+        }
+      }, 7.46);
+
+      beat2.from(".beat2-metric-price", { x: 58, rotation: 0.8, opacity: 0, duration: 0.52, ease: "expo.out" }, 8.02);
+      beat2.to(priceCounter, {
+        value: 24,
+        duration: 0.72,
+        ease: "power3.out",
+        snap: "value",
+        onUpdate: function () {
+          document.getElementById("beat2-price-value").textContent = Math.round(priceCounter.value);
+        }
+      }, 8.12);
+
+      beat2.from(".beat2-recommendation", { y: 52, opacity: 0, duration: 0.72, ease: "power4.out" }, 8.88);
+      beat2.from(".beat2-reco-icon", { scale: 0.45, rotation: -20, opacity: 0, duration: 0.46, ease: "back.out(1.8)" }, 9.12);
+      beat2.from(".beat2-reco-copy > span", { x: -24, opacity: 0, duration: 0.38, ease: "expo.out" }, 9.28);
+      beat2.from(".beat2-reco-copy strong", { y: 20, opacity: 0, duration: 0.5, ease: "power3.out" }, 9.4);
+      beat2.from(".beat2-reco-copy p", { opacity: 0, duration: 0.64, ease: "sine.out" }, 9.62);
+      beat2.from(".beat2-reco-proof", { x: 42, opacity: 0, duration: 0.56, ease: "circ.out" }, 9.48);
+
+      beat2.from(".beat2-border-top", { scaleX: 0, duration: 0.46, ease: "expo.out" }, 9.88);
+      beat2.from(".beat2-border-right", { scaleY: 0, duration: 0.34, ease: "power3.out" }, 10.24);
+      beat2.from(".beat2-border-bottom", { scaleX: 0, duration: 0.46, ease: "circ.out" }, 10.48);
+      beat2.from(".beat2-border-left", { scaleY: 0, duration: 0.34, ease: "back.out(1.15)" }, 10.84);
+      beat2.to(".beat2-signal-dot", { scale: 1.28, duration: 0.42, ease: "sine.inOut", yoyo: true, repeat: 5 }, 10.8);
+      beat2.to(".beat2-live-dot", { scale: 1.35, duration: 0.52, ease: "sine.inOut", yoyo: true, repeat: 5 }, 10.96);
+
+      beat2.fromTo(".beat2-shutter-top", { y: -540 }, { y: 0, duration: 0.24, ease: "power3.in" }, 15.54);
+      beat2.fromTo(".beat2-shutter-bottom", { y: 540 }, { y: 0, duration: 0.24, ease: "power3.in" }, 15.54);
+
+      window.__timelines["beat-2-compare"] = beat2;
+    </script>
+  </div>
+</template>

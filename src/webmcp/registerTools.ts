@@ -1,86 +1,23 @@
 import type { CommandService } from "../domain/commands";
 import type { AppStore } from "../state/store";
-import type { PowerId } from "../domain/types";
-import { COMMIT_SCHEMA, EMPTY_SCHEMA, LOAD_DEMO_SCHEMA, PREVIEW_SCHEMA } from "./schemas";
+import { COMMIT_SCHEMA, COMPARE_SCHEMA, EMPTY_SCHEMA, PREVIEW_SCHEMA, RESET_SCHEMA, SEARCH_SCHEMA } from "./schemas";
 import { toToolResult } from "./results";
 
 export async function registerWebMcpTools(store: AppStore, commands: CommandService): Promise<() => void> {
   const context = document.modelContext;
-  if (!context) {
-    store.dispatch({ type: "SET_CONNECTION", connection: "manual" });
-    return () => undefined;
-  }
-
+  if (!context) { store.dispatch({ type: "SET_CONNECTION", connection: "manual" }); return () => undefined; }
   const controller = new AbortController();
   try {
     await Promise.all([
-      context.registerTool(
-        {
-          name: "inspect_mission_board",
-          title: "Inspect mission board",
-          description: "Read the current committed mission, visible cards, focus, preview status, and recent human-readable history without changing any page state. Use this first before recommending a power.",
-          inputSchema: EMPTY_SCHEMA,
-          annotations: { readOnlyHint: true },
-          execute: () => toToolResult(commands.inspect("agent")),
-        },
-        { signal: controller.signal },
-      ),
-      context.registerTool(
-        {
-          name: "list_card_powers",
-          title: "List card powers",
-          description: "List Forge and Focus with current availability, then return and visibly highlight the best contextual recommendation without changing the committed board.",
-          inputSchema: EMPTY_SCHEMA,
-          execute: () => toToolResult(commands.listPowers("agent")),
-        },
-        { signal: controller.signal },
-      ),
-      context.registerTool(
-        {
-          name: "preview_card_play",
-          title: "Preview a card play",
-          description: "Prepare and display the exact effect of Forge or Focus without changing committed board state. Forge requires a targetCardId from inspect_mission_board.",
-          inputSchema: PREVIEW_SCHEMA,
-          execute: ({ power, targetCardId }) =>
-            toToolResult(commands.previewCardPlay({ power: power as PowerId, targetCardId }, "agent")),
-        },
-        { signal: controller.signal },
-      ),
-      context.registerTool(
-        {
-          name: "commit_card_play",
-          title: "Commit the visible preview",
-          description: "Apply only the exact active preview after the person explicitly asks you to commit it. Requires its one-time preview token; never generates or substitutes a different effect.",
-          inputSchema: COMMIT_SCHEMA,
-          execute: ({ previewToken }) => toToolResult(commands.commitCardPlay(previewToken, "agent")),
-        },
-        { signal: controller.signal },
-      ),
-      context.registerTool(
-        {
-          name: "undo_last_play",
-          title: "Undo the latest card play",
-          description: "Restore the board immediately before the latest committed Forge or Focus play. Supports one level of undo.",
-          inputSchema: EMPTY_SCHEMA,
-          execute: () => toToolResult(commands.undoLastPlay("agent")),
-        },
-        { signal: controller.signal },
-      ),
-      context.registerTool(
-        {
-          name: "load_demo_mission",
-          title: "Load the demo mission",
-          description: "Restore the stable judge-ready sample mission. This creates a fresh baseline and clears preview and undo.",
-          inputSchema: LOAD_DEMO_SCHEMA,
-          execute: ({ confirmReplace }) => toToolResult(commands.loadDemoMission(confirmReplace, "agent")),
-        },
-        { signal: controller.signal },
-      ),
+      context.registerTool({ name: "inspect_exchange", title: "Inspect Signal Exchange", description: "Read the buyer's goal, budget, wallet, current offers, recommendation, pending deal, access, and recent activity without changing page state. Start here.", inputSchema: EMPTY_SCHEMA, annotations: { readOnlyHint: true }, execute: () => toToolResult(commands.inspectExchange()) }, { signal: controller.signal }),
+      context.registerTool({ name: "search_data_offers", title: "Search data offers", description: "Search machine-ready data offers by need and optional credit ceiling. Results become visible on the marketplace.", inputSchema: SEARCH_SCHEMA, execute: ({ query, maxCredits }) => toToolResult(commands.searchDataOffers({ query, maxCredits }, "agent")) }, { signal: controller.signal }),
+      context.registerTool({ name: "compare_data_offers", title: "Compare data offers", description: "Rank offers using trust, freshness, formats, price, and the person's budget, then visibly recommend the strongest fit.", inputSchema: COMPARE_SCHEMA, execute: ({ offerIds }) => toToolResult(commands.compareDataOffers(offerIds, "agent")) }, { signal: controller.signal }),
+      context.registerTool({ name: "preview_data_deal", title: "Negotiate and preview a rental", description: "Submit a rental bid and display the exact accepted price or seller counteroffer. This never spends credits or unlocks data.", inputSchema: PREVIEW_SCHEMA, execute: ({ offerId, bidCredits, durationDays }) => toToolResult(commands.previewDataDeal({ offerId, bidCredits, durationDays }, "agent")) }, { signal: controller.signal }),
+      context.registerTool({ name: "commit_data_deal", title: "Commit the visible data rental", description: "After the person clicks Approve exact deal, apply only that active visible preview using its one-time token. Never substitute another offer or price.", inputSchema: COMMIT_SCHEMA, execute: ({ previewToken }) => toToolResult(commands.commitDataDeal(previewToken, "agent")) }, { signal: controller.signal }),
+      context.registerTool({ name: "undo_last_deal", title: "Reverse the latest simulated deal", description: "Restore the wallet and revoke access from the latest committed demo rental. Supports one level of undo.", inputSchema: EMPTY_SCHEMA, execute: () => toToolResult(commands.undoLastDeal("agent")) }, { signal: controller.signal }),
+      context.registerTool({ name: "load_demo_exchange", title: "Reset Signal Exchange demo", description: "Restore the judge-ready Sydney foot-traffic marketplace, 100-credit wallet, and clean transaction state.", inputSchema: RESET_SCHEMA, execute: ({ confirmReplace }) => toToolResult(commands.loadDemoExchange(confirmReplace, "agent")) }, { signal: controller.signal }),
     ]);
     store.dispatch({ type: "SET_CONNECTION", connection: "ready" });
-  } catch {
-    controller.abort();
-    store.dispatch({ type: "SET_CONNECTION", connection: "manual" });
-  }
+  } catch { controller.abort(); store.dispatch({ type: "SET_CONNECTION", connection: "manual" }); }
   return () => controller.abort();
 }

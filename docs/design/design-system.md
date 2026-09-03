@@ -1,37 +1,33 @@
-# Mission Deck Design System
-
-## Canonical concept
-
-`mission-deck-arcane-two-power-concept.png` is the accepted visual direction. `mission-deck-arcane-implementation-1280x800.png` and `mission-deck-arcane-implementation-360x800.png` are the current implementation proofs.
+# Signal Exchange Design System
 
 ## Direction
 
-- Arcane observatory and tabletop atmosphere: midnight blue-black, antique brass, faint constellations, and restrained runic geometry.
-- A readable game board, not a decorative fantasy poster. Mission state, approval state, and Activity remain immediate.
-- Three parchment idea cards lead into a dark engraved Focus well.
-- Exactly two oversized power cards form the central hand: amber Forge and cyan Focus.
-- Drama comes from scale, material, light, hover lift, preview reveal, and commit motion.
+A premium market terminal for scarce, machine-readable signals. It should feel trustworthy and consequential without imitating a finance dashboard or adding decorative sci-fi noise.
 
-## Tokens
+## Hierarchy
 
-- Background `#040a10`; raised surface `#10202a`.
-- Parchment `#d9c8a7`; parchment highlight `#eadfc7`; ink `#201a13`.
-- Antique brass `#c99748`; bright brass `#efc46d`.
-- Forge `#f2a33b`; Focus `#6bc8e8`; ready `#65d49a`; error `#e8756d`.
-- Display typography uses Georgia/Times for the engraved fantasy tone; supporting UI uses the system sans stack.
-- Motion runs 180–680ms and is disabled by the reduced-motion override.
+- The buyer goal and constraints establish intent.
+- Three horizontal offers make trust, freshness, formats, and price comparable.
+- A brass recommendation edge identifies the agent's pick without hiding alternatives.
+- Activity proves what the agent did; the deal panel is the human approval boundary.
+- Wallet and unlocked schema make transaction consequences concrete.
 
-## Component rules
+## Palette and type
 
-- The page remains an open canvas with board left and a narrow Activity chronicle right.
-- Parchment cards use dark ink, inset frames, circular emblems, and clear status labels.
-- Power cards share one ornate geometry and differ through emblem, accent color, availability, and recommendation state.
-- Preview occupies the board’s right well and never obscures the committed cards.
-- Original inline SVGs use consistent strokes and `currentColor`.
-- No third power, random mechanic, extra dashboard widgets, or novelty statistics.
+- Midnight surfaces: `#071017` through `#111a20`.
+- Brass structure: muted `#765b31`, bright `#c99748`.
+- Machine-readable cyan: `#6bc8e8`.
+- Ready green: `#65d49a`; error coral: `#e8756d`.
+- Display typography is compact and high-contrast; system sans handles metadata and dense evidence.
 
-## Responsive continuation
+## Motion
 
-- At 1280×800 the complete initial board and both powers fit without page scroll.
-- Under 840px Activity moves below the board.
-- At 360px mission cards remain horizontally swipeable and Forge/Focus become stacked full-width invocations.
+Use brief hover lift, recommendation glow, and status changes only where they clarify state. All motion collapses under reduced-motion preference.
+
+## Responsive rules
+
+At desktop, market and approval evidence share one view. At 360px, the document flows vertically: compact offer rows first, trust explanation next, then Activity and deal approval. The page must not scroll horizontally.
+
+## Reference
+
+The accepted concept is `docs/design/signal-exchange-concept-1280x800.png`. The implementation preserves its market/sidebar composition, three-offer density, brass/cyan hierarchy, recommendation treatment, and approval focus while using responsive HTML controls.

@@ -1,19 +1,38 @@
-# Submission handoff
+# Signal Exchange Submission Handoff
 
-Mission Deck is a polished arcane planning game built around exactly two powers: Forge makes ideas executable and Focus chooses the next move. Six WebMCP tools let an agent inspect, recommend, preview, commit, undo, and reset against the same visible state used by manual controls.
+## One-line pitch
 
-The judged proof is the approval boundary: agent-authored changes appear as an exact on-page preview, nothing mutates until approval, and Activity plus Undo keep the person in control.
+Signal Exchange lets agents find and negotiate access to machine-ready data while people retain the budget, approval, and undo controls.
 
-## Current evidence
+## Problem and audience
 
-- `npm test`: 13 tests pass, including WebMCP registration, annotation, structured-result, cleanup, and fallback coverage.
-- `npm run build`: strict TypeScript and Vite production build pass.
-- Live local WebMCP discovery exposes six tools; the power enum contains only `forge` and `focus`.
-- Inspect is side-effect-free and truthfully read-only; recommendation visibly updates the board and is intentionally not annotated read-only.
-- Verified agent loop: inspect → recommend Forge → preview/commit Forge → recommend Focus → preview/commit Focus → undo.
-- Visual QA completed at 1280×800 and 360×800.
-- Canonical images live in `docs/design/`.
-- Guided walkthrough: https://github.com/kailmio/mission-deck-webmcp/releases/download/v0.2.0/mission-deck-walkthrough.mp4
-- Release page: https://github.com/kailmio/mission-deck-webmcp/releases/tag/v0.2.0
+Small operators increasingly delegate decisions to agents, but the data those agents need is scattered across marketplace pages with inconsistent freshness, formats, prices, and terms. Manual procurement is slow; autonomous purchase is risky. Signal Exchange turns one marketplace page into a typed, visible collaboration surface.
 
-The current release is designed to deploy through the repository's GitHub Pages workflow. The recut video contains only Forge and Focus and matches the arcane two-power interface.
+## What is new with WebMCP
+
+The agent does more than summarize the page. It discovers seven native capabilities, searches the live inventory, compares offers against the person's visible constraint, negotiates a specific rental, and commits only the approved proposal. The person watches the same state change, sees which actions came from WebMCP, and can reverse the result.
+
+## Judge proof points
+
+- Real browser discovery exposes seven typed tools.
+- `inspect_exchange` is genuinely read-only; search and compare truthfully create visible Activity.
+- Preview returns a seller counteroffer and exact changes without spending credits.
+- Commit accepts only the active revision-bound, expiring token after a person clicks approval for that exact token.
+- A successful commit changes wallet 100 → 78 and unlocks the selected schema.
+- Replay and stale tokens are rejected; undo restores wallet 100 and revokes access.
+- Manual and agent paths share the same command service.
+- The product clearly labels all commerce and access as a local simulation.
+
+## Demo path
+
+Inspect → search within 40 credits → compare → recommend MetroPulse → bid 20 for seven days → show 22-credit counteroffer → explicitly approve → commit → show unlocked schema and Activity → undo.
+
+## Links
+
+- Live app: https://kailmio.github.io/mission-deck-webmcp/
+- Repository: https://github.com/kailmio/mission-deck-webmcp
+- Walkthrough: https://kailmio.github.io/mission-deck-webmcp/video/signal-exchange-walkthrough.mp4
+
+## Honest scope
+
+The marketplace, sellers, credits, negotiation, and data access are deterministic local demo state. Real payments, identity, seller communication, and dataset delivery are intentionally outside the hackathon build.

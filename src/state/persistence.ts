@@ -1,27 +1,15 @@
-import type { ActivityEntry, AppState, BoardContent } from "../domain/types";
+import type { ActivityEntry, AppState, ExchangeContent } from "../domain/types";
 import type { AppStore } from "./store";
 import type { PersistedSlice } from "./reducer";
 
-const STORAGE_KEY = "mission-deck:v2";
-const STORAGE_VERSION = 2;
+const STORAGE_KEY = "signal-exchange:v1";
+const STORAGE_VERSION = 1;
+interface Envelope { version: number; exchange: AppState["exchange"]; undoExchange: ExchangeContent | null; history: ActivityEntry[] }
 
-interface Envelope {
-  version: number;
-  board: AppState["board"];
-  undoBoard: BoardContent | null;
-  history: ActivityEntry[];
-}
-
-function isBoardContent(value: unknown): value is BoardContent {
+function isExchangeContent(value: unknown): value is ExchangeContent {
   if (!value || typeof value !== "object") return false;
-  const candidate = value as Partial<BoardContent>;
-  return (
-    typeof candidate.missionId === "string" &&
-    (candidate.mode === "sample" || candidate.mode === "custom") &&
-    typeof candidate.goal === "string" &&
-    Array.isArray(candidate.cards) &&
-    (typeof candidate.focusedCardId === "string" || candidate.focusedCardId === null)
-  );
+  const candidate = value as Partial<ExchangeContent>;
+  return typeof candidate.exchangeId === "string" && typeof candidate.walletCredits === "number" && Boolean(candidate.brief) && Array.isArray(candidate.offers) && Array.isArray(candidate.access);
 }
 
 export function loadPersistedState(storage: Pick<Storage, "getItem"> = localStorage): PersistedSlice | null {
@@ -29,46 +17,19 @@ export function loadPersistedState(storage: Pick<Storage, "getItem"> = localStor
     const raw = storage.getItem(STORAGE_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw) as Partial<Envelope>;
-    if (
-      parsed.version !== STORAGE_VERSION ||
-      !parsed.board ||
-      typeof parsed.board.revision !== "number" ||
-      !isBoardContent(parsed.board.content) ||
-      !Array.isArray(parsed.history)
-    ) {
-      return null;
-    }
-    return {
-      board: parsed.board,
-      undoBoard: parsed.undoBoard && isBoardContent(parsed.undoBoard) ? parsed.undoBoard : null,
-      history: parsed.history.slice(-20),
-    };
-  } catch {
-    return null;
-  }
+    if (parsed.version !== STORAGE_VERSION || !parsed.exchange || typeof parsed.exchange.revision !== "number" || !isExchangeContent(parsed.exchange.content) || !Array.isArray(parsed.history)) return null;
+    return { exchange: parsed.exchange, undoExchange: parsed.undoExchange && isExchangeContent(parsed.undoExchange) ? parsed.undoExchange : null, history: parsed.history.slice(-20) };
+  } catch { return null; }
 }
 
 export function attachPersistence(store: AppStore, storage: Pick<Storage, "setItem"> = localStorage): () => void {
-  let lastRevision = store.getState().board.revision;
+  let lastRevision = store.getState().exchange.revision;
   return store.subscribe(() => {
     const state = store.getState();
-    if (state.board.revision === lastRevision) return;
-    lastRevision = state.board.revision;
-    try {
-      const envelope: Envelope = {
-        version: STORAGE_VERSION,
-        board: state.board,
-        undoBoard: state.undoBoard,
-        history: state.history.slice(-20),
-      };
-      storage.setItem(STORAGE_KEY, JSON.stringify(envelope));
-    } catch {
-      store.dispatch({
-        type: "SET_PERSISTENCE",
-        persistence: "unavailable",
-        notice: { tone: "error", text: "This session works, but committed changes cannot survive refresh." },
-      });
-    }
+    if (state.exchange.revision === lastRevision) return;
+    lastRevision = state.exchange.revision;
+    try { storage.setItem(STORAGE_KEY, JSON.stringify({ version: STORAGE_VERSION, exchange: state.exchange, undoExchange: state.undoExchange, history: state.history.slice(-20) } satisfies Envelope)); }
+    catch { store.dispatch({ type: "SET_PERSISTENCE", persistence: "unavailable", notice: { tone: "error", text: "This session works, but the committed rental cannot survive refresh." } }); }
   });
 }
 

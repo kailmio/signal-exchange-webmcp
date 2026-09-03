@@ -3,91 +3,12 @@ import { CommandService } from "../domain/commands";
 import { createInitialState } from "../state/reducer";
 import { createStore } from "../state/store";
 
-function harness(now = 1_000) {
-  const store = createStore(createInitialState());
-  let id = 0;
-  const service = new CommandService(store, { now: () => now, id: () => `id-${++id}` });
-  return { store, service };
-}
+function harness(now = 1_000) { const store = createStore(createInitialState()); let id = 0; return { store, service: new CommandService(store, { now: () => now, id: () => `id-${++id}` }) }; }
 
-describe("command safety", () => {
-  it("inspects without changing page state", () => {
-    const { store, service } = harness();
-    const before = store.getState();
-    const result = service.inspect("agent");
-    expect(result.ok).toBe(true);
-    expect(store.getState()).toBe(before);
-  });
-
-  it("previews without mutating, then commits exactly once", () => {
-    const { store, service } = harness();
-    const before = store.getState().board;
-    const preview = service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" }, "agent");
-    expect(preview.ok).toBe(true);
-    expect(store.getState().board).toEqual(before);
-    if (!preview.ok) return;
-    const committed = service.commitCardPlay(preview.data.token, "agent");
-    expect(committed.ok).toBe(true);
-    expect(store.getState().board.content.cards.filter((card) => card.kind === "action")).toHaveLength(4);
-    const replay = service.commitCardPlay(preview.data.token, "agent");
-    expect(replay.ok ? "" : replay.error.code).toBe("PREVIEW_NOT_FOUND");
-  });
-
-  it("rejects missing, mismatched, stale, and expired previews", () => {
-    const missing = harness().service.commitCardPlay("none");
-    expect(missing.ok ? "" : missing.error.code).toBe("PREVIEW_NOT_FOUND");
-
-    const mismatchHarness = harness();
-    mismatchHarness.service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" });
-    const mismatch = mismatchHarness.service.commitCardPlay("wrong");
-    expect(mismatch.ok ? "" : mismatch.error.code).toBe("PREVIEW_TOKEN_MISMATCH");
-
-    const staleHarness = harness();
-    staleHarness.service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" });
-    const stalePreview = staleHarness.store.getState().preview!;
-    staleHarness.store.dispatch({
-      type: "SET_PREVIEW",
-      preview: { ...stalePreview, baseRevision: stalePreview.baseRevision - 1 },
-      entry: staleHarness.store.getState().history.at(-1)!,
-    });
-    const stale = staleHarness.service.commitCardPlay(stalePreview.token);
-    expect(stale.ok ? "" : stale.error.code).toBe("PREVIEW_STALE");
-
-    const expiredHarness = harness(999_999);
-    expiredHarness.service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" });
-    const expiredPreview = expiredHarness.store.getState().preview!;
-    expiredHarness.store.dispatch({
-      type: "SET_PREVIEW",
-      preview: { ...expiredPreview, expiresAt: 0 },
-      entry: expiredHarness.store.getState().history.at(-1)!,
-    });
-    const expired = expiredHarness.service.commitCardPlay(expiredPreview.token);
-    expect(expired.ok ? "" : expired.error.code).toBe("PREVIEW_EXPIRED");
-  });
-
-  it("produces equivalent committed boards for manual and agent origins", () => {
-    const manual = harness();
-    const agent = harness();
-    const manualPreview = manual.service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" }, "manual");
-    const agentPreview = agent.service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" }, "agent");
-    if (!manualPreview.ok || !agentPreview.ok) throw new Error("previews should succeed");
-    manual.service.commitCardPlay(manualPreview.data.token, "manual");
-    agent.service.commitCardPlay(agentPreview.data.token, "agent");
-    expect(manual.store.getState().board).toEqual(agent.store.getState().board);
-  });
-
-  it("undoes one play and makes reset a new baseline", () => {
-    const { store, service } = harness();
-    const preview = service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" }, "manual");
-    if (!preview.ok) throw new Error("preview should succeed");
-    service.commitCardPlay(preview.data.token, "manual");
-    expect(store.getState().undoBoard).not.toBeNull();
-    expect(service.undoLastPlay("manual").ok).toBe(true);
-    expect(store.getState().undoBoard).toBeNull();
-    service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" }, "manual");
-    const token = store.getState().preview!.token;
-    service.commitCardPlay(token, "manual");
-    expect(service.loadDemoMission(true, "manual").ok).toBe(true);
-    expect(store.getState().undoBoard).toBeNull();
-  });
+describe("deal command safety", () => {
+  it("inspects without changing state", () => { const { store, service } = harness(); const before = store.getState(); expect(service.inspectExchange().ok).toBe(true); expect(store.getState()).toBe(before); });
+  it("searches, compares, and visibly recommends MetroPulse", () => { const { store, service } = harness(); expect(service.searchDataOffers({ query: "Sydney foot traffic", maxCredits: 40 }).ok).toBe(true); expect(service.compareDataOffers().ok).toBe(true); expect(store.getState().recommendation?.offerId).toBe("offer-metropulse"); expect(store.getState().history.at(-1)?.origin).toBe("agent"); });
+  it("requires visible human approval, then commits exactly once", () => { const { store, service } = harness(); const preview = service.previewDataDeal({ offerId: "offer-metropulse", bidCredits: 20, durationDays: 7 }, "agent"); expect(store.getState().exchange.content.walletCredits).toBe(100); if (!preview.ok) throw new Error("preview should succeed"); const blocked = service.commitDataDeal(preview.data.token, "agent"); expect(blocked.ok ? "" : blocked.error.code).toBe("HUMAN_APPROVAL_REQUIRED"); expect(store.getState().exchange.content.walletCredits).toBe(100); expect(service.approveVisibleDeal("manual").ok).toBe(true); expect(service.commitDataDeal(preview.data.token, "agent").ok).toBe(true); expect(store.getState().exchange.content.walletCredits).toBe(78); expect(store.getState().exchange.content.access).toHaveLength(1); const replay = service.commitDataDeal(preview.data.token); expect(replay.ok ? "" : replay.error.code).toBe("PREVIEW_NOT_FOUND"); });
+  it("rejects mismatched, stale, and expired tokens", () => { const mismatch = harness(); mismatch.service.previewDataDeal({ offerId: "offer-metropulse", bidCredits: 20, durationDays: 7 }); mismatch.service.approveVisibleDeal(); const mismatchResult = mismatch.service.commitDataDeal("wrong"); expect(mismatchResult.ok ? "" : mismatchResult.error.code).toBe("PREVIEW_TOKEN_MISMATCH"); const stale = harness(); stale.service.previewDataDeal({ offerId: "offer-metropulse", bidCredits: 20, durationDays: 7 }); const stalePreview = stale.store.getState().preview!; stale.store.dispatch({ type: "SET_PREVIEW", preview: { ...stalePreview, baseRevision: -1 }, entry: stale.store.getState().history.at(-1)! }); stale.service.approveVisibleDeal(); const staleResult = stale.service.commitDataDeal(stalePreview.token); expect(staleResult.ok ? "" : staleResult.error.code).toBe("PREVIEW_STALE"); const expired = harness(999_999); expired.service.previewDataDeal({ offerId: "offer-metropulse", bidCredits: 20, durationDays: 7 }); const expiredPreview = expired.store.getState().preview!; expired.store.dispatch({ type: "SET_PREVIEW", preview: { ...expiredPreview, expiresAt: 0 }, entry: expired.store.getState().history.at(-1)! }); expired.service.approveVisibleDeal(); const expiredResult = expired.service.commitDataDeal(expiredPreview.token); expect(expiredResult.ok ? "" : expiredResult.error.code).toBe("PREVIEW_EXPIRED"); });
+  it("keeps manual and agent commits identical and supports undo", () => { const manual = harness(); const agent = harness(); const a = manual.service.previewDataDeal({ offerId: "offer-metropulse", bidCredits: 20, durationDays: 7 }, "manual"); const b = agent.service.previewDataDeal({ offerId: "offer-metropulse", bidCredits: 20, durationDays: 7 }, "agent"); if (!a.ok || !b.ok) throw new Error("preview should succeed"); manual.service.approveVisibleDeal(); agent.service.approveVisibleDeal(); manual.service.commitDataDeal(a.data.token, "manual"); agent.service.commitDataDeal(b.data.token, "agent"); expect(manual.store.getState().exchange).toEqual(agent.store.getState().exchange); expect(manual.service.undoLastDeal("manual").ok).toBe(true); expect(manual.store.getState().exchange.content.walletCredits).toBe(100); expect(manual.store.getState().exchange.content.access).toHaveLength(0); });
 });

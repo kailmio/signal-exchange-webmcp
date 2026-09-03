@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Exchange — WebMCP Walkthrough</title>
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #040A10; }
+      #signal-exchange-walkthrough { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #040A10; }
+      .transition-cover { position: absolute; inset: 0; z-index: 100; pointer-events: none; background: #061019; opacity: 0; }
+      .transition-cover::before { content: ""; position: absolute; inset: 0; border-top: 4px solid #C99748; border-bottom: 4px solid #6BC8E8; }
+    </style>
+  </head>
+  <body>
+    <main id="signal-exchange-walkthrough" data-composition-id="signal-exchange-walkthrough" data-start="0" data-duration="65" data-width="1920" data-height="1080">
+      <div id="beat-slot-1" data-composition-id="beat-1-interface" data-composition-src="compositions/beat-1-interface.html" data-start="0" data-duration="13" data-track-index="1"></div>
+      <div id="beat-slot-2" data-composition-id="beat-2-compare" data-composition-src="compositions/beat-2-compare.html" data-start="13" data-duration="16" data-track-index="1"></div>
+      <div id="beat-slot-3" data-composition-id="beat-3-approval" data-composition-src="compositions/beat-3-approval.html" data-start="29" data-duration="23" data-track-index="1"></div>
+      <div id="beat-slot-4" data-composition-id="beat-4-thesis" data-composition-src="compositions/beat-4-thesis.html" data-start="52" data-duration="13" data-track-index="1"></div>
+      <div id="transition-1" class="transition-cover" data-layout-ignore></div>
+      <div id="transition-2" class="transition-cover" data-layout-ignore></div>
+      <div id="transition-3" class="transition-cover" data-layout-ignore></div>
+    </main>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const master = gsap.timeline({ paused: true });
+      [13, 29, 52].forEach(function (boundary, index) {
+        const cover = "#transition-" + (index + 1);
+        master.fromTo(cover, { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.18, ease: "power3.in" }, boundary - 0.18);
+        master.to(cover, { opacity: 0, scaleX: 1, duration: 0.28, ease: "power2.out" }, boundary);
+        master.set(cover, { opacity: 0, scaleX: 0 }, boundary + 0.29);
+      });
+      window.__timelines["signal-exchange-walkthrough"] = master;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,815 @@
+<template id="beat-1-interface-template">
+  <div
+    data-composition-id="beat-1-interface"
+    data-start="0"
+    data-duration="13"
+    data-width="1920"
+    data-height="1080"
+  >
+    <div class="scene-shell">
+      <div class="bg-grid" aria-hidden="true"></div>
+      <div class="bg-glow bg-glow-cyan" aria-hidden="true" data-layout-ignore></div>
+      <div class="bg-glow bg-glow-brass" aria-hidden="true" data-layout-ignore></div>
+
+      <div class="scene-content">
+        <section class="message-column" aria-label="The missing interface">
+          <div class="brand-lockup">
+            <span class="brand-mark">
+              <img
+                src="capture/assets/svgs/logo-2685cc99.svg"
+                alt=""
+                crossorigin="anonymous"
+              />
+            </span>
+            <span class="brand-name">SIGNAL EXCHANGE</span>
+            <span class="brand-rule" aria-hidden="true"></span>
+          </div>
+
+          <p class="eyebrow">WEBMCP WALKTHROUGH · 01</p>
+
+          <h1 class="question" aria-label="Your agent can research the web. But can it make a real deal?">
+            <span class="q-word">Your</span>
+            <span class="q-word q-agent">agent</span>
+            <span class="q-word">can</span>
+            <span class="q-word">research</span>
+            <span class="q-word">the</span>
+            <span class="q-word">web.</span>
+            <span class="q-word q-turn">But</span>
+            <span class="q-word">can</span>
+            <span class="q-word">it</span>
+            <span class="q-word q-accent">make</span>
+            <span class="q-word q-accent">a</span>
+            <span class="q-word q-accent">real</span>
+            <span class="q-word q-accent">deal?</span>
+          </h1>
+
+          <div class="thesis-block">
+            <div class="thesis-rule" aria-hidden="true"></div>
+            <p class="thesis">Research is not procurement.</p>
+            <p class="thesis-detail">
+              Signal Exchange lets an agent inspect, compare, and negotiate — while the person keeps the final approval.
+            </p>
+          </div>
+
+          <div class="human-ledger" aria-label="Human constraints">
+            <div class="ledger-title">HUMAN CONSTRAINTS</div>
+            <div class="ledger-row">
+              <span class="ledger-index">01</span>
+              <span class="ledger-label">GOAL</span>
+              <span class="ledger-value">Weekend pop-up</span>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-index">02</span>
+              <span class="ledger-label">LIMIT</span>
+              <span class="ledger-value data-value">40 credits</span>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-index">03</span>
+              <span class="ledger-label">APPROVAL</span>
+              <span class="ledger-value approval-value">Required</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="product-column" aria-label="Signal Exchange marketplace interface">
+          <div class="market-label">
+            <span class="market-status-dot" aria-hidden="true"></span>
+            <span>LIVE PRODUCT · LOCAL SIMULATION</span>
+          </div>
+
+          <div class="device-stage" data-layout-allow-overflow>
+            <div class="device-offset" aria-hidden="true"></div>
+            <div class="device-frame">
+              <div class="device-topline">
+                <span>AGENT-READY MARKET</span>
+                <span class="device-tool">inspect_exchange</span>
+              </div>
+              <div class="screen-mask">
+                <img
+                  class="product-capture"
+                  src="capture/screenshots/scroll-000.png"
+                  alt="Signal Exchange data marketplace showing three Sydney foot-traffic offers and a human approval sidebar"
+                  crossorigin="anonymous"
+                />
+              </div>
+              <div class="device-footer">
+                <span>3 VERIFIED OFFERS</span>
+                <span class="device-footer-center">CONSENT BUILT INTO THE PAGE</span>
+                <span>WEBMCP READY</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="market-proof">
+            <span class="proof-kicker">THE INTERFACE ADDS</span>
+            <span class="proof-item"><b>01</b> a market</span>
+            <span class="proof-item"><b>02</b> a budget</span>
+            <span class="proof-item"><b>03</b> an approval boundary</span>
+          </div>
+        </section>
+      </div>
+
+      <svg class="agent-path" viewBox="0 0 1920 1080" aria-hidden="true">
+        <path class="agent-path-line" d="M 410 388 C 650 388, 716 486, 918 486 S 1162 436, 1328 436" />
+        <circle class="path-origin" cx="410" cy="388" r="7" />
+        <circle class="path-target" cx="1328" cy="436" r="9" />
+      </svg>
+
+      <div class="transition-bar" aria-hidden="true" data-layout-ignore></div>
+    </div>
+
+    <style>
+      [data-composition-id="beat-1-interface"] {
+        --canvas: #040a10;
+        --header: #061019;
+        --raised: #10202a;
+        --text: #f0e7d5;
+        --muted: #a99f91;
+        --brass: #c99748;
+        --bright-brass: #efc46d;
+        --cyan: #6bc8e8;
+        --green: #65d49a;
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        color: var(--text);
+        background: var(--canvas);
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+      }
+
+      [data-composition-id="beat-1-interface"] *,
+      [data-composition-id="beat-1-interface"] *::before,
+      [data-composition-id="beat-1-interface"] *::after {
+        box-sizing: border-box;
+      }
+
+      [data-composition-id="beat-1-interface"] .scene-shell {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: var(--canvas);
+      }
+
+      [data-composition-id="beat-1-interface"] .bg-grid {
+        position: absolute;
+        inset: 0;
+        opacity: 0.42;
+        background-image:
+          linear-gradient(rgba(107, 200, 232, 0.065) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(107, 200, 232, 0.065) 1px, transparent 1px);
+        background-size: 74px 74px;
+        mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.76) 70%, transparent 100%);
+      }
+
+      [data-composition-id="beat-1-interface"] .bg-glow {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        filter: blur(1px);
+      }
+
+      [data-composition-id="beat-1-interface"] .bg-glow-cyan {
+        width: 980px;
+        height: 760px;
+        right: -180px;
+        top: 40px;
+        background: radial-gradient(circle, rgba(107, 200, 232, 0.13) 0%, rgba(107, 200, 232, 0.035) 48%, transparent 72%);
+      }
+
+      [data-composition-id="beat-1-interface"] .bg-glow-brass {
+        width: 720px;
+        height: 620px;
+        left: -280px;
+        bottom: -250px;
+        background: radial-gradient(circle, rgba(201, 151, 72, 0.12) 0%, transparent 70%);
+      }
+
+      [data-composition-id="beat-1-interface"] .scene-content {
+        position: relative;
+        z-index: 3;
+        display: grid;
+        grid-template-columns: minmax(0, 0.79fr) minmax(0, 1.21fr);
+        align-items: stretch;
+        width: 100%;
+        height: 100%;
+        padding: 66px 70px 62px;
+        gap: 38px;
+        box-sizing: border-box;
+      }
+
+      [data-composition-id="beat-1-interface"] .message-column,
+      [data-composition-id="beat-1-interface"] .product-column {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        height: 100%;
+      }
+
+      [data-composition-id="beat-1-interface"] .message-column {
+        z-index: 6;
+        padding-right: 8px;
+      }
+
+      [data-composition-id="beat-1-interface"] .brand-lockup {
+        display: flex;
+        align-items: center;
+        gap: 17px;
+        min-height: 56px;
+      }
+
+      [data-composition-id="beat-1-interface"] .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 54px;
+        height: 54px;
+        color: var(--bright-brass);
+        border: 1px solid rgba(239, 196, 109, 0.82);
+        background: rgba(6, 16, 25, 0.94);
+        box-shadow: 8px 8px 0 rgba(201, 151, 72, 0.13);
+      }
+
+      [data-composition-id="beat-1-interface"] .brand-mark img {
+        width: 34px;
+        height: 34px;
+        filter: invert(81%) sepia(63%) saturate(580%) hue-rotate(350deg) brightness(102%) contrast(88%);
+      }
+
+      [data-composition-id="beat-1-interface"] .brand-name {
+        color: var(--bright-brass);
+        font-family: "Courier New", monospace;
+        font-size: 21px;
+        font-weight: 700;
+        letter-spacing: 0.17em;
+      }
+
+      [data-composition-id="beat-1-interface"] .brand-rule {
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(201, 151, 72, 0.8), transparent);
+        transform-origin: left center;
+      }
+
+      [data-composition-id="beat-1-interface"] .eyebrow {
+        margin: 76px 0 18px;
+        color: var(--cyan);
+        font-family: "Courier New", monospace;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+      }
+
+      [data-composition-id="beat-1-interface"] .question {
+        display: block;
+        max-width: 750px;
+        margin: 0;
+        color: var(--text);
+        font-family: Georgia, serif;
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 1.01;
+        letter-spacing: -0.035em;
+      }
+
+      [data-composition-id="beat-1-interface"] .q-word {
+        display: inline-block;
+        margin-right: 0.11em;
+        transform-origin: left center;
+      }
+
+      [data-composition-id="beat-1-interface"] .q-turn {
+        margin-left: 0.14em;
+      }
+
+      [data-composition-id="beat-1-interface"] .q-agent {
+        color: var(--cyan);
+      }
+
+      [data-composition-id="beat-1-interface"] .q-accent {
+        color: var(--bright-brass);
+      }
+
+      [data-composition-id="beat-1-interface"] .thesis-block {
+        display: grid;
+        grid-template-columns: 5px 1fr;
+        column-gap: 18px;
+        margin-top: 28px;
+        max-width: 700px;
+      }
+
+      [data-composition-id="beat-1-interface"] .thesis-rule {
+        grid-row: 1 / span 2;
+        width: 5px;
+        height: 100%;
+        min-height: 92px;
+        background: var(--brass);
+        transform-origin: top center;
+      }
+
+      [data-composition-id="beat-1-interface"] .thesis {
+        margin: 0 0 7px;
+        color: var(--text);
+        font-family: Georgia, serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      [data-composition-id="beat-1-interface"] .thesis-detail {
+        margin: 0;
+        max-width: 640px;
+        color: #c9c0b2;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 1.43;
+      }
+
+      [data-composition-id="beat-1-interface"] .human-ledger {
+        width: 100%;
+        max-width: 704px;
+        margin-top: auto;
+        border-top: 1px solid rgba(201, 151, 72, 0.72);
+        border-bottom: 1px solid rgba(201, 151, 72, 0.34);
+        background: rgba(6, 16, 25, 0.78);
+      }
+
+      [data-composition-id="beat-1-interface"] .ledger-title {
+        padding: 13px 16px 10px;
+        color: var(--muted);
+        border-bottom: 1px solid rgba(169, 159, 145, 0.22);
+        font-family: "Courier New", monospace;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+      }
+
+      [data-composition-id="beat-1-interface"] .ledger-row {
+        display: grid;
+        grid-template-columns: 48px 142px 1fr;
+        align-items: center;
+        min-height: 50px;
+        padding: 0 16px;
+        border-bottom: 1px solid rgba(169, 159, 145, 0.14);
+      }
+
+      [data-composition-id="beat-1-interface"] .ledger-row:last-child {
+        border-bottom: 0;
+      }
+
+      [data-composition-id="beat-1-interface"] .ledger-index,
+      [data-composition-id="beat-1-interface"] .ledger-label {
+        color: var(--muted);
+        font-family: "Courier New", monospace;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      [data-composition-id="beat-1-interface"] .ledger-index {
+        color: var(--brass);
+      }
+
+      [data-composition-id="beat-1-interface"] .ledger-value {
+        justify-self: end;
+        color: var(--text);
+        font-family: Georgia, serif;
+        font-size: 23px;
+        font-weight: 700;
+      }
+
+      [data-composition-id="beat-1-interface"] .data-value {
+        font-family: "Courier New", monospace;
+        font-variant-numeric: tabular-nums;
+      }
+
+      [data-composition-id="beat-1-interface"] .approval-value {
+        color: var(--bright-brass);
+      }
+
+      [data-composition-id="beat-1-interface"] .product-column {
+        z-index: 4;
+        align-items: stretch;
+        justify-content: center;
+        perspective: 1500px;
+      }
+
+      [data-composition-id="beat-1-interface"] .market-label {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        margin: 18px 0 18px 18px;
+        color: var(--green);
+        font-family: "Courier New", monospace;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+      }
+
+      [data-composition-id="beat-1-interface"] .market-status-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 20px rgba(101, 212, 154, 0.72);
+      }
+
+      [data-composition-id="beat-1-interface"] .device-stage {
+        position: relative;
+        width: 100%;
+        max-width: 1110px;
+        margin: 0 auto;
+        transform: rotateY(-5.5deg) rotateX(1.3deg);
+        transform-style: preserve-3d;
+      }
+
+      [data-composition-id="beat-1-interface"] .device-offset {
+        position: absolute;
+        inset: 18px -17px -18px 17px;
+        border: 1px solid rgba(107, 200, 232, 0.28);
+        background: rgba(16, 32, 42, 0.46);
+        transform: translateZ(-22px);
+      }
+
+      [data-composition-id="beat-1-interface"] .device-frame {
+        position: relative;
+        width: 100%;
+        padding: 13px 13px 0;
+        border: 1px solid rgba(239, 196, 109, 0.88);
+        background: var(--header);
+        box-shadow:
+          0 0 0 1px rgba(4, 10, 16, 0.8),
+          0 0 58px rgba(107, 200, 232, 0.12),
+          24px 34px 0 rgba(0, 0, 0, 0.22);
+        transform-origin: center center;
+        transform-style: preserve-3d;
+      }
+
+      [data-composition-id="beat-1-interface"] .device-topline,
+      [data-composition-id="beat-1-interface"] .device-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 38px;
+        color: var(--muted);
+        font-family: "Courier New", monospace;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+      }
+
+      [data-composition-id="beat-1-interface"] .device-topline {
+        padding: 0 4px 10px;
+      }
+
+      [data-composition-id="beat-1-interface"] .device-tool {
+        color: var(--cyan);
+        letter-spacing: 0;
+      }
+
+      [data-composition-id="beat-1-interface"] .screen-mask {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border: 1px solid rgba(107, 200, 232, 0.32);
+        background: var(--canvas);
+      }
+
+      [data-composition-id="beat-1-interface"] .screen-mask::after {
+        position: absolute;
+        inset: 0;
+        content: "";
+        pointer-events: none;
+        background:
+          linear-gradient(115deg, rgba(255, 255, 255, 0.055), transparent 22%),
+          linear-gradient(90deg, transparent 72%, rgba(107, 200, 232, 0.035));
+      }
+
+      [data-composition-id="beat-1-interface"] .product-capture {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform-origin: 60% 42%;
+      }
+
+      [data-composition-id="beat-1-interface"] .device-footer {
+        min-height: 48px;
+        padding: 0 4px;
+        color: #bfb5a7;
+      }
+
+      [data-composition-id="beat-1-interface"] .device-footer-center {
+        color: var(--bright-brass);
+      }
+
+      [data-composition-id="beat-1-interface"] .market-proof {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1fr 1.75fr;
+        align-items: center;
+        gap: 0;
+        margin: 34px 20px 0;
+        border-top: 1px solid rgba(201, 151, 72, 0.45);
+        border-bottom: 1px solid rgba(201, 151, 72, 0.24);
+        background: rgba(6, 16, 25, 0.74);
+      }
+
+      [data-composition-id="beat-1-interface"] .market-proof > span {
+        display: flex;
+        align-items: center;
+        min-height: 54px;
+        padding: 0 13px;
+        border-right: 1px solid rgba(169, 159, 145, 0.18);
+        color: #d8cec0;
+        font-size: 17px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      [data-composition-id="beat-1-interface"] .market-proof > span:last-child {
+        border-right: 0;
+      }
+
+      [data-composition-id="beat-1-interface"] .proof-kicker {
+        color: var(--muted) !important;
+        font-family: "Courier New", monospace;
+        font-size: 16px !important;
+        letter-spacing: 0.08em;
+      }
+
+      [data-composition-id="beat-1-interface"] .proof-item b {
+        margin-right: 8px;
+        color: var(--cyan);
+        font-family: "Courier New", monospace;
+        font-size: 16px;
+        font-variant-numeric: tabular-nums;
+      }
+
+      [data-composition-id="beat-1-interface"] .agent-path {
+        position: absolute;
+        z-index: 5;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        pointer-events: none;
+      }
+
+      [data-composition-id="beat-1-interface"] .agent-path-line {
+        fill: none;
+        stroke: var(--cyan);
+        stroke-width: 2;
+        stroke-dasharray: 10 12;
+        opacity: 0.64;
+      }
+
+      [data-composition-id="beat-1-interface"] .path-origin {
+        fill: var(--cyan);
+        stroke: var(--canvas);
+        stroke-width: 4;
+      }
+
+      [data-composition-id="beat-1-interface"] .path-target {
+        fill: var(--canvas);
+        stroke: var(--bright-brass);
+        stroke-width: 4;
+      }
+
+      [data-composition-id="beat-1-interface"] .transition-bar {
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        right: -120px;
+        width: 120px;
+        height: 100%;
+        background: var(--bright-brass);
+        box-shadow: -12px 0 36px rgba(239, 196, 109, 0.28);
+      }
+    </style>
+
+    <script src="vendor/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      const beat1 = gsap.timeline({ paused: true });
+      const wordDistances = [-92, -78, -66, -54, -46, -40, -82, -66, -54, -44, -38, -32, -26];
+      const wordEases = [
+        'expo.out', 'power4.out', 'back.out(1.25)', 'circ.out', 'power3.out',
+        'sine.out', 'power2.out', 'back.out(1.1)', 'power1.out', 'expo.out',
+        'circ.out', 'power4.out', 'power3.out'
+      ];
+      const questionWords = gsap.utils.toArray('[data-composition-id="beat-1-interface"] .q-word');
+
+      beat1.from('[data-composition-id="beat-1-interface"] .bg-grid', {
+        opacity: 0,
+        duration: 1.15,
+        ease: 'sine.out'
+      }, 0.1);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .bg-glow-cyan', {
+        opacity: 0,
+        scale: 0.72,
+        duration: 1.55,
+        ease: 'power1.out'
+      }, 0.14);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .bg-glow-brass', {
+        opacity: 0,
+        scale: 0.82,
+        duration: 1.25,
+        ease: 'sine.out'
+      }, 0.22);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .device-stage', {
+        x: 286,
+        rotationY: -14,
+        opacity: 0,
+        duration: 1.05,
+        ease: 'expo.out'
+      }, 0.18);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .device-offset', {
+        x: 34,
+        y: 24,
+        opacity: 0,
+        duration: 0.72,
+        ease: 'power3.out'
+      }, 0.55);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .device-frame', {
+        scale: 0.965,
+        opacity: 0,
+        duration: 0.82,
+        ease: 'back.out(1.16)'
+      }, 0.42);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .market-label', {
+        x: 48,
+        opacity: 0,
+        duration: 0.46,
+        ease: 'power4.out'
+      }, 0.74);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .market-status-dot', {
+        scale: 0,
+        duration: 0.31,
+        ease: 'back.out(2.3)'
+      }, 0.92);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .brand-mark', {
+        scale: 1.52,
+        rotation: -24,
+        opacity: 0,
+        duration: 0.52,
+        ease: 'back.out(1.8)'
+      }, 0.28);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .brand-name', {
+        x: -36,
+        opacity: 0,
+        duration: 0.55,
+        ease: 'expo.out'
+      }, 0.43);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .brand-rule', {
+        scaleX: 0,
+        duration: 0.82,
+        ease: 'circ.out'
+      }, 0.62);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .eyebrow', {
+        y: -24,
+        opacity: 0,
+        duration: 0.48,
+        ease: 'power2.out'
+      }, 0.84);
+
+      questionWords.forEach((word, index) => {
+        beat1.from(word, {
+          x: wordDistances[index],
+          opacity: 0,
+          scale: index > 8 ? 1.16 : 1.08,
+          duration: 0.33 + (index * 0.018),
+          ease: wordEases[index]
+        }, 1.08 + (index * 0.075));
+      });
+
+      beat1.from('[data-composition-id="beat-1-interface"] .agent-path-line', {
+        strokeDashoffset: 1320,
+        strokeDasharray: 1320,
+        duration: 1.18,
+        ease: 'power2.inOut'
+      }, 2.18);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .path-origin', {
+        scale: 0,
+        transformOrigin: 'center center',
+        duration: 0.28,
+        ease: 'back.out(2.2)'
+      }, 2.12);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .path-target', {
+        scale: 0,
+        transformOrigin: 'center center',
+        duration: 0.36,
+        ease: 'back.out(2)'
+      }, 3.22);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .thesis-rule', {
+        scaleY: 0,
+        duration: 0.44,
+        ease: 'circ.out'
+      }, 3.28);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .thesis', {
+        x: -42,
+        opacity: 0,
+        duration: 0.58,
+        ease: 'expo.out'
+      }, 3.42);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .thesis-detail', {
+        y: 30,
+        opacity: 0,
+        duration: 0.66,
+        ease: 'power3.out'
+      }, 3.65);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .ledger-title', {
+        x: -34,
+        opacity: 0,
+        duration: 0.4,
+        ease: 'power4.out'
+      }, 4.16);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .ledger-row', {
+        x: (index) => -54 + (index * 14),
+        opacity: 0,
+        duration: 0.54,
+        stagger: 0.13,
+        ease: 'expo.out'
+      }, 4.34);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .market-proof', {
+        scaleX: 0.84,
+        opacity: 0,
+        transformOrigin: 'left center',
+        duration: 0.58,
+        ease: 'power3.out'
+      }, 5.05);
+
+      beat1.from('[data-composition-id="beat-1-interface"] .market-proof > span', {
+        y: 20,
+        opacity: 0,
+        duration: 0.38,
+        stagger: 0.09,
+        ease: 'circ.out'
+      }, 5.28);
+
+      beat1.to('[data-composition-id="beat-1-interface"] .product-capture', {
+        scale: 1.025,
+        x: -8,
+        duration: 9.7,
+        ease: 'sine.inOut'
+      }, 1.85);
+
+      beat1.to('[data-composition-id="beat-1-interface"] .market-status-dot', {
+        scale: 1.55,
+        opacity: 0.62,
+        duration: 0.72,
+        repeat: 5,
+        yoyo: true,
+        ease: 'sine.inOut'
+      }, 6.15);
+
+      beat1.to('[data-composition-id="beat-1-interface"] .path-target', {
+        scale: 1.72,
+        opacity: 0.58,
+        transformOrigin: 'center center',
+        duration: 0.6,
+        repeat: 3,
+        yoyo: true,
+        ease: 'sine.inOut'
+      }, 7.05);
+
+      beat1.to('[data-composition-id="beat-1-interface"] .transition-bar', {
+        x: -120,
+        duration: 0.4,
+        ease: 'power4.in'
+      }, 12.52);
+
+      beat1.to('[data-composition-id="beat-1-interface"] .scene-content, [data-composition-id="beat-1-interface"] .agent-path', {
+        x: -132,
+        opacity: 0.3,
+        filter: 'blur(12px)',
+        duration: 0.4,
+        ease: 'power3.in'
+      }, 12.54);
+
+      window.__timelines['beat-1-interface'] = beat1;
+    </script>
+  </div>
+</template>

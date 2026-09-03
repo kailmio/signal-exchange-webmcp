@@ -1,13 +1,19 @@
-# Mission Deck Build Checklist
+# Signal Exchange Build Checklist
 
-- [x] Remove the third power from types, transforms, schemas, icons, persistence, tests, and UI.
-- [x] Keep Forge deterministic, preview-safe, and target-aware.
-- [x] Keep Focus deterministic, preview-safe, and action-aware.
-- [x] Make recommendations progress from Forge to Focus and back to Forge when more ideas remain.
-- [x] Restyle the complete board as a dramatic arcane fantasy tabletop.
-- [x] Preserve six WebMCP tools and manual/agent command parity.
-- [x] Pass 13 Vitest checks and the strict production build.
-- [x] Verify the real WebMCP loop in the in-app browser.
-- [x] Verify 1280×800 and 360×800 rendering.
-- [x] Recut the judge video from the current two-power build.
-- [x] Deploy the frozen two-power release to GitHub Pages.
+- [x] Lock one real audience, decision, budget, and rental scenario.
+- [x] Present three differentiated agent-ready data offers.
+- [x] Implement shared typed state and deterministic market logic.
+- [x] Register seven meaningful WebMCP tools with bounded schemas.
+- [x] Keep inspection side-effect-free and tool annotations truthful.
+- [x] Separate negotiation preview from approval-bound commit.
+- [x] Bind commits to a visible one-time token, revision, and expiry.
+- [x] Enforce listing, duration, buyer budget, wallet, existing-access, and replay errors.
+- [x] Attribute agent and manual activity visibly.
+- [x] Provide one-level undo and confirmation-safe reset.
+- [x] Persist committed state but never restore pending approval.
+- [x] Build an honest manual fallback.
+- [x] Verify unit/integration tests and production build.
+- [x] Verify 1280×800 and 360×800 layouts.
+- [ ] Deploy the pivot and smoke-test the public URL.
+- [x] Validate the Signal Exchange walkthrough video and wire its deterministic deployment render.
+- [x] Add final app and video verification evidence to build notes.

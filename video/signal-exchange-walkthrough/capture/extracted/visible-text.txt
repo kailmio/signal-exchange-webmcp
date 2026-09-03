@@ -1,0 +1,89 @@
+[span] Signal Exchange
+[div] Manual demo mode
+[strong] 100
+[span] credits
+[button] Compare offers
+[button] Reset
+[span] Data marketplace
+[h1] Find trusted data. Let your agent negotiate.
+[p] Set the goal and budget. Your agent compares provenance metadata, licensing, and price before you approve the deal.
+[h2] Market offers · Sydney foot-traffic data
+[span] compatible offers
+[strong] MetroPulse Foot Traffic
+[small] CitySignal
+[span] verified
+[p] Hourly pedestrian counts near Sydney retail, transit, and public spaces.
+[small] Trust
+[span] Excellent
+[small] Freshness
+[strong] 2 hours ago
+[span] Greater Sydney · 184 zones
+[small] Formats
+[strong] JSON · CSV · Parquet
+[span] 12,480
+[span] rows
+[small] 7-day rental
+[span] credits
+[em] Selected
+[strong] VenueLens Weekend Demand
+[small] VenueLens
+[span] verified
+[p] Weekend foot traffic and dwell-time signals around venues and entertainment precincts.
+[small] Trust
+[span] Excellent
+[small] Freshness
+[strong] 18 hours ago
+[span] Sydney CBD · 76 venues
+[small] Formats
+[strong] JSON · CSV
+[span] 8,420
+[span] rows
+[small] 7-day rental
+[span] credits
+[em] View deal
+[strong] RetailFlow Monthly Archive
+[small] RetailFlow
+[span] verified
+[p] Monthly retail-category footfall for historical trend and location comparisons.
+[small] Trust
+[span] Excellent
+[small] Freshness
+[strong] 6 days ago
+[span] NSW metro · 320 zones
+[small] Formats
+[strong] CSV · Parquet
+[span] 48,600
+[span] rows
+[small] 7-day rental
+[span] credits
+[em] View deal
+[strong] Provenance metadata
+[small] Seller-provided trust signals
+[strong] Clear licenses
+[small] Usage terms before purchase
+[strong] Machine-ready
+[small] JSON, CSV, and Parquet
+[h2] Activity
+[strong] Waiting for your agent
+[p] Goal and budget are set
+[small] Ready
+[strong] Marketplace ready
+[p] 3 verified data offers
+[small] Ready
+[h2] Goal & budget
+[dt] Goal
+[dd] Choose a Sydney location for a weekend pop-up
+[dt] Budget
+[dd] Up to
+[dd] credits
+[dt] Duration
+[dd] days
+[dt] Available
+[dd] 100
+[dd] credits
+[small] Review recommendation
+[strong] MetroPulse Foot Traffic
+[span] CitySignal
+[span] credits listed
+[button] Negotiate rental
+[p] Your agent can negotiate. You approve the deal.
