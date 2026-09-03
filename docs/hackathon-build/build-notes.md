@@ -116,3 +116,22 @@
 - Emulated `prefers-reduced-motion: reduce`; interactive transition and animation durations resolve to 0.01ms while controls remain usable.
 - Browser console inspection returned no warnings or errors after the keyboard and responsive paths.
 - Inspected the accepted ready-state concept and the final 1280×800 implementation screenshot together. The fidelity ledger records seven comparison points, the copy diff, intentional viewport adaptation, and the resolved fallback-label overlap.
+
+## Build checkpoint 4 — Frozen public release
+
+- Recovery commit `5837a1f0b2bf27222f395b5a39418859d33c4c87` passed 11 Vitest tests and the strict TypeScript/Vite production build in GitHub Actions run `33730207725`.
+- GitHub Pages deployed the passing artifact to `https://kailmio.github.io/mission-deck-webmcp/`; the returned stylesheet fingerprint `index-FaHiGzsE.css` confirms the polished build is live.
+- On the frozen HTTPS release, the in-app browser discovered all six page-defined tools and reported `Agent ready`.
+- Repeated the complete public WebMCP path: reset → inspect → recommend Forge → Forge preview/commit → Focus preview/commit → Wild preview/commit → replay rejection → refresh → undo → reset.
+- Refresh restored committed revision 6 with focused and forged state while discarding the preview; undo advanced to revision 7; reset advanced to revision 8 and a following undo returned `NOTHING_TO_UNDO` without mutation.
+- A replay of the consumed Wild token returned `PREVIEW_NOT_FOUND` and left the committed board intact. Automated tests separately cover stale, expired, missing, and mismatched guards.
+- Final public app URL: `https://kailmio.github.io/mission-deck-webmcp/`. Public repository: `https://github.com/kailmio/mission-deck-webmcp`.
+
+## Build checkpoint 5 — Video and submission handoff
+
+- Produced a self-contained 60.5-second HyperFrames judge demo from the frozen public deployment, with six timed beats covering the hook, tool discovery, exact preview/approval, Focus, bounded Wild surprise, commit history, undo, and the closing thesis.
+- Recorded original `af_nova` narration at a measured pace, aligned it to the scene, and preserved the editable script, storyboard, composition sources, captured site assets, and deterministic transcript timing alongside the render.
+- HyperFrames validation reports zero runtime, layout, motion, or contrast errors; all 65 sampled text pairs pass contrast. The remaining lint warning is non-blocking and concerns the readable size of the standalone Wild composition.
+- Inspected every selected 1920×1080 hero frame, including a clean final Focus count at 29.1 seconds. The render is H.264 video plus stereo AAC audio at 30fps, 60.500 seconds, 17,600,923 bytes, and decodes end to end without ffmpeg errors.
+- Re-ran the application release checks after video production: all 11 Vitest tests pass and the strict TypeScript/Vite build succeeds.
+- Build checklist item 12 is complete. The editable Studio preview is available locally at `http://localhost:3017/#project/mission-deck-demo`; the rendered artifact is `video/mission-deck-demo/renders/mission-deck-demo.mp4`.

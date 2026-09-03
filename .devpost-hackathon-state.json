@@ -9,14 +9,14 @@
     "source": "known"
   },
   "participant": {
-    "name": "",
+    "name": "Mission Deck",
     "display_name": "Yanghua Liu"
   },
   "project": {
     "name": "",
     "summary": "A polished self-contained planning web app where people manipulate a visible card deck and an agent uses WebMCP to inspect the board, recommend cards, and—with human control—play structured powers, including a bounded-surprise Wild Card.",
-    "ai_usage": "",
-    "codex_usage": ""
+    "ai_usage": "Codex was the primary coding agent for product shaping, implementation, testing, deployment, visual QA, and video production. Hermes Agent independently reviewed the PRD. Image generation produced original concept references. The shipped application contains original code and deterministic local logic; it calls no model API.",
+    "codex_usage": "Codex implemented the React and TypeScript application, the six WebMCP tools, preview-safe command flow, tests, GitHub Pages release, accessibility and responsive QA, and the narrated HyperFrames demo."
   },
   "current_stage": "resources",
   "completed_stages": [
@@ -26,14 +26,15 @@
   ],
   "rules_acknowledged": true,
   "learning": {
-    "status": "active",
+    "status": "completed",
     "current_step": "build",
     "completed_steps": [
       "onboard",
       "scope",
       "prd",
       "spec",
-      "checklist"
+      "checklist",
+      "build"
     ],
     "plan_file": "docs/hackathon-build/scope.md",
     "checklist_file": "docs/hackathon-build/checklist.md"
@@ -42,5 +43,5 @@
     "draft_file": "devpost-submission.md",
     "status": "not-started"
   },
-  "next_command": "build-project"
+  "next_command": "prepare-submission"
 }

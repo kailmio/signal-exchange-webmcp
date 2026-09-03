@@ -1,0 +1,767 @@
+[
+  {
+    "text": "Agent",
+    "start": 0.18,
+    "end": 0.703
+  },
+  {
+    "text": "actions",
+    "start": 0.703,
+    "end": 1.436
+  },
+  {
+    "text": "are",
+    "start": 1.436,
+    "end": 1.75
+  },
+  {
+    "text": "powerful.",
+    "start": 1.75,
+    "end": 2.588
+  },
+  {
+    "text": "But",
+    "start": 2.588,
+    "end": 2.902
+  },
+  {
+    "text": "on",
+    "start": 2.902,
+    "end": 3.112
+  },
+  {
+    "text": "most",
+    "start": 3.112,
+    "end": 3.53
+  },
+  {
+    "text": "websites,",
+    "start": 3.53,
+    "end": 4.368
+  },
+  {
+    "text": "they",
+    "start": 4.368,
+    "end": 4.787
+  },
+  {
+    "text": "disappear",
+    "start": 4.787,
+    "end": 5.729
+  },
+  {
+    "text": "behind",
+    "start": 5.729,
+    "end": 6.357
+  },
+  {
+    "text": "the",
+    "start": 6.357,
+    "end": 6.671
+  },
+  {
+    "text": "chat.",
+    "start": 6.671,
+    "end": 7.09
+  },
+  {
+    "text": "Mission",
+    "start": 7.09,
+    "end": 7.449
+  },
+  {
+    "text": "Deck",
+    "start": 7.449,
+    "end": 7.654
+  },
+  {
+    "text": "makes",
+    "start": 7.654,
+    "end": 7.91
+  },
+  {
+    "text": "every",
+    "start": 7.91,
+    "end": 8.166
+  },
+  {
+    "text": "action",
+    "start": 8.166,
+    "end": 8.474
+  },
+  {
+    "text": "visible.",
+    "start": 8.474,
+    "end": 8.833
+  },
+  {
+    "text": "Through",
+    "start": 8.833,
+    "end": 9.192
+  },
+  {
+    "text": "Web",
+    "start": 9.192,
+    "end": 9.345
+  },
+  {
+    "text": "M",
+    "start": 9.345,
+    "end": 9.397
+  },
+  {
+    "text": "C",
+    "start": 9.397,
+    "end": 9.448
+  },
+  {
+    "text": "P,",
+    "start": 9.448,
+    "end": 9.499
+  },
+  {
+    "text": "an",
+    "start": 9.499,
+    "end": 9.602
+  },
+  {
+    "text": "agent",
+    "start": 9.602,
+    "end": 9.858
+  },
+  {
+    "text": "reads",
+    "start": 9.858,
+    "end": 10.114
+  },
+  {
+    "text": "the",
+    "start": 10.114,
+    "end": 10.268
+  },
+  {
+    "text": "real",
+    "start": 10.268,
+    "end": 10.473
+  },
+  {
+    "text": "board,",
+    "start": 10.473,
+    "end": 10.729
+  },
+  {
+    "text": "discovers",
+    "start": 10.729,
+    "end": 11.191
+  },
+  {
+    "text": "three",
+    "start": 11.191,
+    "end": 11.447
+  },
+  {
+    "text": "powers,",
+    "start": 11.447,
+    "end": 11.755
+  },
+  {
+    "text": "and",
+    "start": 11.755,
+    "end": 11.908
+  },
+  {
+    "text": "recommends",
+    "start": 11.908,
+    "end": 12.421
+  },
+  {
+    "text": "the",
+    "start": 12.421,
+    "end": 12.575
+  },
+  {
+    "text": "one",
+    "start": 12.575,
+    "end": 12.729
+  },
+  {
+    "text": "that",
+    "start": 12.729,
+    "end": 12.934
+  },
+  {
+    "text": "fits",
+    "start": 12.934,
+    "end": 13.139
+  },
+  {
+    "text": "the",
+    "start": 13.139,
+    "end": 13.292
+  },
+  {
+    "text": "moment.",
+    "start": 13.292,
+    "end": 13.6
+  },
+  {
+    "text": "Forge",
+    "start": 13.6,
+    "end": 13.96
+  },
+  {
+    "text": "turns",
+    "start": 13.96,
+    "end": 14.321
+  },
+  {
+    "text": "one",
+    "start": 14.321,
+    "end": 14.537
+  },
+  {
+    "text": "rough",
+    "start": 14.537,
+    "end": 14.897
+  },
+  {
+    "text": "idea",
+    "start": 14.897,
+    "end": 15.186
+  },
+  {
+    "text": "into",
+    "start": 15.186,
+    "end": 15.474
+  },
+  {
+    "text": "concrete",
+    "start": 15.474,
+    "end": 16.05
+  },
+  {
+    "text": "actions.",
+    "start": 16.05,
+    "end": 16.555
+  },
+  {
+    "text": "Before",
+    "start": 16.555,
+    "end": 16.987
+  },
+  {
+    "text": "anything",
+    "start": 16.987,
+    "end": 17.564
+  },
+  {
+    "text": "changes,",
+    "start": 17.564,
+    "end": 18.068
+  },
+  {
+    "text": "you",
+    "start": 18.068,
+    "end": 18.284
+  },
+  {
+    "text": "see",
+    "start": 18.284,
+    "end": 18.501
+  },
+  {
+    "text": "the",
+    "start": 18.501,
+    "end": 18.717
+  },
+  {
+    "text": "exact",
+    "start": 18.717,
+    "end": 19.077
+  },
+  {
+    "text": "proposal.",
+    "start": 19.077,
+    "end": 19.654
+  },
+  {
+    "text": "The",
+    "start": 19.654,
+    "end": 19.87
+  },
+  {
+    "text": "agent",
+    "start": 19.87,
+    "end": 20.23
+  },
+  {
+    "text": "can’t",
+    "start": 20.23,
+    "end": 20.519
+  },
+  {
+    "text": "swap",
+    "start": 20.519,
+    "end": 20.807
+  },
+  {
+    "text": "it",
+    "start": 20.807,
+    "end": 20.951
+  },
+  {
+    "text": "later.",
+    "start": 20.951,
+    "end": 21.311
+  },
+  {
+    "text": "Only",
+    "start": 21.311,
+    "end": 21.6
+  },
+  {
+    "text": "the",
+    "start": 21.6,
+    "end": 21.816
+  },
+  {
+    "text": "preview",
+    "start": 21.816,
+    "end": 22.32
+  },
+  {
+    "text": "you",
+    "start": 22.32,
+    "end": 22.537
+  },
+  {
+    "text": "approve",
+    "start": 22.537,
+    "end": 23.041
+  },
+  {
+    "text": "can",
+    "start": 23.041,
+    "end": 23.257
+  },
+  {
+    "text": "be",
+    "start": 23.257,
+    "end": 23.401
+  },
+  {
+    "text": "committed.",
+    "start": 23.401,
+    "end": 24.05
+  },
+  {
+    "text": "Focus",
+    "start": 24.05,
+    "end": 24.353
+  },
+  {
+    "text": "chooses",
+    "start": 24.353,
+    "end": 24.776
+  },
+  {
+    "text": "the",
+    "start": 24.776,
+    "end": 24.958
+  },
+  {
+    "text": "highest-leverage",
+    "start": 24.958,
+    "end": 25.866
+  },
+  {
+    "text": "next",
+    "start": 25.866,
+    "end": 26.108
+  },
+  {
+    "text": "move.",
+    "start": 26.108,
+    "end": 26.35
+  },
+  {
+    "text": "Then",
+    "start": 26.35,
+    "end": 26.543
+  },
+  {
+    "text": "there’s",
+    "start": 26.543,
+    "end": 26.834
+  },
+  {
+    "text": "Wild.",
+    "start": 26.834,
+    "end": 27.027
+  },
+  {
+    "text": "It",
+    "start": 27.027,
+    "end": 27.124
+  },
+  {
+    "text": "delivers",
+    "start": 27.124,
+    "end": 27.511
+  },
+  {
+    "text": "a",
+    "start": 27.511,
+    "end": 27.559
+  },
+  {
+    "text": "bounded",
+    "start": 27.559,
+    "end": 27.898
+  },
+  {
+    "text": "surprise—memorable,",
+    "start": 27.898,
+    "end": 28.72
+  },
+  {
+    "text": "but",
+    "start": 28.72,
+    "end": 28.865
+  },
+  {
+    "text": "still",
+    "start": 28.865,
+    "end": 29.107
+  },
+  {
+    "text": "compatible",
+    "start": 29.107,
+    "end": 29.59
+  },
+  {
+    "text": "with",
+    "start": 29.59,
+    "end": 29.784
+  },
+  {
+    "text": "the",
+    "start": 29.784,
+    "end": 29.929
+  },
+  {
+    "text": "board.",
+    "start": 29.929,
+    "end": 30.171
+  },
+  {
+    "text": "Even",
+    "start": 30.171,
+    "end": 30.364
+  },
+  {
+    "text": "the",
+    "start": 30.364,
+    "end": 30.509
+  },
+  {
+    "text": "surprise",
+    "start": 30.509,
+    "end": 30.896
+  },
+  {
+    "text": "stops",
+    "start": 30.896,
+    "end": 31.138
+  },
+  {
+    "text": "for",
+    "start": 31.138,
+    "end": 31.283
+  },
+  {
+    "text": "approval.",
+    "start": 31.283,
+    "end": 31.67
+  },
+  {
+    "text": "Every",
+    "start": 31.67,
+    "end": 31.915
+  },
+  {
+    "text": "Web",
+    "start": 31.915,
+    "end": 32.062
+  },
+  {
+    "text": "M",
+    "start": 32.062,
+    "end": 32.111
+  },
+  {
+    "text": "C",
+    "start": 32.111,
+    "end": 32.159
+  },
+  {
+    "text": "P",
+    "start": 32.159,
+    "end": 32.208
+  },
+  {
+    "text": "preview",
+    "start": 32.208,
+    "end": 32.551
+  },
+  {
+    "text": "and",
+    "start": 32.551,
+    "end": 32.698
+  },
+  {
+    "text": "commit",
+    "start": 32.698,
+    "end": 32.992
+  },
+  {
+    "text": "appears",
+    "start": 32.992,
+    "end": 33.334
+  },
+  {
+    "text": "in",
+    "start": 33.334,
+    "end": 33.432
+  },
+  {
+    "text": "the",
+    "start": 33.432,
+    "end": 33.579
+  },
+  {
+    "text": "shared",
+    "start": 33.579,
+    "end": 33.873
+  },
+  {
+    "text": "activity",
+    "start": 33.873,
+    "end": 34.264
+  },
+  {
+    "text": "rail.",
+    "start": 34.264,
+    "end": 34.46
+  },
+  {
+    "text": "Refresh",
+    "start": 34.46,
+    "end": 34.803
+  },
+  {
+    "text": "keeps",
+    "start": 34.803,
+    "end": 35.047
+  },
+  {
+    "text": "committed",
+    "start": 35.047,
+    "end": 35.488
+  },
+  {
+    "text": "work.",
+    "start": 35.488,
+    "end": 35.684
+  },
+  {
+    "text": "Replayed",
+    "start": 35.684,
+    "end": 36.075
+  },
+  {
+    "text": "or",
+    "start": 36.075,
+    "end": 36.173
+  },
+  {
+    "text": "stale",
+    "start": 36.173,
+    "end": 36.418
+  },
+  {
+    "text": "actions",
+    "start": 36.418,
+    "end": 36.761
+  },
+  {
+    "text": "are",
+    "start": 36.761,
+    "end": 36.907
+  },
+  {
+    "text": "rejected.",
+    "start": 36.907,
+    "end": 37.299
+  },
+  {
+    "text": "And",
+    "start": 37.299,
+    "end": 37.446
+  },
+  {
+    "text": "Undo",
+    "start": 37.446,
+    "end": 37.642
+  },
+  {
+    "text": "restores",
+    "start": 37.642,
+    "end": 38.033
+  },
+  {
+    "text": "the",
+    "start": 38.033,
+    "end": 38.18
+  },
+  {
+    "text": "prior",
+    "start": 38.18,
+    "end": 38.425
+  },
+  {
+    "text": "board",
+    "start": 38.425,
+    "end": 38.669
+  },
+  {
+    "text": "in",
+    "start": 38.669,
+    "end": 38.767
+  },
+  {
+    "text": "one",
+    "start": 38.767,
+    "end": 38.914
+  },
+  {
+    "text": "move.",
+    "start": 38.914,
+    "end": 39.11
+  },
+  {
+    "text": "No",
+    "start": 39.11,
+    "end": 39.244
+  },
+  {
+    "text": "hidden",
+    "start": 39.244,
+    "end": 39.645
+  },
+  {
+    "text": "automation.",
+    "start": 39.645,
+    "end": 40.314
+  },
+  {
+    "text": "No",
+    "start": 40.314,
+    "end": 40.447
+  },
+  {
+    "text": "mystery",
+    "start": 40.447,
+    "end": 40.916
+  },
+  {
+    "text": "state.",
+    "start": 40.916,
+    "end": 41.25
+  },
+  {
+    "text": "Just",
+    "start": 41.25,
+    "end": 41.857
+  },
+  {
+    "text": "a",
+    "start": 41.857,
+    "end": 42.008
+  },
+  {
+    "text": "person",
+    "start": 42.008,
+    "end": 42.919
+  },
+  {
+    "text": "and",
+    "start": 42.919,
+    "end": 43.374
+  },
+  {
+    "text": "an",
+    "start": 43.374,
+    "end": 43.677
+  },
+  {
+    "text": "agent,",
+    "start": 43.677,
+    "end": 44.435
+  },
+  {
+    "text": "acting",
+    "start": 44.435,
+    "end": 45.346
+  },
+  {
+    "text": "on",
+    "start": 45.346,
+    "end": 45.649
+  },
+  {
+    "text": "the",
+    "start": 45.649,
+    "end": 46.104
+  },
+  {
+    "text": "same",
+    "start": 46.104,
+    "end": 46.711
+  },
+  {
+    "text": "web",
+    "start": 46.711,
+    "end": 47.166
+  },
+  {
+    "text": "page—with",
+    "start": 47.166,
+    "end": 48.379
+  },
+  {
+    "text": "the",
+    "start": 48.379,
+    "end": 48.835
+  },
+  {
+    "text": "human",
+    "start": 48.835,
+    "end": 49.593
+  },
+  {
+    "text": "visibly",
+    "start": 49.593,
+    "end": 50.655
+  },
+  {
+    "text": "in",
+    "start": 50.655,
+    "end": 50.958
+  },
+  {
+    "text": "control.",
+    "start": 50.958,
+    "end": 52.02
+  }
+]

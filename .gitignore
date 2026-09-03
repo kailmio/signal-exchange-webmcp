@@ -7,5 +7,10 @@ coverage/
 vite.config.js
 vite.config.d.ts
 .DS_Store
+.venv/
+video/**/auditions/
+video/**/.hyperframes/
+video/**/.thumbnails/
+video/**/.waveform-cache/
 
 .vercel

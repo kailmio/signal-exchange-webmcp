@@ -75,13 +75,13 @@
   Acceptance: No essential content clips horizontally at 360px; the mobile section order is clear; all core actions work without a pointer; motion never blocks controls and reduced motion preserves meaning; desktop retains the no-scroll demo frame.
   Verify: Check 1280×800 and 360px; keyboard-run preview/approve/cancel/undo/reset/custom mission; emulate reduced motion; inspect headings, labels, dialog semantics, focus visibility, contrast, overflow, and console output.
 
-- [ ] **11. Run the release matrix and deploy the frozen application — 30 minutes**
+- [x] **11. Run the release matrix and deploy the frozen application — 30 minutes**
   Spec ref: `spec.md > Risks And Verification > Verification gates`
   What to build: Fix only release-blocking defects, complete automated and manual checks, finalize metadata/README/WebMCP instructions/AI-use disclosure, deploy the exact passing build, and tag the frozen release. No new features enter after this item.
   Acceptance: All twelve verification gates in the spec pass; the public HTTPS build repeats the sample WebMCP path; manual fallback remains usable; repository instructions reproduce the build; the release is complete before midnight.
   Verify: Run `npm run test` and `npm run build`; run the full clean-session demo on the deployed URL; refresh after a commit; verify preview discard, stale/replay rejection, reset/undo semantics, mobile, keyboard, and public asset loading. Create recovery commit 3 and record the deployed URL plus commit hash.
 
-- [ ] **12. Prepare the Devpost and video handoff — 30 minutes**
+- [x] **12. Prepare the Devpost and video handoff — 30 minutes**
   Spec ref: `spec.md > Demo And Submission Flow` and `prd.md > Submission Proof Points`
   What to build: Create the timed 60–90 second `docs/demo-script.md`, capture checklist, screenshot shortlist, project-story bullets, setup/test instructions, deployed URL, repository status/link placeholder, AI-use disclosure, and proof checklist. Ensure the hero sequence is real WebMCP Wild preview → approval → commit → undo. This item prepares materials; final editing/upload/submission continues with `$prepare-submission` after the application build.
   Acceptance: The script shows the sample board and agent readiness within 10 seconds, starts inspect → recommend → preview within 15 seconds, visibly proves WebMCP preview/commit, ends with undo, and leaves enough material to prepare the Devpost entry without rediscovering facts.

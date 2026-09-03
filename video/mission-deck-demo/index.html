@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Deck — Visible Agent Actions</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Arial Narrow"; src: local("Arial Narrow"); font-weight: 400 800; }
+      * { box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; margin: 0; overflow: hidden; background: #070C10; }
+      body { font-family: "Arial Narrow", Arial, sans-serif; }
+      #mission-deck-video { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #070C10; }
+      .beat-slot { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; }
+      .transition-cover { position: absolute; z-index: 100; inset: -80px; background-color: #070C10; opacity: 0; transform-origin: 0 50%; pointer-events: none; }
+      .transition-cover::after { content: ""; position: absolute; inset: 0; border-left: 14px solid currentColor; box-shadow: -30px 0 110px currentColor; }
+      .transition-cover--amber { color: #F3A237; }
+      .transition-cover--cyan { color: #27B9EF; transform-origin: 100% 50%; }
+      .transition-cover--violet { color: #9B65EE; }
+      .transition-cover--quiet { color: #334048; transform-origin: 100% 50%; }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-6l3q" id="mission-deck-video" data-composition-id="mission-deck-video" data-width="1920" data-height="1080" data-start="0" data-duration="60.50">
+      <audio data-hf-id="hf-8w1m" id="narration" src="narration.wav" data-start="3.00" data-duration="52.650667" data-track-index="0" data-volume="1"></audio>
+
+      <div data-hf-id="hf-4ldi" id="beat-1" class="beat-slot" data-composition-id="mission-deck-beat-1-hook" data-composition-src="compositions/beat-1-hook.html" data-start="0" data-duration="10.09" data-track-index="1"></div>
+      <div data-hf-id="hf-cf43" id="beat-2" class="beat-slot" data-composition-id="beat-2-discovery" data-composition-src="compositions/beat-2-discovery.html" data-start="10.09" data-duration="6.51" data-track-index="1"></div>
+      <div data-hf-id="hf-3g8l" id="beat-3" class="beat-slot" data-composition-id="beat-3-preview" data-composition-src="compositions/beat-3-preview.html" data-start="16.60" data-duration="10.45" data-track-index="1"></div>
+      <div data-hf-id="hf-kg6s" id="beat-4" class="beat-slot" data-composition-id="beat-4-focus" data-composition-src="compositions/beat-4-focus.html" data-start="27.05" data-duration="2.30" data-track-index="1"></div>
+      <div data-hf-id="hf-pigt" id="beat-5" class="beat-slot" data-composition-id="beat-5-wild" data-composition-src="compositions/beat-5-wild.html" data-start="29.35" data-duration="5.32" data-track-index="1"></div>
+      <div data-hf-id="hf-0egj" id="beat-6" class="beat-slot" data-composition-id="beat-6-undo" data-composition-src="compositions/beat-6-undo.html" data-start="34.67" data-duration="25.83" data-track-index="1"></div>
+
+      <div data-hf-id="hf-0fzx" id="transition-1" class="transition-cover transition-cover--amber" data-layout-ignore=""></div>
+      <div data-hf-id="hf-ld8m" id="transition-2" class="transition-cover transition-cover--cyan" data-layout-ignore=""></div>
+      <div data-hf-id="hf-ffay" id="transition-3" class="transition-cover transition-cover--quiet" data-layout-ignore=""></div>
+      <div data-hf-id="hf-ixhw" id="transition-4" class="transition-cover transition-cover--violet" data-layout-ignore=""></div>
+      <div data-hf-id="hf-vvxg" id="transition-5" class="transition-cover transition-cover--quiet" data-layout-ignore=""></div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      [
+        ["#transition-1", 9.82],
+        ["#transition-2", 16.33],
+        ["#transition-3", 26.78],
+        ["#transition-4", 29.08],
+        ["#transition-5", 34.40]
+      ].forEach(function (item) {
+        var selector = item[0];
+        var time = item[1];
+        tl.fromTo(selector, { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.27, ease: "power3.in" }, time);
+        tl.to(selector, { opacity: 0, scaleX: 1, duration: 0.30, ease: "power3.out" }, time + 0.27);
+      });
+      window.__timelines["mission-deck-video"] = tl;
+    </script>
+  </body>
+</html>
