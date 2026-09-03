@@ -1,0 +1,15 @@
+Here’s how to use Mission Deck.
+
+You start with a mission and three rough ideas. The orange outline marks the selected idea, and Forge is recommended because the board needs concrete actions first.
+
+Choose an idea, then play Forge. Mission Deck does not change the board immediately. It opens an exact preview showing the actions Forge wants to add. Review them, then choose Approve Exact Preview—or cancel.
+
+After approval, those actions become committed board state. Focus is now available. Play Focus to select one highest-leverage next move, review the preview, and approve it the same way.
+
+Wild adds one bounded surprise. It can reframe the mission or add a useful constraint, but it still stops at preview. You remain in control.
+
+An agent can use the same workflow through Web M C P. Ask it to inspect the board, recommend a card, and preview the result. The green Agent Ready status means the page has exposed its six tools.
+
+Every preview, approval, rejection, and commit appears in Activity. If the last play was wrong, choose Undo and the previous board returns.
+
+That’s the complete loop: inspect, recommend, preview, approve, commit, and recover—on one shared web page.

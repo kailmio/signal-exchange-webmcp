@@ -135,3 +135,11 @@
 - Inspected every selected 1920×1080 hero frame, including a clean final Focus count at 29.1 seconds. The render is H.264 video plus stereo AAC audio at 30fps, 60.500 seconds, 17,600,923 bytes, and decodes end to end without ffmpeg errors.
 - Re-ran the application release checks after video production: all 11 Vitest tests pass and the strict TypeScript/Vite build succeeds.
 - Build checklist item 12 is complete. The editable Studio preview is available locally at `http://localhost:3017/#project/mission-deck-demo`; the rendered artifact is `video/mission-deck-demo/renders/mission-deck-demo.mp4`.
+
+## Build checkpoint 6 — Instructional walkthrough
+
+- Participant feedback identified that the first film worked as an introduction but did not adequately teach operation. Kept that cut as the cinematic trailer and produced a separate self-contained guided walkthrough as the primary submission demo.
+- The 67-second walkthrough explicitly teaches orientation, idea selection, Forge preview and approval, Focus, bounded Wild, the recommended agent prompt, visible WebMCP tool calls, Activity evidence, and Undo.
+- HyperFrames lint has zero errors; the two non-blocking warnings concern composition file length. Runtime, layout, and contrast checks report zero issues, with all 90 sampled text pairs passing contrast.
+- Inspected every selected 1920×1080 beat frame after a final overlap polish pass. The H.264/AAC stereo render is 30fps, 67.000 seconds, 29,066,891 bytes, and decodes end to end without ffmpeg errors.
+- Re-ran the application tests after walkthrough production: all 11 Vitest tests pass. The editable Studio preview is at `http://localhost:3018/#project/mission-deck-walkthrough`; the render is `video/mission-deck-walkthrough/renders/mission-deck-walkthrough.mp4`.

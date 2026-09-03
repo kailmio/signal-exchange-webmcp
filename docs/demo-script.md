@@ -1,5 +1,7 @@
 # Mission Deck Demo Script
 
+The rendered submission walkthrough now lives in `video/mission-deck-walkthrough/`. Its final narration, timing, and frame plan are in that folder's `SCRIPT.md` and `STORYBOARD.md`. The timed take below remains the live-demo rehearsal script for a judge or presenter who wants to operate the deployed app in real time.
+
 Target runtime: 78–86 seconds. Record the deployed app at 1280×800 in ChatGPT's WebMCP-capable in-app browser. Use a fresh sample baseline and keep the full board, activity rail, and agent conversation visible when tool calls occur.
 
 ## Timed take

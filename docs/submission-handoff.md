@@ -6,8 +6,9 @@
 - Public repository: https://github.com/kailmio/mission-deck-webmcp
 - Demo script: `docs/demo-script.md`
 - Visual proof: `docs/design/mission-deck-implementation-1280x800.png`
-- Rendered demo: `video/mission-deck-demo/renders/mission-deck-demo.mp4`
-- Editable video project: `video/mission-deck-demo/`
+- Guided walkthrough: `video/mission-deck-walkthrough/renders/mission-deck-walkthrough.mp4`
+- Editable walkthrough project: `video/mission-deck-walkthrough/`
+- Cinematic trailer: `video/mission-deck-demo/renders/mission-deck-demo.mp4`
 
 ## One-line pitch
 
@@ -31,7 +32,7 @@ Mission Deck turns invisible agent actions into visible WebMCP power cards that 
 - Persistence restores committed content and discards previews.
 - 1280×800 desktop without page scroll; 360px without page-level horizontal overflow.
 - Keyboard Enter/Space, Escape cancellation, dialog focus trap/restore, and reduced-motion emulation verified.
-- Narrated 1920×1080 demo rendered to H.264/AAC at 30fps; the 60.5-second artifact passed a complete decode check.
+- Narrated 1920×1080 guided walkthrough covers manual controls, agent prompting, exact previews, approval, commit evidence, and recovery. The H.264/AAC render runs 67.0 seconds at 30fps and passed a complete decode check. The original 60.5-second cinematic cut remains available as a trailer.
 
 ## AI-use disclosure
 
@@ -39,6 +40,6 @@ Codex served as the primary coding agent for product shaping, implementation, te
 
 ## Remaining submission work
 
-1. Upload the rendered demo and verify public playback.
+1. Verify public playback of the guided walkthrough release asset.
 2. Run `$prepare-submission` to draft the Devpost fields from this handoff.
 3. Paste the verified app, repository, and video links; complete the required declarations; submit before 5:00 AM Australia/Sydney on 2026-09-04.

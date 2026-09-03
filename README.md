@@ -20,7 +20,9 @@ Open the live app in ChatGPT's WebMCP-capable in-app browser, then ask the agent
 
 The board should visibly move from Forge → Focus → Wild while the activity rail attributes each WebMCP preview, commit, and undo. In a browser without WebMCP, the header honestly reports **Manual demo mode** and the same cards remain playable with the pointer or keyboard.
 
-A narrated 60.5-second judge demo and its editable HyperFrames source live in `video/mission-deck-demo/`. Open the project with `npx hyperframes preview video/mission-deck-demo`; the verified MP4 is at `video/mission-deck-demo/renders/mission-deck-demo.mp4`.
+The primary demo is a narrated 67-second guided walkthrough in `video/mission-deck-walkthrough/`. It teaches both the manual card flow and the agent/WebMCP flow, including the exact-preview approval boundary and Undo. Open it with `npx hyperframes preview video/mission-deck-walkthrough --port 3018`; the MP4 is at `video/mission-deck-walkthrough/renders/mission-deck-walkthrough.mp4`.
+
+The original 60.5-second cinematic introduction remains in `video/mission-deck-demo/` as a shorter product trailer.
 
 ## WebMCP tools
 
