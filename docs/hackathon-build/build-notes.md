@@ -143,3 +143,4 @@
 - HyperFrames lint has zero errors; the two non-blocking warnings concern composition file length. Runtime, layout, and contrast checks report zero issues, with all 90 sampled text pairs passing contrast.
 - Inspected every selected 1920×1080 beat frame after a final overlap polish pass. The H.264/AAC stereo render is 30fps, 67.000 seconds, 29,066,891 bytes, and decodes end to end without ffmpeg errors.
 - Re-ran the application tests after walkthrough production: all 11 Vitest tests pass. The editable Studio preview is at `http://localhost:3018/#project/mission-deck-walkthrough`; the render is `video/mission-deck-walkthrough/renders/mission-deck-walkthrough.mp4`.
+- Tagged the walkthrough release as `v0.1.1`; the public asset reports the exact 29,066,891-byte size and the matching Pages workflow for commit `721c4c285317e034e85efc3f224488048aec6a5b` completed successfully.

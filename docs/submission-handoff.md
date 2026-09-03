@@ -4,6 +4,8 @@
 
 - Live app: https://kailmio.github.io/mission-deck-webmcp/
 - Public repository: https://github.com/kailmio/mission-deck-webmcp
+- Public guided walkthrough: https://github.com/kailmio/mission-deck-webmcp/releases/download/v0.1.1/mission-deck-walkthrough.mp4
+- Walkthrough release page: https://github.com/kailmio/mission-deck-webmcp/releases/tag/v0.1.1
 - Demo script: `docs/demo-script.md`
 - Visual proof: `docs/design/mission-deck-implementation-1280x800.png`
 - Guided walkthrough: `video/mission-deck-walkthrough/renders/mission-deck-walkthrough.mp4`
@@ -40,6 +42,5 @@ Codex served as the primary coding agent for product shaping, implementation, te
 
 ## Remaining submission work
 
-1. Verify public playback of the guided walkthrough release asset.
-2. Run `$prepare-submission` to draft the Devpost fields from this handoff.
-3. Paste the verified app, repository, and video links; complete the required declarations; submit before 5:00 AM Australia/Sydney on 2026-09-04.
+1. Run `$prepare-submission` to draft the Devpost fields from this handoff.
+2. Paste the verified app, repository, and video links; complete the required declarations; submit before 5:00 AM Australia/Sydney on 2026-09-04.
