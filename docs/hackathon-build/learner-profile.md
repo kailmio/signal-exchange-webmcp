@@ -8,7 +8,7 @@
 
 ## Project Idea
 
-- Initial idea (or "exploring"): A polished self-contained planning web app inspired by the referenced browser-card mod. People manipulate a visible card deck while an agent uses WebMCP to inspect the board, recommend cards, and—with human control—play Forge and Focus.
+- Initial idea (or "exploring"): A polished self-contained planning web app inspired by the referenced browser-card mod. The final direction is an arcane-fantasy board with exactly two powers: Forge and Focus. An agent uses WebMCP to inspect, recommend, preview, and—with human control—commit reversible plays.
 
 ## Technical Experience
 
@@ -21,4 +21,4 @@
 
 - Preferred pace: Fast, deadline-aware, and willing to delegate product tradeoffs to Codex
 - Likely support needs: Judging-criteria alignment, interaction design, scope control, and implementation
-- Notes for downstream commands: Build a polished self-contained app rather than a browser extension. The agent should recommend Forge or Focus. Visual and interaction decisions are delegated to Codex. Use the Card Master repository as conceptual reference only; create original code and assets. Submission deadline is September 3, 2026 at 1:00 p.m. PT.
+- Notes for downstream commands: Build a polished self-contained app rather than a browser extension. Keep only Forge and Focus. The board should feel arcane, dramatic, and game-like while preserving legible human approval. The agent should recommend between the two powers. Use the Card Master repository as conceptual reference only; create original code and assets. Submission deadline is September 3, 2026 at 1:00 p.m. PT.

@@ -38,7 +38,7 @@ export function getPowerAvailability(content: BoardContent): PowerAvailability[]
     if (power.id === "focus") {
       return { ...power, available: actionable.length > 0, reason: actionable.length ? undefined : "Forge an idea to create actions first." };
     }
-    return { ...power, available: false };
+    return { ...power, available: actionable.length > 0, reason: actionable.length ? undefined : "Forge an idea to create actions first." };
   });
 }
 
@@ -46,10 +46,15 @@ export function recommendPower(content: BoardContent): { power: PowerId; reason:
   if (actions(content).length > 0 && !content.focusedCardId) {
     return { power: "focus", reason: "You have actions to choose from, but no single next move." };
   }
+  if (content.focusedCardId) {
+    return openIdeas(content).length > 0
+      ? { power: "forge", reason: "The next move is chosen; forge another idea to deepen the plan." }
+      : { power: "focus", reason: "The board is structured; refocus when a different move becomes more valuable." };
+  }
   if (openIdeas(content).length > 0) {
     return { power: "forge", reason: "The board still has a promising idea that needs concrete actions." };
   }
-  return { power: "focus", reason: "Review the available actions and keep one highest-leverage next move selected." };
+  return { power: "focus", reason: "The board is structured; choose the move that deserves attention now." };
 }
 
 const FORGE_TEMPLATES = [

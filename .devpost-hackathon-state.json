@@ -14,7 +14,7 @@
   },
   "project": {
     "name": "",
-    "summary": "A polished self-contained planning web app where people manipulate a visible card deck and an agent uses WebMCP to inspect the board, recommend cards, and—with human control—play structured powers, including a bounded-surprise Wild Card.",
+    "summary": "A polished arcane-fantasy planning game where people and agents share one visible WebMCP board. Forge turns ideas into actions; Focus chooses the next move; every proposal requires visible human approval and remains undoable.",
     "ai_usage": "Codex was the primary coding agent for product shaping, implementation, testing, deployment, visual QA, and video production. Hermes Agent independently reviewed the PRD. Image generation produced original concept references. The shipped application contains original code and deterministic local logic; it calls no model API.",
     "codex_usage": "Codex implemented the React and TypeScript application, the six WebMCP tools, preview-safe command flow, tests, GitHub Pages release, accessibility and responsive QA, and the narrated HyperFrames demo."
   },

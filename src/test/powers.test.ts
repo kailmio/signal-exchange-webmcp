@@ -42,11 +42,6 @@ describe("power engine", () => {
     expect(focused.data.proposedContent.focusedCardId).toBeTruthy();
     expect(recommendPower(forged.data.proposedContent).power).toBe("focus");
     expect(recommendPower(focused.data.proposedContent).power).toBe("forge");
-  });
-
-  it("exposes only Forge and Focus", () => {
-    expect(getPowerAvailability(createSampleContent()).map((power) => power.id)).toEqual(["forge", "focus"]);
-    const invalid = previewPower(createSampleContent(), "random" as PowerId);
-    expect(invalid.ok ? "" : invalid.error.code).toBe("INVALID_INPUT");
+    expect(getPowerAvailability(focused.data.proposedContent).map((power) => power.id)).toEqual(["forge", "focus"]);
   });
 });

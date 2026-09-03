@@ -3,7 +3,7 @@ type IconName = "mark" | "forge" | "focus" | "idea" | "reveal" | "control" | "ch
 export function Icon({ name, size = 24 }: { name: IconName; size?: number }) {
   const common = { width: size, height: size, viewBox: "0 0 48 48", fill: "none", "aria-hidden": true } as const;
   if (name === "mark") {
-    return <svg {...common}><path d="M9 16 21 5l12 11-12 11L9 16Z"/><path d="m15 31 12-11 12 11-12 11-12-11Z"/><path d="m15 11 18 26"/></svg>;
+    return <svg {...common}><circle cx="24" cy="24" r="17"/><path d="m24 7 4 12 12 5-12 4-4 13-4-13-12-4 12-5 4-12Z"/><circle cx="24" cy="24" r="3"/></svg>;
   }
   if (name === "forge") {
     return <svg {...common}><path d="M8 28h32M13 28l5-8h12l5 8M21 28v9h6v-9M24 5v8M13 9l5 6M35 9l-5 6"/></svg>;

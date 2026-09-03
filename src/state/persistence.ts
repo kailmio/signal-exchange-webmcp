@@ -19,7 +19,8 @@ function isBoardContent(value: unknown): value is BoardContent {
     typeof candidate.missionId === "string" &&
     (candidate.mode === "sample" || candidate.mode === "custom") &&
     typeof candidate.goal === "string" &&
-    Array.isArray(candidate.cards)
+    Array.isArray(candidate.cards) &&
+    (typeof candidate.focusedCardId === "string" || candidate.focusedCardId === null)
   );
 }
 
