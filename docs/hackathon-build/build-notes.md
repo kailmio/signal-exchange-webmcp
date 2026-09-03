@@ -140,6 +140,6 @@
 - Produced a self-contained HyperFrames walkthrough with six timed beats covering orientation, Forge, exact preview/approval, Focus, agent recommendation, Activity, undo, and the closing thesis.
 - Recorded `af_nova` narration at a measured pace and preserved the editable script, storyboard, composition sources, captured site assets, and deterministic transcript timing alongside the render.
 - HyperFrames reports zero runtime, layout, motion, or contrast issues; all 106 sampled text pairs pass WCAG AA. The only lint output is two non-blocking composition-length warnings.
-- Inspected every selected 1920×1080 beat frame. The final H.264/AAC stereo render is 30fps, 58.866667 seconds, 25,617,153 bytes, and decodes end to end without ffmpeg errors.
-- Re-ran the application release checks: all 11 Vitest tests pass and the strict TypeScript/Vite build succeeds.
+- Inspected every selected 1920×1080 beat frame. The final H.264/AAC stereo render is 30fps, 58.866667 seconds, 24,211,066 bytes, and decodes end to end without ffmpeg errors.
+- Re-ran the application release checks after merging the final arcane visual treatment: all 10 Vitest tests pass and the strict TypeScript/Vite build succeeds.
 - The editable Studio preview is at `http://localhost:3019/#project/mission-deck-walkthrough`; the render is `video/mission-deck-walkthrough/renders/mission-deck-walkthrough.mp4`.

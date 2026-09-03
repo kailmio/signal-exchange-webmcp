@@ -16,6 +16,8 @@ Open the app in a WebMCP-capable browser, then ask the agent:
 
 The dramatic moment is not randomness: it is the handoff from an agent-authored proposal to a visible human decision. The board shows every recommendation, preview, commit, and undo in the Activity rail. Browsers without WebMCP honestly report **Manual demo mode** and keep the same card loop playable.
 
+The primary demo is a narrated 59-second [guided walkthrough](https://github.com/kailmio/mission-deck-webmcp/releases/download/v0.2.0/mission-deck-walkthrough.mp4). Its editable HyperFrames project lives in `video/mission-deck-walkthrough/`.
+
 ## WebMCP tools
 
 | Tool | Input | Purpose |

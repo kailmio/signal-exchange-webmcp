@@ -12,5 +12,7 @@ The judged proof is the approval boundary: agent-authored changes appear as an e
 - Verified agent loop: inspect → recommend Forge → preview/commit Forge → recommend Focus → preview/commit Focus → undo.
 - Visual QA completed at 1280×800 and 360×800.
 - Canonical images live in `docs/design/`.
+- Guided walkthrough: https://github.com/kailmio/mission-deck-webmcp/releases/download/v0.2.0/mission-deck-walkthrough.mp4
+- Release page: https://github.com/kailmio/mission-deck-webmcp/releases/tag/v0.2.0
 
-The public GitHub Pages link still points at the earlier release until this revision is explicitly deployed. Existing video renders also describe the earlier mechanic and must be recut before submission.
+The current release is designed to deploy through the repository's GitHub Pages workflow. The recut video contains only Forge and Focus and matches the arcane two-power interface.
