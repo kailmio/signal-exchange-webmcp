@@ -5,7 +5,7 @@ export const PREVIEW_SCHEMA = {
   properties: {
     power: {
       type: "string",
-      enum: ["forge", "focus", "wild"],
+      enum: ["forge", "focus"],
       description: "The visible power card to preview.",
     },
     targetCardId: {

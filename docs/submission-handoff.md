@@ -1,46 +1,16 @@
-# Submission Handoff
+# Submission handoff
 
-## Links
+Mission Deck is a polished arcane planning game built around exactly two powers: Forge makes ideas executable and Focus chooses the next move. Six WebMCP tools let an agent inspect, recommend, preview, commit, undo, and reset against the same visible state used by manual controls.
 
-- Live app: https://kailmio.github.io/mission-deck-webmcp/
-- Public repository: https://github.com/kailmio/mission-deck-webmcp
-- Public guided walkthrough: https://github.com/kailmio/mission-deck-webmcp/releases/download/v0.1.1/mission-deck-walkthrough.mp4
-- Walkthrough release page: https://github.com/kailmio/mission-deck-webmcp/releases/tag/v0.1.1
-- Demo script: `docs/demo-script.md`
-- Visual proof: `docs/design/mission-deck-implementation-1280x800.png`
-- Guided walkthrough: `video/mission-deck-walkthrough/renders/mission-deck-walkthrough.mp4`
-- Editable walkthrough project: `video/mission-deck-walkthrough/`
-- Cinematic trailer: `video/mission-deck-demo/renders/mission-deck-demo.mp4`
+The judged proof is the approval boundary: agent-authored changes appear as an exact on-page preview, nothing mutates until approval, and Activity plus Undo keep the person in control.
 
-## One-line pitch
+## Current evidence
 
-Mission Deck turns invisible agent actions into visible WebMCP power cards that people can inspect, preview, approve, and undo on a shared planning board.
+- `npm test`: 10 tests pass.
+- `npm run build`: strict TypeScript and Vite production build pass.
+- Live local WebMCP discovery exposes six tools; the power enum contains only `forge` and `focus`.
+- Verified agent loop: inspect → recommend Forge → preview/commit Forge → recommend Focus → preview/commit Focus → undo.
+- Visual QA completed at 1280×800 and 360×800.
+- Canonical images live in `docs/design/`.
 
-## Story bullets
-
-- **Problem:** agent actions are often hidden behind chat and difficult for ordinary people to understand or trust.
-- **Insight:** familiar card mechanics give each capability a name, constraint, preview, and consequence.
-- **Experience:** Forge makes ideas actionable, Focus chooses the highest-leverage move, and Wild reveals a bounded surprise.
-- **WebMCP leverage:** the agent reads real page state and uses six page-defined tools across a multi-step workflow instead of scraping pixels or receiving pasted context.
-- **Human control:** every mutation is an exact visible preview; stale/replayed commits fail; undo restores the prior board.
-- **Execution:** static, deterministic, responsive, accessible, and usable manually when WebMCP is unavailable.
-
-## Technical proof
-
-- 11 automated domain/persistence/command tests.
-- Strict TypeScript and Vite production build.
-- Six tools discovered and invoked in the in-app browser on local and public HTTPS builds.
-- Full manual Forge → Focus → Wild → undo path.
-- Persistence restores committed content and discards previews.
-- 1280×800 desktop without page scroll; 360px without page-level horizontal overflow.
-- Keyboard Enter/Space, Escape cancellation, dialog focus trap/restore, and reduced-motion emulation verified.
-- Narrated 1920×1080 guided walkthrough covers manual controls, agent prompting, exact previews, approval, commit evidence, and recovery. The H.264/AAC render runs 67.0 seconds at 30fps and passed a complete decode check. The original 60.5-second cinematic cut remains available as a trailer.
-
-## AI-use disclosure
-
-Codex served as the primary coding agent for product shaping, implementation, testing, deployment, visual QA, and submission preparation. Hermes Agent independently reviewed the PRD. Image generation created original concept art used as a design reference. The shipped app contains original code and assets, calls no model API, and computes all power outcomes locally and deterministically.
-
-## Remaining submission work
-
-1. Run `$prepare-submission` to draft the Devpost fields from this handoff.
-2. Paste the verified app, repository, and video links; complete the required declarations; submit before 5:00 AM Australia/Sydney on 2026-09-04.
+The public GitHub Pages link still points at the earlier release until this revision is explicitly deployed. Existing video renders also describe the earlier mechanic and must be recut before submission.

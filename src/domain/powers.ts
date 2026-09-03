@@ -12,7 +12,6 @@ import type {
 export const POWER_DEFINITIONS: readonly PowerDefinition[] = [
   { id: "forge", name: "Forge", effect: "Turn one idea into clear actions", accent: "amber" },
   { id: "focus", name: "Focus", effect: "Choose the highest-leverage next move", accent: "cyan" },
-  { id: "wild", name: "Wild", effect: "Reveal one bounded surprise", accent: "violet" },
 ];
 
 type ProposalResult = { ok: true; data: PowerProposal } | { ok: false; error: CommandError };
@@ -39,7 +38,7 @@ export function getPowerAvailability(content: BoardContent): PowerAvailability[]
     if (power.id === "focus") {
       return { ...power, available: actionable.length > 0, reason: actionable.length ? undefined : "Forge an idea to create actions first." };
     }
-    return { ...power, available: content.cards.length > 0, reason: content.cards.length ? undefined : "Add an idea before drawing Wild." };
+    return { ...power, available: actionable.length > 0, reason: actionable.length ? undefined : "Forge an idea to create actions first." };
   });
 }
 
@@ -48,12 +47,14 @@ export function recommendPower(content: BoardContent): { power: PowerId; reason:
     return { power: "focus", reason: "You have actions to choose from, but no single next move." };
   }
   if (content.focusedCardId) {
-    return { power: "wild", reason: "The plan has a clear next move; a bounded surprise can expose a stronger angle." };
+    return openIdeas(content).length > 0
+      ? { power: "forge", reason: "The next move is chosen; forge another idea to deepen the plan." }
+      : { power: "focus", reason: "The board is structured; refocus when a different move becomes more valuable." };
   }
   if (openIdeas(content).length > 0) {
     return { power: "forge", reason: "The board still has a promising idea that needs concrete actions." };
   }
-  return { power: "wild", reason: "The plan is structured; a bounded surprise can expose a stronger angle." };
+  return { power: "focus", reason: "The board is structured; choose the move that deserves attention now." };
 }
 
 const FORGE_TEMPLATES = [
@@ -127,84 +128,8 @@ function focus(content: BoardContent, targetCardId?: string): ProposalResult {
   };
 }
 
-function wild(content: BoardContent): ProposalResult {
-  if (content.cards.length === 0) return error("POWER_UNAVAILABLE", "Wild needs something on the board to transform.", "Add an idea, then draw Wild again.");
-  const proposed = cloneBoardContent(content);
-  const index = content.wildDrawIndex % 4;
-  proposed.wildDrawIndex += 1;
-  const primaryIdea = proposed.cards.find((card) => card.kind === "idea") ?? proposed.cards[0];
-
-  if (index === 0) {
-    const before = primaryIdea.detail;
-    primaryIdea.detail = "Design for first-time users, not agent experts.";
-    return {
-      ok: true,
-      data: {
-        outcomeKey: "reverse-assumption",
-        outcomeTitle: "Reverse the assumption",
-        rationale: "Make the interaction legible to someone who has never used an agent tool.",
-        changes: [{ kind: "update", cardId: primaryIdea.id, label: primaryIdea.title, before, after: primaryIdea.detail }],
-        proposedContent: proposed,
-      },
-    };
-  }
-
-  if (index === 1) {
-    const before = primaryIdea.detail;
-    primaryIdea.detail = "Make this useful to a solo maker seeing WebMCP for the first time.";
-    return {
-      ok: true,
-      data: {
-        outcomeKey: "change-audience",
-        outcomeTitle: "Change the audience",
-        rationale: "A sharper audience makes the proof easier to judge.",
-        changes: [{ kind: "update", cardId: primaryIdea.id, label: primaryIdea.title, before, after: primaryIdea.detail }],
-        proposedContent: proposed,
-      },
-    };
-  }
-
-  if (index === 2) {
-    const before = proposed.goal;
-    proposed.goal = `Prove one unforgettable interaction: ${content.goal.slice(0, 92)}`;
-    return {
-      ok: true,
-      data: {
-        outcomeKey: "radical-scope",
-        outcomeTitle: "Cut the scope in half",
-        rationale: "One undeniable interaction is stronger than a broad unfinished product.",
-        changes: [{ kind: "update", label: "Mission", before, after: proposed.goal }],
-        proposedContent: proposed,
-      },
-    };
-  }
-
-  const ideas = proposed.cards.filter((card) => card.kind === "idea").slice(0, 2);
-  if (ideas.length < 2) return wild({ ...content, wildDrawIndex: content.wildDrawIndex + 1 });
-  const combined: MissionCard = {
-    id: `wild-combined-${content.wildDrawIndex}`,
-    kind: "action",
-    title: "Stage one visible trust moment",
-    detail: `Combine “${ideas[0].title}” with “${ideas[1].title}”.`,
-    completionCheck: "A first-time viewer can narrate the before, approval, and after states.",
-    status: "open",
-  };
-  proposed.cards.push(combined);
-  return {
-    ok: true,
-    data: {
-      outcomeKey: "combine-ideas",
-      outcomeTitle: "Combine two ideas",
-      rationale: "The strongest reveal can also be the clearest explanation.",
-      changes: [{ kind: "combine", cardId: combined.id, label: combined.title, before: `${ideas[0].title} + ${ideas[1].title}`, after: combined.detail }],
-      proposedContent: proposed,
-    },
-  };
-}
-
 export function previewPower(content: BoardContent, power: PowerId, targetCardId?: string): ProposalResult {
   if (power === "forge") return forge(content, targetCardId);
   if (power === "focus") return focus(content, targetCardId);
-  if (power === "wild") return wild(content);
-  return error("INVALID_INPUT", "Unknown power.", "Choose Forge, Focus, or Wild.");
+  return error("INVALID_INPUT", "Unknown power.", "Choose Forge or Focus.");
 }

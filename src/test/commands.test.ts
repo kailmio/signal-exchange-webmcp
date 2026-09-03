@@ -30,12 +30,12 @@ describe("command safety", () => {
     expect(missing.ok ? "" : missing.error.code).toBe("PREVIEW_NOT_FOUND");
 
     const mismatchHarness = harness();
-    mismatchHarness.service.previewCardPlay({ power: "wild" });
+    mismatchHarness.service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" });
     const mismatch = mismatchHarness.service.commitCardPlay("wrong");
     expect(mismatch.ok ? "" : mismatch.error.code).toBe("PREVIEW_TOKEN_MISMATCH");
 
     const staleHarness = harness();
-    staleHarness.service.previewCardPlay({ power: "wild" });
+    staleHarness.service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" });
     const stalePreview = staleHarness.store.getState().preview!;
     staleHarness.store.dispatch({
       type: "SET_PREVIEW",
@@ -46,7 +46,7 @@ describe("command safety", () => {
     expect(stale.ok ? "" : stale.error.code).toBe("PREVIEW_STALE");
 
     const expiredHarness = harness(999_999);
-    expiredHarness.service.previewCardPlay({ power: "wild" });
+    expiredHarness.service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" });
     const expiredPreview = expiredHarness.store.getState().preview!;
     expiredHarness.store.dispatch({
       type: "SET_PREVIEW",
@@ -60,8 +60,8 @@ describe("command safety", () => {
   it("produces equivalent committed boards for manual and agent origins", () => {
     const manual = harness();
     const agent = harness();
-    const manualPreview = manual.service.previewCardPlay({ power: "wild" }, "manual");
-    const agentPreview = agent.service.previewCardPlay({ power: "wild" }, "agent");
+    const manualPreview = manual.service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" }, "manual");
+    const agentPreview = agent.service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" }, "agent");
     if (!manualPreview.ok || !agentPreview.ok) throw new Error("previews should succeed");
     manual.service.commitCardPlay(manualPreview.data.token, "manual");
     agent.service.commitCardPlay(agentPreview.data.token, "agent");
@@ -70,13 +70,13 @@ describe("command safety", () => {
 
   it("undoes one play and makes reset a new baseline", () => {
     const { store, service } = harness();
-    const preview = service.previewCardPlay({ power: "wild" }, "manual");
+    const preview = service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" }, "manual");
     if (!preview.ok) throw new Error("preview should succeed");
     service.commitCardPlay(preview.data.token, "manual");
     expect(store.getState().undoBoard).not.toBeNull();
     expect(service.undoLastPlay("manual").ok).toBe(true);
     expect(store.getState().undoBoard).toBeNull();
-    service.previewCardPlay({ power: "wild" }, "manual");
+    service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" }, "manual");
     const token = store.getState().preview!.token;
     service.commitCardPlay(token, "manual");
     expect(service.loadDemoMission(true, "manual").ok).toBe(true);

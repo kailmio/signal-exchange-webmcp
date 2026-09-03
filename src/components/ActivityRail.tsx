@@ -16,7 +16,7 @@ export function ActivityRail({ history, canUndo, onUndo }: { history: ActivityEn
       <ol className="activity-list">
         {[...history].reverse().slice(0, 5).map((entry) => (
           <li className={`activity-item activity-item--${entry.origin}`} key={entry.id}>
-            <span className="activity-item__icon"><Icon name={entry.kind === "undo" ? "undo" : entry.kind === "preview" ? "wild" : entry.kind === "error" ? "clock" : "check"} size={20} /></span>
+            <span className="activity-item__icon"><Icon name={entry.kind === "undo" ? "undo" : entry.power ?? (entry.kind === "error" ? "clock" : "check")} size={20} /></span>
             <span><strong>{entry.summary}</strong><small>{relativeTime(entry)}</small></span>
           </li>
         ))}

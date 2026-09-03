@@ -2,8 +2,8 @@ import type { ActivityEntry, AppState, BoardContent } from "../domain/types";
 import type { AppStore } from "./store";
 import type { PersistedSlice } from "./reducer";
 
-const STORAGE_KEY = "mission-deck:v1";
-const STORAGE_VERSION = 1;
+const STORAGE_KEY = "mission-deck:v2";
+const STORAGE_VERSION = 2;
 
 interface Envelope {
   version: number;
@@ -20,7 +20,7 @@ function isBoardContent(value: unknown): value is BoardContent {
     (candidate.mode === "sample" || candidate.mode === "custom") &&
     typeof candidate.goal === "string" &&
     Array.isArray(candidate.cards) &&
-    typeof candidate.wildDrawIndex === "number"
+    (typeof candidate.focusedCardId === "string" || candidate.focusedCardId === null)
   );
 }
 

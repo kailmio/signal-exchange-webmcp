@@ -21,12 +21,12 @@ describe("persistence", () => {
     const store = createStore(createInitialState());
     attachPersistence(store, storage);
     const service = new CommandService(store, { now: () => 100, id: () => "token" });
-    const preview = service.previewCardPlay({ power: "wild" }, "manual");
+    const preview = service.previewCardPlay({ power: "forge", targetCardId: "idea-tangible" }, "manual");
     expect(saved).toBe("");
     if (!preview.ok) throw new Error("preview should succeed");
     service.commitCardPlay(preview.data.token, "manual");
     expect(saved).not.toContain("proposedContent");
     const restored = loadPersistedState(storage);
-    expect(restored?.board.content.cards[0].detail).toBe("Design for first-time users, not agent experts.");
+    expect(restored?.board.content.cards.filter((card) => card.kind === "action")).toHaveLength(4);
   });
 });

@@ -40,14 +40,7 @@ describe("power engine", () => {
     expect(focused.data.proposedContent.cards.filter((card) => card.status === "focused")).toHaveLength(1);
     expect(focused.data.proposedContent.focusedCardId).toBeTruthy();
     expect(recommendPower(forged.data.proposedContent).power).toBe("focus");
-    expect(recommendPower(focused.data.proposedContent).power).toBe("wild");
-  });
-
-  it("uses a deterministic, bounded first Wild reveal", () => {
-    const first = previewPower(createSampleContent(), "wild");
-    const second = previewPower(createSampleContent(), "wild");
-    expect(first).toEqual(second);
-    expect(first.ok && first.data.outcomeKey).toBe("reverse-assumption");
-    expect(first.ok && first.data.changes).toHaveLength(1);
+    expect(recommendPower(focused.data.proposedContent).power).toBe("forge");
+    expect(getPowerAvailability(focused.data.proposedContent).map((power) => power.id)).toEqual(["forge", "focus"]);
   });
 });

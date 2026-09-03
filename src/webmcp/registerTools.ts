@@ -29,7 +29,7 @@ export async function registerWebMcpTools(store: AppStore, commands: CommandServ
         {
           name: "list_card_powers",
           title: "List card powers",
-          description: "List Forge, Focus, and Wild with current availability, then return and visibly highlight the best contextual recommendation without changing the committed board.",
+          description: "List Forge and Focus with current availability, then return and visibly highlight the best contextual recommendation without changing the committed board.",
           inputSchema: EMPTY_SCHEMA,
           annotations: { readOnlyHint: true },
           execute: () => toToolResult(commands.listPowers("agent")),
@@ -40,7 +40,7 @@ export async function registerWebMcpTools(store: AppStore, commands: CommandServ
         {
           name: "preview_card_play",
           title: "Preview a card play",
-          description: "Prepare and display the exact effect of Forge, Focus, or Wild without changing committed board state. Forge requires a targetCardId from inspect_mission_board.",
+          description: "Prepare and display the exact effect of Forge or Focus without changing committed board state. Forge requires a targetCardId from inspect_mission_board.",
           inputSchema: PREVIEW_SCHEMA,
           execute: ({ power, targetCardId }) =>
             toToolResult(commands.previewCardPlay({ power: power as PowerId, targetCardId }, "agent")),
@@ -61,7 +61,7 @@ export async function registerWebMcpTools(store: AppStore, commands: CommandServ
         {
           name: "undo_last_play",
           title: "Undo the latest card play",
-          description: "Restore the board immediately before the latest committed Forge, Focus, or Wild play. Supports one level of undo.",
+          description: "Restore the board immediately before the latest committed Forge or Focus play. Supports one level of undo.",
           inputSchema: EMPTY_SCHEMA,
           execute: () => toToolResult(commands.undoLastPlay("agent")),
         },

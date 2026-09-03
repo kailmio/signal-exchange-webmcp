@@ -108,16 +108,19 @@ export default function App() {
             )}
           </div>
 
-          <div className="power-hand" aria-label="Card powers">
-            {powers.map((power) => (
-              <PowerCard
-                key={power.id}
-                power={power}
-                recommended={(state.recommendation?.power ?? recommendPower(state.board.content).power) === power.id}
-                active={state.preview?.power === power.id}
-                onPlay={playPower}
-              />
-            ))}
+          <div className="power-table">
+            <span className="power-table__label">Choose your power</span>
+            <div className="power-hand" aria-label="Card powers">
+              {powers.map((power) => (
+                <PowerCard
+                  key={power.id}
+                  power={power}
+                  recommended={(state.recommendation?.power ?? recommendPower(state.board.content).power) === power.id}
+                  active={state.preview?.power === power.id}
+                  onPlay={playPower}
+                />
+              ))}
+            </div>
           </div>
         </section>
 

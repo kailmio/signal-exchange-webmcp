@@ -1,5 +1,13 @@
 # Build Notes
 
+## 2026-09-03 — Final two-power direction
+
+- Participant made the decisive scope change: keep only Forge and Focus; remove the earlier third-power exploration.
+- Generated and accepted `docs/design/mission-deck-arcane-two-power-concept.png`, then rebuilt the board as an arcane observatory/tabletop with parchment mission cards, brass frames, celestial geometry, and a larger two-card hand.
+- Removed the superseded mechanic from runtime types, transforms, schemas, icons, persistence, tests, current planning docs, and submission script. Storage advanced to version two so older local state cannot resurrect it.
+- Verified 10 Vitest checks, strict TypeScript/Vite build, WebMCP tool discovery with a two-value power enum, inspect → recommend Forge → preview/commit Forge → recommend Focus → preview/commit Focus → undo, and 1280×800 plus 360×800 visual behavior.
+- Existing rendered videos are historical and must be recut from the current build before submission. The public deployment remains unchanged pending explicit publication authorization.
+
 ## 2026-09-03 — Guided build started
 
 - Entered the optional guided build path during the Resources stage.
