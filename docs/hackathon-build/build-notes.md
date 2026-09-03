@@ -29,3 +29,5 @@ Starting wallet 100 → search three matching offers → recommend MetroPulse at
 - Real WebMCP discovery exposes all seven tools; the full preview → blocked commit → human click → commit → undo loop passes.
 - The 65-second walkthrough passes HyperFrames runtime, WCAG contrast, console, and 15-sample layout validation with zero errors.
 - GitHub Pages renders the MP4 with pinned HyperFrames 0.8.27 and FFmpeg, then publishes it with the tested app.
+- Public deployment `33785590857` passed on commit `bce1cd4`; both the app and 19.7 MB MP4 returned HTTP 200.
+- The deployed WebMCP smoke test passed search, comparison, a 20→22 counteroffer, pre-approval commit rejection, exact human approval, commit, undo, and reset.

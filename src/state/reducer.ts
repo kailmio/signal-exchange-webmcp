@@ -25,7 +25,7 @@ export interface PersistedSlice { exchange: AppState["exchange"]; undoExchange: 
 
 export function createInitialState(persisted?: PersistedSlice | null): AppState {
   const content = persisted?.exchange.content ?? createSampleExchange();
-  return { exchange: persisted?.exchange ?? { revision: 0, content }, undoExchange: persisted?.undoExchange ?? null, visibleOfferIds: content.offers.map((offer) => offer.id), recommendation: null, preview: null, approvedPreviewToken: null, history: persisted?.history?.slice(-20) ?? INITIAL_HISTORY, connection: "checking", persistence: "available", committing: false, notice: persisted ? { tone: "info", text: "Committed rental restored. Pending deal previews are never restored." } : null };
+  return { exchange: persisted?.exchange ?? { revision: 0, content }, undoExchange: persisted?.undoExchange ?? null, visibleOfferIds: content.offers.map((offer) => offer.id), recommendation: null, preview: null, approvedPreviewToken: null, history: persisted?.history?.slice(-20) ?? INITIAL_HISTORY, connection: "checking", persistence: "available", committing: false, notice: persisted ? { tone: "info", text: "Saved demo state restored. Pending deal previews are never restored." } : null };
 }
 
 function append(history: ActivityEntry[], entry: ActivityEntry): ActivityEntry[] { return [...history, entry].slice(-20); }

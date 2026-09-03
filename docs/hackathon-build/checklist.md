@@ -14,6 +14,6 @@
 - [x] Build an honest manual fallback.
 - [x] Verify unit/integration tests and production build.
 - [x] Verify 1280×800 and 360×800 layouts.
-- [ ] Deploy the pivot and smoke-test the public URL.
+- [x] Deploy the pivot and smoke-test the public URL.
 - [x] Validate the Signal Exchange walkthrough video and wire its deterministic deployment render.
 - [x] Add final app and video verification evidence to build notes.
