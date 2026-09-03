@@ -1,8 +1,18 @@
 import { CommandService } from "./domain/commands";
-import { loadPersistedState, attachPersistence } from "./state/persistence";
+import { loadPersistedState, attachPersistence, STORAGE_KEY } from "./state/persistence";
 import { createInitialState } from "./state/reducer";
 import { createStore } from "./state/store";
 
-export const appStore = createStore(createInitialState(loadPersistedState()));
+const persisted = loadPersistedState();
+const initialState = createInitialState(persisted);
+try {
+  if (!persisted && localStorage.getItem(STORAGE_KEY)) {
+    initialState.notice = { tone: "error", text: "Saved data was incompatible, so the sample mission was restored safely." };
+  }
+} catch {
+  initialState.persistence = "unavailable";
+}
+
+export const appStore = createStore(initialState);
 export const commands = new CommandService(appStore);
 attachPersistence(appStore);

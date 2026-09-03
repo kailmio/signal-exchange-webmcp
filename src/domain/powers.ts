@@ -44,11 +44,14 @@ export function getPowerAvailability(content: BoardContent): PowerAvailability[]
 }
 
 export function recommendPower(content: BoardContent): { power: PowerId; reason: string } {
-  if (openIdeas(content).length > 0) {
-    return { power: "forge", reason: "The board still has a promising idea that needs concrete actions." };
-  }
   if (actions(content).length > 0 && !content.focusedCardId) {
     return { power: "focus", reason: "You have actions to choose from, but no single next move." };
+  }
+  if (content.focusedCardId) {
+    return { power: "wild", reason: "The plan has a clear next move; a bounded surprise can expose a stronger angle." };
+  }
+  if (openIdeas(content).length > 0) {
+    return { power: "forge", reason: "The board still has a promising idea that needs concrete actions." };
   }
   return { power: "wild", reason: "The plan is structured; a bounded surprise can expose a stronger angle." };
 }

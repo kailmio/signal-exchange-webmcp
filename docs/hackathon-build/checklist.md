@@ -45,31 +45,31 @@
   Acceptance: A preview never mutates committed content; commit applies exactly the stored proposal once; stale, expired, missing, mismatched, duplicate, and concurrent commits leave state unchanged; reset creates a non-undoable baseline.
   Verify: Run `npm run test` with explicit assertions for every error code, manual/agent equivalence, exact preview-to-commit equality, undo restoration, and reset behavior. Create recovery commit 1 only after the suite passes.
 
-- [ ] **6. Wire the synchronous store and versioned persistence — 25 minutes**
+- [x] **6. Wire the synchronous store and versioned persistence — 25 minutes**
   Spec ref: `spec.md > Synchronous application store`, `spec.md > Persistence adapter`, and `spec.md > Data Flow > Startup and persistence`
   What to build: Add the pure reducer, synchronous `getState`/`dispatch`/`subscribe` store, React subscription hook, versioned localStorage envelope, capped activity history, load fallback, and in-memory behavior when storage fails.
   Acceptance: Tool callbacks can always read the newest revision; committed board/history survive refresh; previews never persist; corrupt/incompatible storage recovers to the sample with a visible notice; storage failure does not stop play.
   Verify: Run store and persistence tests for synchronous updates, latest-state reads, valid restore, preview exclusion, corrupt JSON, wrong version, history cap, and simulated storage exceptions.
 
-- [ ] **7. Build the complete manual desktop interaction loop — 30 minutes**
+- [x] **7. Build the complete manual desktop interaction loop — 30 minutes**
   Spec ref: `spec.md > Static application shell` and `spec.md > Components And Responsibilities`
   What to build: Compose the header/status, mission board, cards, focus zone, three-card power hand, Forge target selection, preview panel, approve/cancel actions, activity rail, notices, undo, and reset using the shared commands. Implement the dark restrained mission-control visual direction with original CSS.
   Acceptance: At 1280×800 the complete sample loop is visible without page scrolling; manual Forge → Focus → Wild → undo succeeds; preview preserves committed text/order/focus/history; activity clearly attributes manual actions.
   Verify: Run the production build, open a clean sample, execute the complete manual path twice, cancel one preview, attempt one invalid play, and confirm the board stays usable with no console errors.
 
-- [ ] **8. Register and prove the real WebMCP loop — 30 minutes**
+- [x] **8. Register and prove the real WebMCP loop — 30 minutes**
   Spec ref: `spec.md > WebMCP adapter` and `spec.md > WebMCP Tool Contracts`
   What to build: Add the current `document.modelContext.registerTool()` adapter, schemas, result formatting, AbortController cleanup, capability state, and all six tools. Each handler calls the same commands as the manual interface. Update the HTTPS deployment and test with a supported browser agent.
   Acceptance: The agent discovers all six tools; inspect returns current committed state; list returns availability/recommendation and highlights it; preview renders exact pending changes; commit visibly names the WebMCP action; undo and demo reset work; unsupported environments truthfully show manual mode.
   Verify: In ChatGPT’s in-app browser, invoke `inspect_mission_board`, `list_card_powers`, `preview_card_play`, `commit_card_play`, `undo_last_play`, and `load_demo_mission`; compare one agent and manual result from the same baseline; save a backup screen capture or screenshots of the working loop. Create recovery commit 2.
 
-- [ ] **9. Finish custom mission, recovery states, and compact activity — 25 minutes**
+- [x] **9. Finish custom mission, recovery states, and compact activity — 25 minutes**
   Spec ref: `spec.md > CustomMissionDialog`, `spec.md > ActivityRail`, and `spec.md > Error Strategy`
   What to build: Add the small custom-mission dialog, inline validation, neutral starter ideas, replacement confirmation, long-text constraints/detail reveal, persistence notices, connection explanations, and readable activity trimming.
   Acceptance: Whitespace goals are rejected inline; a goal without ideas creates at least two usable starters; cancelling preserves the prior board; reset confirmation protects modified work; no visible state exposes raw payloads or claims a false connection.
   Verify: Exercise empty, minimal, long, cancelled, confirmed, refreshed, corrupt-storage, and WebMCP-unavailable paths; confirm every failure leaves committed state intact and names a next action.
 
-- [ ] **10. Complete responsive, keyboard, reduced-motion, and visual polish — 30 minutes**
+- [x] **10. Complete responsive, keyboard, reduced-motion, and visual polish — 30 minutes**
   Spec ref: `spec.md > Presentation components` and `spec.md > Risks And Verification > Verification gates`
   What to build: Finish 360px layout, semantic controls, dialog focus behavior, logical tab order, Enter/Space activation, Escape preview cancellation, visible focus, non-color status cues, `aria-live` notices, reduced-motion overrides, and reusable sub-one-second power/commit/undo transitions.
   Acceptance: No essential content clips horizontally at 360px; the mobile section order is clear; all core actions work without a pointer; motion never blocks controls and reduced motion preserves meaning; desktop retains the no-scroll demo frame.

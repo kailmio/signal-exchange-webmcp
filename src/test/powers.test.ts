@@ -39,6 +39,8 @@ describe("power engine", () => {
     if (!focused.ok) return;
     expect(focused.data.proposedContent.cards.filter((card) => card.status === "focused")).toHaveLength(1);
     expect(focused.data.proposedContent.focusedCardId).toBeTruthy();
+    expect(recommendPower(forged.data.proposedContent).power).toBe("focus");
+    expect(recommendPower(focused.data.proposedContent).power).toBe("wild");
   });
 
   it("uses a deterministic, bounded first Wild reveal", () => {

@@ -97,3 +97,22 @@
 - Vercel credentials were unavailable; created an anonymous HTTPS preview deployment as the single allowed early fallback. It expires after 60 minutes, so a durable GitHub Pages release is planned using the already-authenticated GitHub CLI.
 - Implemented typed board state, stable sample data, deterministic Forge/Focus/Wild power engine, recommendation, preview-safe command service, synchronous external store, versioned persistence, accessible components, and the six WebMCP tool registrations.
 - Verification: 11 Vitest tests passed; strict TypeScript/Vite production build passed; the in-app browser discovered all six WebMCP tools; agent-driven inspect, list, Forge preview/commit, Focus preview/commit, Wild preview/commit, and undo succeeded against live UI state.
+
+## Build checkpoint 2 — Shared UI and live WebMCP
+
+- Implemented and visually checked the full desktop board against the accepted concept at 1280×800, including the open-canvas layout, three idea cards, focus well, tactile power hand, preview panel, and attributed activity rail.
+- Fixed the recommendation progression so a clean board recommends Forge, a forged board recommends Focus, and a focused board recommends Wild.
+- Verified the complete manual Forge → Focus → Wild → undo flow with real button interactions. Verified custom-mission empty validation and neutral starter cards.
+- Verified committed state survives refresh while preview state does not; the restored-state notice is visible.
+- The local and durable public builds both expose all six WebMCP tools in the in-app browser. The public smoke test completed inspect, Wild preview, exact commit, and undo.
+- Created public repository `https://github.com/kailmio/mission-deck-webmcp`, enabled GitHub Pages, and verified the deployment workflow passed. Durable URL: `https://kailmio.github.io/mission-deck-webmcp/`.
+- Responsive check at 360×800 found no document-level horizontal overflow. Moved transient notices to the bottom on mobile so they do not cover the mission heading.
+
+## Build checkpoint 3 — Responsive and accessibility polish
+
+- At 1280×800 the document measured exactly 1280×800 with no page scroll; at 360×800 the document width measured 345px inside a 360px viewport with no page-level horizontal overflow.
+- Verified keyboard activation with Enter for Forge and Space for Focus, Escape preview cancellation, and visible button focus.
+- Added a trapped Tab/Shift+Tab loop to the custom-mission dialog and verified focus returns to the New mission trigger after Escape.
+- Emulated `prefers-reduced-motion: reduce`; interactive transition and animation durations resolve to 0.01ms while controls remain usable.
+- Browser console inspection returned no warnings or errors after the keyboard and responsive paths.
+- Inspected the accepted ready-state concept and the final 1280×800 implementation screenshot together. The fidelity ledger records seven comparison points, the copy diff, intentional viewport adaptation, and the resolved fallback-label overlap.

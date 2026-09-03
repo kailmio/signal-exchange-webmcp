@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { appStore, commands } from "./runtime";
 import { useAppState } from "./state/store";
-import { getPowerAvailability } from "./domain/powers";
+import { getPowerAvailability, recommendPower } from "./domain/powers";
+import { createSampleContent } from "./domain/sampleMission";
 import type { PowerId } from "./domain/types";
 import { registerWebMcpTools } from "./webmcp/registerTools";
 import { ActivityRail } from "./components/ActivityRail";
@@ -28,8 +29,8 @@ export default function App() {
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        if (state.preview) commands.cancelPreview("manual");
-        else if (dialogOpen) setDialogOpen(false);
+        if (dialogOpen) setDialogOpen(false);
+        else if (state.preview) commands.cancelPreview("manual");
       }
     };
     window.addEventListener("keydown", onKeyDown);
@@ -47,7 +48,7 @@ export default function App() {
   };
 
   const reset = () => {
-    const modified = state.board.revision > 0 || state.board.content.mode === "custom";
+    const modified = JSON.stringify(state.board.content) !== JSON.stringify(createSampleContent());
     if (!modified || window.confirm("Replace this board with the sample mission?")) {
       commands.loadDemoMission(true, "manual");
       setSelectedCardId("idea-tangible");
@@ -61,6 +62,7 @@ export default function App() {
         <div className={`connection connection--${state.connection}`}>
           <span className="connection__dot" />
           {state.connection === "ready" ? "Agent ready" : state.connection === "checking" ? "Checking agent connection" : "Manual demo mode"}
+          {state.connection === "manual" ? <span className="sr-only">. Every card remains available without an agent.</span> : null}
         </div>
         <div className="header-actions">
           <button type="button" onClick={() => setDialogOpen(true)}>New mission</button>
@@ -111,7 +113,7 @@ export default function App() {
               <PowerCard
                 key={power.id}
                 power={power}
-                recommended={state.recommendation?.power === power.id || (!state.recommendation && power.id === "forge")}
+                recommended={(state.recommendation?.power ?? recommendPower(state.board.content).power) === power.id}
                 active={state.preview?.power === power.id}
                 onPlay={playPower}
               />
@@ -123,7 +125,6 @@ export default function App() {
       </main>
 
       {state.notice ? <div className={`notice notice--${state.notice.tone}`} role="status" aria-live="polite">{state.notice.text}<button type="button" aria-label="Dismiss notice" onClick={() => appStore.dispatch({ type: "CLEAR_NOTICE" })}>×</button></div> : null}
-      {state.connection === "manual" ? <p className="manual-note">Your browser does not expose WebMCP here. Every card remains available for a truthful manual demo.</p> : null}
       <CustomMissionDialog open={dialogOpen} onClose={() => setDialogOpen(false)} onCreate={(goal, ideas) => { commands.createCustomMission(goal, ideas); setSelectedCardId(null); setDialogOpen(false); }} />
     </div>
   );
