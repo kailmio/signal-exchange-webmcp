@@ -1,6 +1,23 @@
 # Signal Exchange Two-Sided Demo Script
 
-Target: 90–120 seconds of actual app and agent use, not a text-only introduction. This script is updated; the published 65-second video is still the earlier buyer-only version.
+The final [139.4-second narrated demo is public on YouTube](https://youtu.be/e3yAC_muBbw). It demonstrates the two-sided workflow through real browser captures and Codex WebMCP calls. [Source, exact narration and recording disclosures](../video/signal-exchange-live-demo/README.md) are available in the repository.
+
+## Published video chapters
+
+- 00:00 — Problem and marketplace.
+- 00:13 — Human publishing controls.
+- 00:30 — Agent discovery and inspection.
+- 00:47 — Negotiation preview without spending.
+- 01:04 — Participant approval and manual completion.
+- 01:21 — Actual sample delivery.
+- 01:41 — Undo and agent-side publishing.
+- 01:58 — WebMCP implementation and limits.
+
+The participant approved and manually committed in the recorded take, then Codex received the data through WebMCP. Equivalent Laneway examples were used in two tabs; the edit is not one continuous transaction. The exact approval click fell between capture segments; real before/after states and the manual commit transition are shown. These details differ from the original agent-commit recording plan below.
+
+## Original recording plan and repeatable agent-commit path
+
+The following 90–120-second plan is retained as a rehearsal guide, not as the timeline or transcript of the finished video. Both manual and agent commit require the same page-level human approval.
 
 | Time | Actual screen action | Explanation |
 | --- | --- | --- |
@@ -23,6 +40,6 @@ Target: 90–120 seconds of actual app and agent use, not a text-only introducti
 
 For the reverse path, authorize the agent to publish a synthetic two-row listing through `publish_data_offer`, with title, seller, source, terms, prices and confirmation. Then rent it manually.
 
-## Recording constraints
+## Constraints for future recordings
 
 Keep the real tool conversation and page visible together. Do not simulate agent output in editing. State that credits, counterparty identity and negotiation are local simulation. Sample file delivery is real, but no commercial dataset was procured. Clearly show the human click. Do not claim secure content protection or recall of downloaded data.

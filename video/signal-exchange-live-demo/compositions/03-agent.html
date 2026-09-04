@@ -1,0 +1,92 @@
+<template id="03-agent-template">
+  <div data-hf-id="hf-p1uq" id="agent-composition" data-composition-id="03-agent" data-width="1920" data-height="1080" data-start="0" data-duration="16.809">
+    <div data-hf-id="hf-cn5c" class="scene-content">
+      <header data-hf-id="hf-i552" class="agent-heading">
+        <div data-hf-id="hf-t8js" class="agent-chapter">03 / AGENT PERSPECTIVE</div>
+        <h1 data-hf-id="hf-mhzq">The agent reads a contract, not pixels</h1>
+      </header>
+      <div data-hf-id="hf-a12w" class="agent-evidence-row">
+        <div data-hf-id="hf-4rej" class="agent-browser-column">
+          <div data-hf-id="hf-mbr4" class="agent-browser-frame">
+            <img data-hf-id="hf-oqz4" id="agent-before" src="evidence/03-agent-search-before.jpg" alt="Real marketplace before the recorded search" data-start="0" data-duration="4" data-track-index="1">
+            <video data-hf-id="hf-enpo" id="agent-search" src="footage/04-agent-search.mp4" data-start="3.65" data-duration="3.4" data-track-index="2" muted playsinline></video>
+            <video data-hf-id="hf-yfya" id="agent-inspect" src="footage/05-agent-inspect.mp4" data-start="6.7" data-duration="3.399" data-track-index="3" muted playsinline></video>
+            <img data-hf-id="hf-7zpu" id="agent-inspect-hold" src="evidence/03-agent-inspect-last.jpg" alt="Last captured inspection frame" data-start="10.099" data-duration="2.436" data-track-index="3">
+            <video data-hf-id="hf-q2uj" id="agent-compare" src="footage/06-agent-compare.mp4" data-start="12.185" data-duration="3.06" data-track-index="4" muted playsinline></video>
+            <img data-hf-id="hf-czuv" id="agent-compare-hold" src="evidence/03-agent-compare-last.jpg" alt="Last captured comparison frame" data-start="15.245" data-duration="1.564" data-track-index="4">
+          </div>
+          <p data-hf-id="hf-l8bm" class="agent-recording-note">Recorded session · waits shortened</p>
+        </div>
+        <aside data-hf-id="hf-t0fi" class="agent-trace" aria-label="Recorded tool trace excerpts">
+          <h2 data-hf-id="hf-xsvj">Recorded WebMCP excerpts</h2>
+          <section data-hf-id="hf-m2ns" class="agent-search-excerpt">
+            <code data-hf-id="hf-c077" class="agent-tool">search_data_offers</code>
+            <pre data-hf-id="hf-fbpv">{
+  "query": "Laneway",
+  "maxCredits": 40
+}</pre>
+          </section>
+          <section data-hf-id="hf-halk" class="agent-inspect-excerpt">
+            <code data-hf-id="hf-m0i6" class="agent-tool">inspect_data_offer</code>
+            <code data-hf-id="hf-d39f" class="agent-field">sampleFields</code>
+            <pre data-hf-id="hf-19rh">["location", "day",
+ "pedestrians",
+ "confidence"]</pre>
+          </section>
+          <section data-hf-id="hf-75st" class="agent-terms-excerpt">
+            <code data-hf-id="hf-0k07" class="agent-field">license</code>
+            <p data-hf-id="hf-qi2m">Demo evaluation only · attribution required · no redistribution</p>
+          </section>
+          <section data-hf-id="hf-oowj" class="agent-source-excerpt">
+            <code data-hf-id="hf-durt" class="agent-field">source</code>
+            <p data-hf-id="hf-fthy">Synthetic teaching sample created for Signal Exchange; not observed pedestrian data.</p>
+          </section>
+        </aside>
+      </div>
+      <footer data-hf-id="hf-2ilg" class="agent-footer">LIVE DEMO · Synthetic samples + simulated credits <span data-hf-id="hf-k5lj">AI narration · Tool results shown as excerpts</span></footer>
+    </div>
+    <style>
+      [data-composition-id="03-agent"] { width:1920px; height:1080px; background:#040A10; color:#F0E7D5; overflow:hidden; font-family:Arial,sans-serif; }
+      [data-composition-id="03-agent"] * { box-sizing:border-box; }
+      [data-composition-id="03-agent"] .scene-content { width:100%; height:100%; padding:44px 48px; display:flex; flex-direction:column; gap:18px; }
+      [data-composition-id="03-agent"] .agent-heading { display:flex; flex-direction:column; gap:10px; }
+      [data-composition-id="03-agent"] .agent-chapter { font-size:22px; line-height:1.2; color:#6BC8E8; font-weight:700; letter-spacing:2px; }
+      [data-composition-id="03-agent"] h1 { font-family:Georgia,serif; font-size:60px; line-height:1.1; font-weight:700; letter-spacing:-1.4px; margin:0; }
+      [data-composition-id="03-agent"] .agent-evidence-row { display:flex; flex:1; min-height:0; gap:24px; align-items:center; }
+      [data-composition-id="03-agent"] .agent-browser-column { display:flex; flex-direction:column; gap:14px; width:1320px; flex-shrink:0; }
+      [data-composition-id="03-agent"] .agent-browser-frame { display:grid; width:1320px; height:742.5px; background:#061019; border:1px solid #C99748; overflow:hidden; }
+      [data-composition-id="03-agent"] .agent-browser-frame > * { grid-area:1 / 1; width:100%; height:100%; object-fit:contain; }
+      [data-composition-id="03-agent"] #agent-before { z-index:1; }
+      [data-composition-id="03-agent"] #agent-search { z-index:2; }
+      [data-composition-id="03-agent"] #agent-inspect, [data-composition-id="03-agent"] #agent-inspect-hold { z-index:3; }
+      [data-composition-id="03-agent"] #agent-compare, [data-composition-id="03-agent"] #agent-compare-hold { z-index:4; }
+      [data-composition-id="03-agent"] .agent-recording-note { color:#A99F91; margin:0; font-size:24px; line-height:1.2; }
+      [data-composition-id="03-agent"] .agent-trace { width:456px; flex-shrink:0; padding:22px; display:flex; flex-direction:column; gap:17px; background:#10202A; border-top:3px solid #6BC8E8; }
+      [data-composition-id="03-agent"] h2 { margin:0; font-size:24px; line-height:1.2; font-weight:700; color:#F0E7D5; }
+      [data-composition-id="03-agent"] section { display:flex; flex-direction:column; gap:7px; }
+      [data-composition-id="03-agent"] code, [data-composition-id="03-agent"] pre { font-family:'Courier New',monospace; font-size:22px; line-height:1.2; font-weight:700; font-variant-ligatures:none; font-variant-numeric:tabular-nums; }
+      [data-composition-id="03-agent"] pre { margin:0; white-space:pre-wrap; color:#F0E7D5; }
+      [data-composition-id="03-agent"] .agent-tool { color:#6BC8E8; }
+      [data-composition-id="03-agent"] .agent-field { color:#EFC46D; }
+      [data-composition-id="03-agent"] section p { font-size:24px; line-height:1.25; margin:0; }
+      [data-composition-id="03-agent"] .agent-footer { display:flex; justify-content:space-between; gap:24px; font-size:20px; line-height:1.2; color:#A99F91; border-top:1px solid #C99748; padding-top:12px; }
+    </style>
+    <script src="vendor/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      {
+        const tl = gsap.timeline({ paused:true });
+        const scope = '[data-composition-id="03-agent"] ';
+        tl.from(scope + '.agent-heading', { x:-20, opacity:0, duration:0.55, ease:'power3.out' }, 0.12);
+        tl.from(scope + '.agent-browser-column', { scale:0.994, opacity:0, duration:0.65, ease:'sine.out' }, 0.2);
+        tl.from(scope + '.agent-trace', { x:16, opacity:0, duration:0.45, ease:'power2.out' }, 0.3);
+        tl.from(scope + '.agent-footer', { y:8, opacity:0, duration:0.35, ease:'expo.out' }, 0.4);
+        // Incoming recorded takes dissolve over the previous real frame. No fabricated UI motion.
+        tl.from('#agent-search', { opacity:0, duration:0.35, ease:'sine.out', immediateRender:false }, 3.65);
+        tl.from('#agent-inspect', { opacity:0, duration:0.35, ease:'power2.out', immediateRender:false }, 6.7);
+        tl.from('#agent-compare', { opacity:0, duration:0.35, ease:'power3.out', immediateRender:false }, 12.185);
+        window.__timelines['03-agent'] = tl;
+      }
+    </script>
+  </div>
+</template>

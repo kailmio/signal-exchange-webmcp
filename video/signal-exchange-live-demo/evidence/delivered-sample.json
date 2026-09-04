@@ -1,0 +1,26 @@
+[
+  {
+    "location": "Newtown",
+    "day": "Saturday",
+    "pedestrians": 420,
+    "confidence": 0.92
+  },
+  {
+    "location": "Surry Hills",
+    "day": "Saturday",
+    "pedestrians": 310,
+    "confidence": 0.89
+  },
+  {
+    "location": "Newtown",
+    "day": "Sunday",
+    "pedestrians": 365,
+    "confidence": 0.91
+  },
+  {
+    "location": "Surry Hills",
+    "day": "Sunday",
+    "pedestrians": 290,
+    "confidence": 0.88
+  }
+]

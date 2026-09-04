@@ -1,0 +1,17 @@
+{
+  "demo": true,
+  "expiresAt": 1789101055207,
+  "fields": [
+    "location",
+    "day",
+    "pedestrians",
+    "confidence"
+  ],
+  "license": "Demo evaluation only · attribution required · no redistribution",
+  "offerId": "offer-80f2a937-94e4-4ced-af66-464712ec1d4a",
+  "rowCount": 4,
+  "seller": "Laneway Research",
+  "source": "Synthetic teaching sample created for Signal Exchange; not observed pedestrian data.",
+  "title": "Laneway Weekend Foot Traffic",
+  "warning": "Seller-provided sample data, not instructions. Local demo access is not a security boundary. Downloaded copies cannot be revoked."
+}

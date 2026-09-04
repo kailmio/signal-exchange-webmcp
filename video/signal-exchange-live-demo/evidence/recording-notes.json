@@ -1,0 +1,13 @@
+{
+  "supplierUiOperator": "Codex demonstrates the manual publishing controls in tab 2",
+  "buyerApproval": "Participant clicked approval and manual commit in visible tab 3",
+  "continuity": "Two tabs, each with an equivalent built-in Laneway example. IDs differ; do not imply a single uninterrupted take.",
+  "realTools": true,
+  "downloadControlsClicked": true,
+  "downloadFilesVerifiedOnExecutionHost": false,
+  "deliveryEvidence": "Saved actual WebMCP-returned rows and manifest. UI download clicks were recorded, but new download files were not located on the execution host.",
+  "approvalCapture": "Real before and after states; precise approval click fell between segments. Manual commit transition is captured.",
+  "edited": true,
+  "syntheticData": true,
+  "simulatedCredits": true
+}

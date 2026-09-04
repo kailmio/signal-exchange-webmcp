@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Signal Exchange — narrated live demo</title>
+  <script src="vendor/gsap.min.js"></script>
+  <style>
+    html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#040A10}
+    #signal-exchange-live-demo{position:relative;width:1920px;height:1080px;overflow:hidden;background:#040A10}
+    .chapter-transition{position:absolute;inset:0;z-index:100;pointer-events:none;background:#061019;opacity:0;border-top:3px solid #C99748;box-sizing:border-box}
+  </style>
+</head>
+<body>
+  <main data-hf-id="hf-ok9q" id="signal-exchange-live-demo" data-composition-id="signal-exchange-live-demo" data-start="0" data-duration="139.376" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-d5fg" id="slot-01" data-composition-id="01-problem" data-composition-src="compositions/01-problem.html" data-start="0" data-duration="13.673" data-track-index="1"></div>
+    <div data-hf-id="hf-ypzw" id="slot-02" data-composition-id="02-supplier" data-composition-src="compositions/02-supplier.html" data-start="13.673" data-duration="16.723" data-track-index="1"></div>
+    <div data-hf-id="hf-dv4l" id="slot-03" data-composition-id="03-agent" data-composition-src="compositions/03-agent.html" data-start="30.396" data-duration="16.809" data-track-index="1"></div>
+    <div data-hf-id="hf-oo12" id="slot-04" data-composition-id="04-negotiate" data-composition-src="compositions/04-negotiate.html" data-start="47.205" data-duration="17.384" data-track-index="1"></div>
+    <div data-hf-id="hf-0a6r" id="slot-05" data-composition-id="05-handoff" data-composition-src="compositions/05-handoff.html" data-start="64.589" data-duration="16.446" data-track-index="1"></div>
+    <div data-hf-id="hf-9qzq" id="slot-06" data-composition-id="06-delivery" data-composition-src="compositions/06-delivery.html" data-start="81.035" data-duration="20.820" data-track-index="1"></div>
+    <div data-hf-id="hf-wj2q" id="slot-07" data-composition-id="07-control" data-composition-src="compositions/07-control.html" data-start="101.855" data-duration="16.104" data-track-index="1"></div>
+    <div data-hf-id="hf-1usk" id="slot-08" data-composition-id="08-webmcp" data-composition-src="compositions/08-webmcp.html" data-start="117.959" data-duration="21.417" data-track-index="1"></div>
+    <audio data-hf-id="hf-yhxl" id="narration" src="narration-normalized.wav" data-start="0" data-duration="139.376" data-track-index="0" data-volume="1"></audio>
+    <div data-hf-id="hf-u4of" id="chapter-transition" class="chapter-transition" data-layout-ignore=""></div>
+  </main>
+  <script>
+    window.__timelines=window.__timelines||{};
+    const master=gsap.timeline({paused:true});
+    [13.673,30.396,47.205,64.589,81.035,101.855,117.959].forEach((boundary)=>{
+      master.fromTo('#chapter-transition',{opacity:0},{opacity:1,duration:0.15,ease:'power2.in'},boundary-0.15);
+      master.to('#chapter-transition',{opacity:0,duration:0.22,ease:'sine.out'},boundary);
+      master.set('#chapter-transition',{opacity:0},boundary+0.23);
+    });
+    window.__timelines['signal-exchange-live-demo']=master;
+  </script>
+</body>
+</html>

@@ -27,3 +27,9 @@ Autonomous implementation of the participant-approved publish → discover → n
 - [x] Add seller proceeds, exact license terms, rental expiry, and undo that preserves later listings. Verify credit conservation and revocation.
 - [x] Add accessible publish/search/sample/download UI in the existing brass/cyan design. Verify desktop, mobile, and both manual/tool paths.
 - [x] Update product documents and publish the tested app. Keep the existing video explicitly labelled as the earlier buyer-only walkthrough until re-recorded.
+
+## Final narrated demonstration
+
+- [x] Record both human controls and actual agent WebMCP calls, with approval and sample delivery.
+- [x] Publish the 139.4-second narrated YouTube demo and document the recording's editorial limits.
+- [x] Replace stale current-video references while retaining clearly labelled earlier-release evidence.

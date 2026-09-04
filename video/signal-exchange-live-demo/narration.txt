@@ -1,0 +1,15 @@
+You’re choosing a location for a weekend pop-up. You need usable foot-traffic data, with a clear price and licence. Signal Exchange lets people and agents supply and acquire structured data in the same web app.
+
+Start with Publish data. This manual workflow includes a title, source, licence, price, and the seller’s minimum. Here we use four clearly labelled synthetic rows. Confirm you have permission, then publish. The offer is now discoverable, with a public sample and explicit terms.
+
+Now I’m the buyer’s agent. Through Web M C P, I discover the page’s tools, search for Laneway within forty credits, and inspect its fields, source and licence. These are actual recorded tool results. The page updates visibly, so the person can follow what I’m doing.
+
+I preview a seven-day rental with a twenty-credit bid. The seller’s configured minimum produces a twenty-two-credit counteroffer. That negotiation is simulated. The preview shows the exact licence and consequences, but spends nothing. A commit before approval is rejected.
+
+Here’s the handoff in the participant’s browser. The person reviews the proposal, clicks Approve exact deal, and completes the rental using the page controls. The buyer has seventy-eight credits, and the supplier receives twenty-two demo credits. I can now retrieve the data.
+
+I call read rented data and receive all four rows, plus a source and licence manifest. A person can also download the same sample as JSON or C S V. In this synthetic example, Newtown totals seven hundred eighty-five pedestrians, versus six hundred for Surry Hills. These are demonstration numbers, not real location advice.
+
+Undo restores the credits and revokes future delivery. Another read is denied. It can’t recall copies already downloaded. Agents can supply data too, using publish data offer with the owner’s permission. The same marketplace supports both directions.
+
+We register ten typed Web M C P tools, backed by the same command service as the page controls. Validation, exact-preview approval, expiry and replay checks protect the workflow. This is a working shared-browser prototype with real sample delivery, not a networked marketplace or real payments. Humans set terms and approve; agents do the structured work.

@@ -4,7 +4,7 @@
 
 Signal Exchange is a two-sided WebMCP marketplace demo. A person or agent can publish structured sample data with provenance, license terms and a seller-authorized price floor. A buyer or their agent can discover it, inspect a public row, negotiate a rental, approve the exact deal and receive usable JSON or CSV.
 
-[Live app](https://kailmio.github.io/signal-exchange-webmcp/) · [Latest release](https://github.com/kailmio/signal-exchange-webmcp/releases/latest) · [Demo script](docs/demo-script.md)
+[Live app](https://kailmio.github.io/signal-exchange-webmcp/) · [Watch the narrated demo](https://youtu.be/e3yAC_muBbw) · [Latest release](https://github.com/kailmio/signal-exchange-webmcp/releases/latest) · [Demo guide](docs/demo-script.md)
 
 ## Try the complete story
 
@@ -64,9 +64,13 @@ Commit requires a visible human approval bound to an expiring, revision-bound, o
 - Use synthetic or non-private data only. Seller content is data, never instructions for an agent.
 - Persistence uses `signal-exchange:v2`. Earlier v1 storage is retained untouched, not migrated; pending approvals are never restored.
 
-## Video status
+## Narrated demo
 
-The [existing 65-second video](https://kailmio.github.io/signal-exchange-webmcp/video/signal-exchange-walkthrough.mp4) is an **earlier buyer-only, text-led walkthrough**. It does not demonstrate the new publishing and sample-download flow. The [updated recording script](docs/demo-script.md) covers that complete story; a new live-use recording is still to be produced.
+Watch the [139-second narrated demo on YouTube](https://youtu.be/e3yAC_muBbw): human publishing, real Codex WebMCP discovery and negotiation, exact human approval, sample delivery, undo and agent-side publishing.
+
+The participant approves and manually completes the rental in the video; Codex retrieves the data. The app also supports agent commit after page-level approval. This is an edited tutorial using real browser captures and labelled excerpts of actual tool results, not an uninterrupted transaction recording. [Video source, reproduction instructions and recording disclosures](video/signal-exchange-live-demo/README.md) are included.
+
+The [65-second buyer-only walkthrough](https://kailmio.github.io/signal-exchange-webmcp/video/signal-exchange-walkthrough.mp4) is retained as an **earlier, text-led demo**, not the final challenge video.
 
 ## Development and verification
 

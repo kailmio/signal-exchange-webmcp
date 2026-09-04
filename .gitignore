@@ -8,9 +8,26 @@ vite.config.js
 vite.config.d.ts
 .DS_Store
 .venv/
+.venv-video/
+video/**/raw-frames/
+video/**/renders/
 video/**/auditions/
 video/**/.hyperframes/
 video/**/.thumbnails/
 video/**/.waveform-cache/
+video/**/snapshots*/
+video/signal-exchange-live-demo/capture/extracted/
+video/signal-exchange-live-demo/narration.wav
+video/signal-exchange-live-demo/voice/
+video/signal-exchange-live-demo/capture/*
+!video/signal-exchange-live-demo/capture/assets/
+!video/signal-exchange-live-demo/capture/screenshots/
+video/signal-exchange-live-demo/capture/assets/*
+!video/signal-exchange-live-demo/capture/assets/svgs/
+video/signal-exchange-live-demo/capture/assets/svgs/*
+!video/signal-exchange-live-demo/capture/assets/svgs/logo-2685cc99.svg
+video/signal-exchange-live-demo/capture/screenshots/*
+!video/signal-exchange-live-demo/capture/screenshots/scroll-000.png
+!video/signal-exchange-live-demo/capture/screenshots/scroll-100.png
 
 .vercel

@@ -1,0 +1,186 @@
+[
+  {
+    "shot": "01-open-publisher",
+    "duration": 6.783,
+    "frames": 10,
+    "realStart": 1788495889.389,
+    "realEnd": 1788495894.481,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "02-review-sample",
+    "duration": 7.864,
+    "frames": 17,
+    "realStart": 1788495901.817,
+    "realEnd": 1788495907.935,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "03-publish",
+    "duration": 3.51,
+    "frames": 15,
+    "realStart": 1788495915.091,
+    "realEnd": 1788495921.116,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "04-agent-search",
+    "duration": 3.4,
+    "frames": 12,
+    "realStart": 1788495931.446,
+    "realEnd": 1788495937.618,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "05-agent-inspect",
+    "duration": 3.399,
+    "frames": 12,
+    "realStart": 1788495943.539,
+    "realEnd": 1788495949.568,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "06-agent-compare",
+    "duration": 3.06,
+    "frames": 2,
+    "realStart": 1788495958.849,
+    "realEnd": 1788495963.96,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "07-agent-negotiate",
+    "duration": 3.038,
+    "frames": 2,
+    "realStart": 1788495964.055,
+    "realEnd": 1788495970.098,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "07b-visible-proposal",
+    "duration": 3.037,
+    "frames": 2,
+    "realStart": 1788496207.448,
+    "realEnd": 1788496212.492,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "07c-visible-proposal",
+    "duration": 3.04,
+    "frames": 2,
+    "realStart": 1788496254.196,
+    "realEnd": 1788496259.295,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "08-approval-required",
+    "duration": 3.034,
+    "frames": 2,
+    "realStart": 1788495978.145,
+    "realEnd": 1788495983.199,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "09-human-approval",
+    "duration": 4.5,
+    "frames": 2,
+    "realStart": 1788496000.058,
+    "realEnd": 1788496045.133,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "09b-human-approval",
+    "duration": 2,
+    "frames": 1,
+    "realStart": 1788496083.731,
+    "realEnd": 1788496128.81,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "09c-human-approval",
+    "duration": 2,
+    "frames": 1,
+    "realStart": 1788496154.335,
+    "realEnd": 1788496194.253,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "09d-human-approval",
+    "duration": 2,
+    "frames": 1,
+    "realStart": 1788496265.987,
+    "realEnd": 1788496306.049,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "09e-reveal-approval",
+    "duration": 3,
+    "frames": 2,
+    "realStart": 1788496314.217,
+    "realEnd": 1788496319.336,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "09f-human-approval",
+    "duration": 4.999,
+    "frames": 4,
+    "realStart": 1788496336.613,
+    "realEnd": 1788496467.792,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "10-agent-delivery",
+    "duration": 2,
+    "frames": 1,
+    "realStart": 1788496467.857,
+    "realEnd": 1788496474.893,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "11-downloads",
+    "duration": 4.078,
+    "frames": 4,
+    "realStart": 1788496487.337,
+    "realEnd": 1788496494.399,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "12-undo",
+    "duration": 3.041,
+    "frames": 2,
+    "realStart": 1788496501.862,
+    "realEnd": 1788496507.984,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "13-access-denied",
+    "duration": 2,
+    "frames": 1,
+    "realStart": 1788496508.075,
+    "realEnd": 1788496513.148,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "14-agent-publishes",
+    "duration": 3.084,
+    "frames": 3,
+    "realStart": 1788496523.776,
+    "realEnd": 1788496530.797,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "15-agent-listing",
+    "duration": 3.078,
+    "frames": 3,
+    "realStart": 1788496530.929,
+    "realEnd": 1788496537.001,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  },
+  {
+    "shot": "16-agent-supplier-detail",
+    "duration": 3.3,
+    "frames": 9,
+    "realStart": 1788496548.059,
+    "realEnd": 1788496554.101,
+    "note": "Real browser frames; gaps longer than 2.5 seconds shortened. No generated UI or mouse actions."
+  }
+]

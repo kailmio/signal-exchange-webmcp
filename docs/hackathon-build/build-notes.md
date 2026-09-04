@@ -48,7 +48,7 @@ The participant clarified the goal: “trade agent-ready data with humans or age
 - Reverse-role proof: WebMCP published a two-row Beacon sample; a person using mobile controls bid 10, reviewed the 12-credit counteroffer, approved and committed. Buyer 88; seller +12.
 - Revocation and persistence proof: refresh retained listing, access and proceeds; undo blocked subsequent delivery and preserved the later Beacon listing.
 - Visual proof: 1280×800 and 360×800 reviewed against the existing concept and extension spec; direct browser measurements found no overflowing elements; no app console errors.
-- Existing video is clearly marked as the earlier buyer-only text walkthrough. An updated live-use recording is still outstanding; the script is ready.
+- At the two-sided app release, the existing video was marked as the earlier buyer-only text walkthrough. The final narrated recording was completed later on 4 September; see below.
 
 ### Public release verification
 
@@ -57,3 +57,12 @@ The participant clarified the goal: “trade agent-ready data with humans or age
 - Public smoke test: agent published a two-row sample, searched and inspected it, negotiated 20 to 22 credits, and received explicit denials for pre-rental delivery and unapproved commit. After page approval, commit produced buyer balance 78, seller proceeds 22, and both rows with the exact license in the delivery manifest.
 - Undo revoked access; demo reset restored 100 credits, three seed listings and no active rentals. Public-origin warning/error logs were empty.
 - Release v1.1.0 is the two-sided app; the existing rendered video remains the explicitly labelled earlier buyer-only walkthrough.
+
+## Final narrated demo (4 September 2026)
+
+- Published [Signal Exchange — Humans + Agents Trade Data](https://youtu.be/e3yAC_muBbw): 139.4 seconds, 1920×1080, with narration and no background music.
+- Shows supplier controls, genuine Codex WebMCP discovery/inspection/negotiation, participant approval and manual commit, actual four-row delivery, undo and agent-side publishing.
+- Uses edited real browser captures and labelled excerpts of recorded tool results. Equivalent examples were recorded in two tabs; the precise approval click fell between capture segments. Real approval states and manual commit transition are shown, not fabricated clicks.
+- Final MP4 passed a full decode check; eight actual output frames were visually inspected. HyperFrames runtime/layout/contrast checks passed, and non-silent narration was measured.
+- Source compositions, required media, actual tool trace, delivered rows and license manifest are in `video/signal-exchange-live-demo`. Raw frames, cache files and duplicate working audio are excluded from Git.
+- Submission preparation re-ran all 29 tests and the production build successfully. The app remains v1.1.0; this update adds evidence and documentation rather than new marketplace functionality.

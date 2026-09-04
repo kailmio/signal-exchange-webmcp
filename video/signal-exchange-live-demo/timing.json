@@ -1,0 +1,66 @@
+[
+  {
+    "id": "01-problem",
+    "title": "A real task. Two ways to act.",
+    "label": "THE PROBLEM",
+    "text": "You\u2019re choosing a location for a weekend pop-up. You need usable foot-traffic data, with a clear price and licence. Signal Exchange lets people and agents supply and acquire structured data in the same web app.",
+    "start": 0.0,
+    "duration": 13.673
+  },
+  {
+    "id": "02-supplier",
+    "title": "Publish data people and agents can use",
+    "label": "HUMAN CONTROLS",
+    "text": "Start with Publish data. This manual workflow includes a title, source, licence, price, and the seller\u2019s minimum. Here we use four clearly labelled synthetic rows. Confirm you have permission, then publish. The offer is now discoverable, with a public sample and explicit terms.",
+    "start": 13.673,
+    "duration": 16.723
+  },
+  {
+    "id": "03-agent",
+    "title": "The agent reads a contract, not pixels",
+    "label": "AGENT PERSPECTIVE",
+    "text": "Now I\u2019m the buyer\u2019s agent. Through Web M C P, I discover the page\u2019s tools, search for Laneway within forty credits, and inspect its fields, source and licence. These are actual recorded tool results. The page updates visibly, so the person can follow what I\u2019m doing.",
+    "start": 30.396,
+    "duration": 16.809
+  },
+  {
+    "id": "04-negotiate",
+    "title": "Propose first. Spend nothing yet.",
+    "label": "WEBMCP NEGOTIATION",
+    "text": "I preview a seven-day rental with a twenty-credit bid. The seller\u2019s configured minimum produces a twenty-two-credit counteroffer. That negotiation is simulated. The preview shows the exact licence and consequences, but spends nothing. A commit before approval is rejected.",
+    "start": 47.205,
+    "duration": 17.385
+  },
+  {
+    "id": "05-handoff",
+    "title": "The person approves and completes the deal",
+    "label": "HUMAN + AGENT",
+    "text": "Here\u2019s the handoff in the participant\u2019s browser. The person reviews the proposal, clicks Approve exact deal, and completes the rental using the page controls. The buyer has seventy-eight credits, and the supplier receives twenty-two demo credits. I can now retrieve the data.",
+    "start": 64.589,
+    "duration": 16.446
+  },
+  {
+    "id": "06-delivery",
+    "title": "The result is usable data",
+    "label": "ACTUAL SAMPLE DELIVERY",
+    "text": "I call read rented data and receive all four rows, plus a source and licence manifest. A person can also download the same sample as JSON or C S V. In this synthetic example, Newtown totals seven hundred eighty-five pedestrians, versus six hundred for Surry Hills. These are demonstration numbers, not real location advice.",
+    "start": 81.035,
+    "duration": 20.819
+  },
+  {
+    "id": "07-control",
+    "title": "Undo reverses access and demo credits",
+    "label": "CONTROL AFTER THE DEAL",
+    "text": "Undo restores the credits and revokes future delivery. Another read is denied. It can\u2019t recall copies already downloaded. Agents can supply data too, using publish data offer with the owner\u2019s permission. The same marketplace supports both directions.",
+    "start": 101.855,
+    "duration": 16.105
+  },
+  {
+    "id": "08-webmcp",
+    "title": "One app. Shared state. Explicit tools.",
+    "label": "HOW WEBMCP IS IMPLEMENTED",
+    "text": "We register ten typed Web M C P tools, backed by the same command service as the page controls. Validation, exact-preview approval, expiry and replay checks protect the workflow. This is a working shared-browser prototype with real sample delivery, not a networked marketplace or real payments. Humans set terms and approve; agents do the structured work.",
+    "start": 117.959,
+    "duration": 21.417
+  }
+]
