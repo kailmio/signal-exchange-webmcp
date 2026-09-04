@@ -26,4 +26,4 @@ Autonomous implementation of the participant-approved publish → discover → n
 - [x] Add WebMCP publishing, offer inspection, and access-gated JSON/CSV delivery through the shared command service. Verify person/agent parity and no pre-approval delivery.
 - [x] Add seller proceeds, exact license terms, rental expiry, and undo that preserves later listings. Verify credit conservation and revocation.
 - [x] Add accessible publish/search/sample/download UI in the existing brass/cyan design. Verify desktop, mobile, and both manual/tool paths.
-- [ ] Update product documents and publish the tested app. Keep the existing video explicitly labelled as the earlier buyer-only walkthrough until re-recorded.
+- [x] Update product documents and publish the tested app. Keep the existing video explicitly labelled as the earlier buyer-only walkthrough until re-recorded.

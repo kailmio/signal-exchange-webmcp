@@ -49,3 +49,11 @@ The participant clarified the goal: “trade agent-ready data with humans or age
 - Revocation and persistence proof: refresh retained listing, access and proceeds; undo blocked subsequent delivery and preserved the later Beacon listing.
 - Visual proof: 1280×800 and 360×800 reviewed against the existing concept and extension spec; direct browser measurements found no overflowing elements; no app console errors.
 - Existing video is clearly marked as the earlier buyer-only text walkthrough. An updated live-use recording is still outstanding; the script is ready.
+
+### Public release verification
+
+- GitHub Pages workflow `33833488545` passed on app commit `7c926c5572540d513d7e49181cc58333e10a6b85`, including tests, production build, video render and deployment.
+- The public Signal Exchange URL returned HTTP 200 and discovered all ten WebMCP tools.
+- Public smoke test: agent published a two-row sample, searched and inspected it, negotiated 20 to 22 credits, and received explicit denials for pre-rental delivery and unapproved commit. After page approval, commit produced buyer balance 78, seller proceeds 22, and both rows with the exact license in the delivery manifest.
+- Undo revoked access; demo reset restored 100 credits, three seed listings and no active rentals. Public-origin warning/error logs were empty.
+- Release v1.1.0 is the two-sided app; the existing rendered video remains the explicitly labelled earlier buyer-only walkthrough.

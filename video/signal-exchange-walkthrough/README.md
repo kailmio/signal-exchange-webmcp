@@ -1,6 +1,8 @@
 # Signal Exchange Walkthrough
 
-A 65-second product-led walkthrough of the Signal Exchange WebMCP loop.
+A 65-second, earlier buyer-only walkthrough of the Signal Exchange WebMCP loop.
+
+This video predates v1.1.0. It does not demonstrate seller publishing, seller proceeds or JSON/CSV sample downloads. The updated two-sided recording script is in `docs/demo-script.md`; a new live-use recording remains to be produced.
 
 The current composition is text-led because the preferred local neural TTS dependency was unavailable during the deadline build. Every required explanation is present on screen, including the problem, tool calls, recommendation evidence, 20→22 counteroffer, UI-bound human approval, 100→78 wallet change, unlocked schema, Activity attribution, and undo.
 
