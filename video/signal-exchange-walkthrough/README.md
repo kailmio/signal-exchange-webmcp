@@ -19,4 +19,4 @@ Studio URL: `http://localhost:3027/#project/signal-exchange-walkthrough`
 
 The deployment workflow renders the submission artifact to `dist/video/signal-exchange-walkthrough.mp4` and publishes it at:
 
-https://kailmio.github.io/mission-deck-webmcp/video/signal-exchange-walkthrough.mp4
+https://kailmio.github.io/signal-exchange-webmcp/video/signal-exchange-walkthrough.mp4

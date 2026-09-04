@@ -8,3 +8,4 @@
 - Design authority: Codex may make final scope and visual decisions to maximize judging clarity under the deadline.
 - Reference code: Card Master informed the interaction ambition only; implementation and assets are original.
 - Deadline mode: prioritize a polished, demonstrable vertical slice over backend breadth.
+- Updated working deadline: 4 September 2026 at 6:00 pm Australia/Sydney, as communicated by the participant; this is not an independently verified official event deadline.

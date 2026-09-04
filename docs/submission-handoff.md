@@ -29,9 +29,9 @@ Inspect → search within 40 credits → compare → recommend MetroPulse → bi
 
 ## Links
 
-- Live app: https://kailmio.github.io/mission-deck-webmcp/
-- Repository: https://github.com/kailmio/mission-deck-webmcp
-- Walkthrough: https://kailmio.github.io/mission-deck-webmcp/video/signal-exchange-walkthrough.mp4
+- Live app: https://kailmio.github.io/signal-exchange-webmcp/
+- Repository: https://github.com/kailmio/signal-exchange-webmcp
+- Walkthrough: https://kailmio.github.io/signal-exchange-webmcp/video/signal-exchange-walkthrough.mp4
 
 ## Honest scope
 

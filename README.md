@@ -2,13 +2,15 @@
 
 Signal Exchange is a self-contained WebMCP marketplace where people set the goal, budget, and approval boundary while agents find and negotiate access to machine-ready data.
 
+[Live app](https://kailmio.github.io/signal-exchange-webmcp/) · [Latest release](https://github.com/kailmio/signal-exchange-webmcp/releases/latest) · [Demo walkthrough](https://kailmio.github.io/signal-exchange-webmcp/video/signal-exchange-walkthrough.mp4)
+
 The judge-ready scenario is concrete: a small retailer needs fresh Sydney foot-traffic data to choose a weekend pop-up location. Instead of manually opening listings, translating metadata, and comparing incompatible terms, the agent can inspect the live marketplace, search within a 40-credit budget, compare trust and freshness, negotiate a seven-day rental, and present one exact deal for approval. Nothing is purchased until the person approves the visible preview.
 
 ## 65-second demo
 
-Watch the [guided Signal Exchange walkthrough](https://kailmio.github.io/mission-deck-webmcp/video/signal-exchange-walkthrough.mp4), or run the live agent flow below.
+Watch the [guided Signal Exchange walkthrough](https://kailmio.github.io/signal-exchange-webmcp/video/signal-exchange-walkthrough.mp4), or run the live agent flow below.
 
-Open the [live app](https://kailmio.github.io/mission-deck-webmcp/) in a WebMCP-capable browser and ask:
+Open the [live app](https://kailmio.github.io/signal-exchange-webmcp/) in a WebMCP-capable browser and ask:
 
 1. `Inspect this exchange and find data for my visible goal within budget.`
 2. `Compare the matching offers and explain your recommendation.`
