@@ -14,9 +14,9 @@
   },
   "project": {
     "name": "Signal Exchange",
-    "summary": "A self-contained data marketplace where WebMCP agents search, compare, and negotiate access while people retain the visible approval boundary, budget, and undo control.",
+    "summary": "Trade agent-ready data with humans or agents, by humans or agents. A two-sided local WebMCP demo for publishing structured samples, negotiating rentals, exact human approval and JSON/CSV delivery.",
     "ai_usage": "Codex was the primary coding agent for product shaping, implementation, testing, deployment, visual QA, and video production. Hermes Agent independently reviewed the PRD. Image generation produced original concept references. The shipped application contains original code and deterministic local logic; it calls no model API.",
-    "codex_usage": "Codex implemented the React and TypeScript marketplace, seven WebMCP tools, approval-bound transaction flow, tests, GitHub Pages release, accessibility and responsive QA, and the 65-second HyperFrames walkthrough."
+    "codex_usage": "Codex implemented the React and TypeScript two-sided marketplace, ten WebMCP tools, validated seller publishing, approval-bound rentals, seller proceeds, JSON/CSV sample delivery, tests and GitHub Pages release. Codex also produced an earlier buyer-only HyperFrames walkthrough; the new live-use recording remains to be produced."
   },
   "current_stage": "resources",
   "completed_stages": [

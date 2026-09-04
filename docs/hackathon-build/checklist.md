@@ -17,3 +17,13 @@
 - [x] Deploy the pivot and smoke-test the public URL.
 - [x] Validate the Signal Exchange walkthrough video and wire its deterministic deployment render.
 - [x] Add final app and video verification evidence to build notes.
+
+## Approved two-sided extension (4 September)
+
+Autonomous implementation of the participant-approved publish → discover → negotiate → approve → receive flow. Keep the existing design system and local-demo boundary.
+
+- [x] Add validated seller publishing, source and license metadata, and bounded structured sample rows. Verify invalid inputs never publish.
+- [x] Add WebMCP publishing, offer inspection, and access-gated JSON/CSV delivery through the shared command service. Verify person/agent parity and no pre-approval delivery.
+- [x] Add seller proceeds, exact license terms, rental expiry, and undo that preserves later listings. Verify credit conservation and revocation.
+- [x] Add accessible publish/search/sample/download UI in the existing brass/cyan design. Verify desktop, mobile, and both manual/tool paths.
+- [ ] Update product documents and publish the tested app. Keep the existing video explicitly labelled as the earlier buyer-only walkthrough until re-recorded.

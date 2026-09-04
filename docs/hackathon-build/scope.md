@@ -1,32 +1,32 @@
 # Signal Exchange Scope
 
-Build a polished, self-contained marketplace proving that a person and an agent can safely acquire agent-ready data together through WebMCP.
+## Product goal
 
-## User and problem
+Trade agent-ready data with humans or agents, by humans or agents.
 
-The primary user is a solo operator or small business making a time-sensitive decision without a data procurement team. Today, useful data is fragmented across pages with inconsistent descriptions, pricing, freshness, formats, and licenses. Agents can research pages, but cannot reliably discover the page's transactional capabilities or present a shared, auditable approval step.
+The broader product is a two-sided marketplace: either side may be operated by a person or their authorized agent. This build proves one complete rental interaction in a shared browser session.
 
-## Locked demo
+## Audience and concrete problem
 
-- Goal: choose a Sydney location for a weekend pop-up.
-- Need: fresh retail foot-traffic data.
-- Constraint: 40-credit ceiling and seven-day rental.
-- Supply: three differentiated offers with credible metadata.
-- Outcome: the agent recommends MetroPulse, bids 20 credits, receives a 22-credit counteroffer, pauses for approval, commits, unlocks schema access, and can undo.
+Small operators, independent researchers and agent builders need structured data they can inspect and use, with understandable sources and terms. Data contributors need a way to supply it to people or agents. The demo buyer wants Sydney foot-traffic signals for a weekend pop-up; a contributor publishes a synthetic sample for that decision.
+
+## Approved two-sided flow
+
+Publish a structured sample and terms → discover → inspect one public row → negotiate against the seller's price floor → approve the exact agreement → transfer simulated credits to the seller → receive actual sample rows and a manifest → undo.
 
 ## In scope
 
-- Seven WebMCP tools sharing the same state and command layer as the UI.
-- Search, comparison, deterministic ranking, simulated negotiation, exact preview, approval-bound commit, access state, Activity evidence, and one-level undo.
-- A strong desktop presentation plus complete 360px mobile flow.
-- Deterministic local demo data and credits.
+- Person and WebMCP publishing through the same validated command service.
+- Three seed offers and up to 20 total local listings, each with 2–50 scalar JSON rows.
+- Ten WebMCP tools, exact license terms, fixed seven-day rentals, buyer budget and wallet checks.
+- Buyer debits and per-listing seller proceeds; JSON/CSV sample delivery and license/source manifest.
+- Visible human approval, one-time/revision/expiry token checks, revocation and undo that preserves later listings.
+- Desktop/mobile controls, manual fallback, local persistence and truthful attribution.
 
 ## Out of scope
 
-- Real sellers, payments, identity, settlement, file transfer, data validation, or legal enforcement.
-- An open-ended auction engine, multi-agent bidding, backend accounts, or production security claims.
-- Any suggestion that the demo credits or unlocked schema represent a real commercial transaction.
+Production multi-user identity, cross-device synchronization, real payments, auctions, seller-to-seller messages, independent provenance validation, legal enforcement, secure content protection and real commercial datasets. Automatic owner-delegated approval policies are a future capability; this demo requires an explicit human approval click.
 
 ## Success
 
-A first-time judge understands the problem in ten seconds and can complete the full agent-driven transaction in under a minute, with every tool call visible and the exact spend controlled by the person.
+A judge can publish a sample, have an agent discover and negotiate it, approve 22 credits, receive four usable rows, see both balances, and undo. The judge can distinguish working functionality from simulated commerce.

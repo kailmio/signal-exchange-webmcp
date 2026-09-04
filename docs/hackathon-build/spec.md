@@ -1,31 +1,29 @@
 # Signal Exchange Technical Specification
 
-## Architecture
+React renders an external store. Pure marketplace and data-delivery functions perform validation and serialization. The command service is shared by UI and ten tools registered through `document.modelContext.registerTool`.
 
-React renders a single external store. Pure marketplace functions search, rank, and calculate a proposed exchange snapshot. `CommandService` is the only mutation boundary. Both manual controls and WebMCP registrations call this service, so agent and person paths cannot drift.
+## State and transactions
 
-## State model
+Offers include source, explicit license, sample fields/rows, publication origin and seller earnings. Rentals include the agreed license and expiry. Publishing increments the exchange revision, clears any pending approval, and extends the prior undo snapshot with the new offer so undo cannot delete a later publication.
 
-`ExchangeContent` contains buyer brief, wallet, offers, and active access. `CommittedExchange` adds a monotonic revision. Pending deals store the proposed snapshot separately with origin, base revision, one-time token, and five-minute expiry. UI-only state holds visible offers, recommendation, Activity, connection status, and notices.
+A rental proposal contains the exact buyer debit, seller credit, license and data delivery count. One-time tokens are bound to a revision and five-minute expiry. Only a page-level human click records approval. Commit applies the proposal atomically; undo restores the preceding financial/access snapshot.
 
-## Tool surface
+## Tools
 
-Seven tools are registered through `document.modelContext.registerTool`: `inspect_exchange`, `search_data_offers`, `compare_data_offers`, `preview_data_deal`, `commit_data_deal`, `undo_last_deal`, and `load_demo_exchange`. Inputs use closed JSON schemas with bounds and no additional properties. Results provide readable JSON plus structured content.
+`inspect_exchange`, `publish_data_offer`, `inspect_data_offer`, `search_data_offers`, `compare_data_offers`, `preview_data_deal`, `commit_data_deal`, `read_rented_data`, `undo_last_deal`, `load_demo_exchange`.
 
-`inspect_exchange` alone declares `readOnlyHint: true`. Search and comparison intentionally update visible state and Activity. Preview creates visible pending state but does not mutate committed exchange content. Commit applies only the exact active preview after token, revision, expiry, budget, wallet, and replay checks.
+Inspection, offer inspection and data reading are read-only. All mutation tools visibly update page state and Activity. Publishing requires owner-authorized confirmation and validates metadata, prices and sample structure at runtime as well as in the closed input schema.
 
-## Deterministic market logic
+## Delivery and limits
 
-Search tokenizes the need and filters by the optional credit ceiling. Comparison scores trust, freshness, affordability, and format coverage. Negotiation caps at list price and counters bids below the seller minimum. The demo always resolves a 20-credit MetroPulse bid to 22 credits.
+Listings accept 2–50 rows, at most 12 consistently named fields, scalar values and a 20,000-character JSON payload. At most 20 offers are allowed. One row is publicly inspectable. An active approved rental permits full JSON/CSV serialization with a source/license manifest; reading is denied at expiry or after undo. CSV quoting and formula-prefix neutralization reduce spreadsheet execution risk.
+
+Data is client-local and inspectable; these checks demonstrate workflow permissions, not a security boundary. Seller text is explicitly untrusted data, never instructions.
 
 ## Persistence
 
-Committed exchange state and safe UI history use the versioned `signal-exchange:v1` local key. Pending approvals, committing state, notices, and connection state are not restored. Malformed or incompatible data falls back to the sample exchange.
-
-## Presentation
-
-Desktop uses a marketplace/sidebar split at 1280×800. Mobile becomes one vertical document with compact offer rows and the complete deal panel below. `prefers-reduced-motion` disables transitions and animated accents.
+The v2 namespace stores committed offers, samples, earnings, rentals, undo and recent history. Pending approval is not serialized. The loader validates nested structures. Earlier v1 state is left untouched; there is no destructive migration.
 
 ## Verification
 
-Vitest covers deterministic sample data, search, ranking, negotiation, validation, read-only inspection, preview/commit separation, stale/mismatch/expiry/replay handling, parity, undo, persistence, and seven tool registrations. Browser QA covers discovered WebMCP tools, the live transaction, undo, console health, desktop, and 360px rendering.
+Unit/integration tests cover both roles, publication validation, pricing, exact license, token approval, expiry, read-only behavior, sample delivery, CSV escaping, seller credits, undo, persistence and tool registration. Browser QA covers a human-published/agent-rented listing and agent-published/manually-rented listing, actual file downloads, reload and 1280px/360px layouts.

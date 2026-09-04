@@ -1,38 +1,28 @@
 # Signal Exchange Submission Handoff
 
-## One-line pitch
+## Pitch
 
-Signal Exchange lets agents find and negotiate access to machine-ready data while people retain the budget, approval, and undo controls.
+Trade agent-ready data with humans or agents, by humans or agents.
 
-## Problem and audience
+## Specific problem
 
-Small operators increasingly delegate decisions to agents, but the data those agents need is scattered across marketplace pages with inconsistent freshness, formats, prices, and terms. Manual procurement is slow; autonomous purchase is risky. Signal Exchange turns one marketplace page into a typed, visible collaboration surface.
+Data suppliers need to make structured samples understandable and usable to agents. Data buyers need to inspect source, license, schema and price before allowing a transaction. A normal listing alone does not provide the whole supply-to-delivery workflow.
 
-## What is new with WebMCP
+## Demonstrated solution
 
-The agent does more than summarize the page. It discovers seven native capabilities, searches the live inventory, compares offers against the person's visible constraint, negotiates a specific rental, and commits only the approved proposal. The person watches the same state change, sees which actions came from WebMCP, and can reverse the result.
+A contributor publishes a synthetic Sydney foot-traffic sample. A buyer's agent discovers the new listing through WebMCP, inspects a public row, negotiates against the seller-authorized minimum and pauses for exact human approval. Commit debits the buyer, credits the seller and enables JSON/CSV sample receipt with a manifest. Undo restores credits and revokes future delivery while preserving later listings.
 
-## Judge proof points
-
-- Real browser discovery exposes seven typed tools.
-- `inspect_exchange` is genuinely read-only; search and compare truthfully create visible Activity.
-- Preview returns a seller counteroffer and exact changes without spending credits.
-- Commit accepts only the active revision-bound, expiring token after a person clicks approval for that exact token.
-- A successful commit changes wallet 100 → 78 and unlocks the selected schema.
-- Replay and stale tokens are rejected; undo restores wallet 100 and revokes access.
-- Manual and agent paths share the same command service.
-- The product clearly labels all commerce and access as a local simulation.
-
-## Demo path
-
-Inspect → search within 40 credits → compare → recommend MetroPulse → bid 20 for seven days → show 22-credit counteroffer → explicitly approve → commit → show unlocked schema and Activity → undo.
+Both roles can use the page or WebMCP; ten tools share one typed command layer.
 
 ## Links
 
-- Live app: https://kailmio.github.io/signal-exchange-webmcp/
+- App: https://kailmio.github.io/signal-exchange-webmcp/
 - Repository: https://github.com/kailmio/signal-exchange-webmcp
-- Walkthrough: https://kailmio.github.io/signal-exchange-webmcp/video/signal-exchange-walkthrough.mp4
+- Earlier buyer-only video: https://kailmio.github.io/signal-exchange-webmcp/video/signal-exchange-walkthrough.mp4
+- Updated recording script: docs/demo-script.md
 
-## Honest scope
+## Scope that must remain explicit
 
-The marketplace, sellers, credits, negotiation, and data access are deterministic local demo state. Real payments, identity, seller communication, and dataset delivery are intentionally outside the hackathon build.
+One shared-browser local simulation. No real payments, verified identities, networked marketplace, independent provenance validation or secure content protection. Samples are actual JSON/CSV exports, not full commercial datasets. Human approval is required in this demo; delegated automatic approval is not implemented. Downloaded copies cannot be revoked.
+
+The existing video does not yet show the two-sided feature set. Record the updated live-use demonstration before submission.
